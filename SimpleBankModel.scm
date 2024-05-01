@@ -80,6 +80,8 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:03:15:12:53:04.152;
 		getFullName(): String number = 1002;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:03:01:13:45:02.245;
+		test() number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:02:00:53:07.101;
 	)
 	Global completeDefinition
 	(
@@ -280,6 +282,16 @@ getFullName(): String;
 begin
 
 	return self.firstName & " " & self.lastName;
+
+end;
+}
+test
+{
+test();
+
+vars
+
+begin
 
 end;
 }
