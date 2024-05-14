@@ -8,18 +8,23 @@ localeDefinitions
 typeHeaders
 	SimpleBankModel subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2052;
 	Bank subclassOf Object highestSubId = 2, highestOrdinal = 4, number = 2058;
-	BankAccount subclassOf Object abstract, highestOrdinal = 3, number = 2179;
+	BankAccount subclassOf Object abstract, highestSubId = 1, highestOrdinal = 4, number = 2179;
 	CurrentAccount subclassOf BankAccount highestOrdinal = 1, number = 2183;
 	SavingsAccount subclassOf BankAccount highestOrdinal = 1, number = 2185;
 	Customer subclassOf Object highestSubId = 1, highestOrdinal = 10, number = 2054;
 	GSimpleBankModel subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2053;
+	Transaction subclassOf Object abstract, highestOrdinal = 5, number = 2060;
+	Deposit subclassOf Transaction number = 2061;
+	Payment subclassOf Transaction number = 2064;
 	SSimpleBankModel subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2055;
 	BankAccountByNumberDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2184;
 	CustomerByLastNameDict subclassOf MemberKeyDictionary duplicatesAllowed, loadFactor = 66, number = 2087;
+	TransactionsByDate subclassOf MemberKeyDictionary loadFactor = 66, number = 2068;
 	PrimTypeSet subclassOf Set loadFactor = 66, transient, number = 2180;
 membershipDefinitions
 	BankAccountByNumberDict of BankAccount;
 	CustomerByLastNameDict of Customer;
+	TransactionsByDate of Transaction;
 	PrimTypeSet of PrimType;
 typeDefinitions
 	Object completeDefinition
@@ -77,13 +82,17 @@ without inverses and requires manual maintenance.`
 		balance:                       Decimal[12,2] protected, number = 3, ordinal = 3;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:34.509;
 	referenceDefinitions
+		allTransactions:               TransactionsByDate   explicitInverse, protected, subId = 1, number = 4, ordinal = 4;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:24:15.894;
 		myCustomer:                    Customer   explicitEmbeddedInverse, number = 2, ordinal = 2;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:32:38.080;
 	jadeMethodDefinitions
+		addTransaction(trans: Transaction) updating, number = 1006;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:46:30.806;
 		canWithdraw(amount: Decimal): Boolean abstract, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:19:36.642;
-		create(number: Integer) updating, number = 1001;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:07:23.620;
+		create(cust: Customer) updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:19:34.450;
 		deposit(amount: Decimal) updating, number = 1003;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:42.898;
 		getBalance(): Decimal number = 1004;
@@ -100,8 +109,8 @@ without inverses and requires manual maintenance.`
 	jadeMethodDefinitions
 		canWithdraw(amount: Decimal): Boolean number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:39:12.871;
-		create(number: Integer) updating, number = 1001;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:12:51.577;
+		create(cust: Customer) updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:25.714;
 	)
 	SavingsAccount completeDefinition
 	(
@@ -112,8 +121,8 @@ without inverses and requires manual maintenance.`
 	jadeMethodDefinitions
 		canWithdraw(amount: Decimal): Boolean number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:38:23.262;
-		create(number: Integer) updating, number = 1001;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:18:26.670;
+		create(cust: Customer) updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:43.883;
 	)
 	Customer completeDefinition
 	(
@@ -171,7 +180,7 @@ without inverses and requires manual maintenance.`
 		createCustomersFromFile() number = 1006;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:02:02:23:51.187;
 		createTestAccounts() updating, number = 1009;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:47:44.670;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:58.694;
 		createTestCustomer() updating, number = 1001;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:00:27.632;
 		iterationWithForeach() number = 1013;
@@ -192,6 +201,38 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:05:15:43:50.869;
 		workingWithStrings() number = 1004;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:05:19:43:32.228;
+	)
+	Transaction completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:10:13.732;
+	attributeDefinitions
+		amount:                        Decimal[12,2] protected, number = 4, ordinal = 4;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:13:22.339;
+		balance:                       Decimal[12,2] protected, number = 3, ordinal = 3;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:12:34.642;
+		date:                          Date protected, number = 1, ordinal = 1;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:08:29.257;
+		payee:                         String[31] protected, number = 2, ordinal = 2;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:11:22.485;
+	referenceDefinitions
+		myAccount:                     BankAccount   explicitEmbeddedInverse, protected, number = 5, ordinal = 5;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:24:15.902;
+	jadeMethodDefinitions
+		create(
+			amount: Decimal; 
+			balance: Decimal; 
+			date: Date; 
+			acc: BankAccount; 
+			payee: String) updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:45:09.126;
+	)
+	Deposit completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:12:56.017;
+	)
+	Payment completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:15:50.480;
 	)
 	WebSession completeDefinition
 	(
@@ -230,6 +271,10 @@ without inverses and requires manual maintenance.`
 	(
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:13:14:14:12.156;
 	)
+	TransactionsByDate completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:22:05.427;
+	)
 	Set completeDefinition
 	(
 	)
@@ -252,7 +297,12 @@ memberKeyDefinitions
 	(
 		lastName;
 	)
+	TransactionsByDate completeDefinition
+	(
+		date;
+	)
 inverseDefinitions
+	allTransactions of BankAccount manual parentOf myAccount of Transaction automatic;
 	allBankAccounts of Customer automatic peerOf myCustomer of BankAccount manual;
 
 databaseDefinitions
@@ -274,11 +324,15 @@ databaseDefinitions
 		CurrentAccount in "simplebankaccount";
 		Customer in "simplebankcustomer";
 		CustomerByLastNameDict in "simplebankcustomer";
+		Deposit in "simplebankmodel";
 		GSimpleBankModel in "simplebankmodel";
+		Payment in "simplebankmodel";
 		PrimTypeSet in "simplebankmodel";
 		SSimpleBankModel in "_environ";
 		SavingsAccount in "simplebankaccount";
 		SimpleBankModel in "_usergui";
+		Transaction in "simplebankmodel";
+		TransactionsByDate in "simplebankmodel";
 	)
 typeSources
 	SimpleBankModel (
@@ -343,18 +397,29 @@ end;
 	)
 	BankAccount (
 	jadeMethodSources
+addTransaction
+{
+addTransaction(trans: Transaction) updating;
+
+begin
+
+	allTransactions.add(trans);
+
+end;
+}
 canWithdraw
 {
 canWithdraw(amount : Decimal) : Boolean abstract;
 }
 create
 {
-create(number : Integer) updating;
+create(cust: Customer) updating;
 
 vars
 
 begin
-	self.accountNumber := number;
+	self.accountNumber := app.ourBank.nextAccountNumber();
+	self.myCustomer := cust;
 
 end;
 }
@@ -414,11 +479,12 @@ end;
 }
 create
 {
-create(number : Integer) ::super(number) updating;
+create(cust: Customer) ::super(cust) updating;
 
 vars
 
 begin
+	
 	self.overdraftLimit := BankAccount.Default_Overdraft_Limit;
 
 end;
@@ -438,7 +504,7 @@ end;
 }
 create
 {
-create(number : Integer) ::super(number) updating;
+create(cust: Customer) ::super(cust) updating;
 
 vars
 
@@ -580,14 +646,16 @@ createTestAccounts() updating;
 vars
 	curr : CurrentAccount;
 	savs : SavingsAccount;
+	customer : Customer;
 
 begin
 	// Make sure the root object (instance of the class Bank) is available
 	app.initialize();
 
 	beginTransaction;
-	curr := create CurrentAccount(app.ourBank.nextAccountNumber()) persistent;
-	savs := create SavingsAccount(app.ourBank.nextAccountNumber()) persistent;
+	customer := create Customer("Test", "last name", "02745234", "123 fake street", "ilam", "chch", 500);
+	curr := create CurrentAccount(customer) persistent;
+	savs := create SavingsAccount(customer) persistent;
 	commitTransaction;
 
 end;
@@ -870,6 +938,22 @@ begin
 	write message.toLower();
 	write message.toUpper();
 	write '"JADE" found at position ' & message.pos("JADE", 1).String;
+
+end;
+}
+	)
+	Transaction (
+	jadeMethodSources
+create
+{
+create(amount: Decimal; balance: Decimal; date: Date; acc: BankAccount; payee: String) updating;
+
+begin
+
+	self.amount := amount;
+	self.balance := balance;
+	self.date := date;
+	self.payee := payee;
 
 end;
 }

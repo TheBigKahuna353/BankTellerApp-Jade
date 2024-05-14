@@ -9,9 +9,13 @@ typeHeaders
 	SimpleBankView subclassOf SimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2088;
 	GSimpleBankView subclassOf GSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2089;
 	SSimpleBankView subclassOf SSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2090;
+	AccountsDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, number = 2070;
 	CustomerDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2092;
 	CustomerAdd subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, number = 2186;
+	CustomerEdit subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2059;
+	CustomerList subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2057;
 	CustomerSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2069;
+	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2056;
 membershipDefinitions
 typeDefinitions
 	Object completeDefinition
@@ -52,6 +56,8 @@ typeDefinitions
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:17:44:20.273;
 		runCustomerDetailsForm() number = 1008;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:17:41:21.977;
+		runMainMenu() number = 1016;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:24:34.110;
 		runSearchCustomerForms() number = 1015;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:02:01:43:18.858;
 	)
@@ -75,6 +81,10 @@ typeDefinitions
 	)
 	Form completeDefinition
 	(
+	)
+	AccountsDetails completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:55:39.988;
 	)
 	CustomerDetails completeDefinition
 	(
@@ -133,6 +143,47 @@ typeDefinitions
 	eventMethodMappings
 		btnOK_click = click of Button;
 	)
+	CustomerEdit completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:58:33.540;
+	referenceDefinitions
+		myCustomer:                    Customer  number = 1, ordinal = 1;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:00:56.820;
+	jadeMethodDefinitions
+		load() updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:32:12.295;
+		updateCustomer() protected, number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:23:17.408;
+	eventMethodMappings
+		load = load of Form;
+	)
+	CustomerList completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:43:52.837;
+	referenceDefinitions
+		btnEdit:                       Button  number = 2, ordinal = 2;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:42:47.155;
+		lstCustomers:                  ListBox  number = 1, ordinal = 1;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:42:47.149;
+	jadeMethodDefinitions
+		btnEdit_click(btn: Button input) updating, number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:26:36.221;
+		gotFocus(cntrl: Control input) updating, number = 1004;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:12:48:00.816;
+		load() updating, clientExecution, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:47:05.339;
+		lstCustomers_displayRow(
+			listbox: ListBox input; 
+			cust: Customer; 
+			lstIndex: Integer; 
+			bcontinue: Boolean io): String updating, number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:49:53.578;
+	eventMethodMappings
+		btnEdit_click = click of Button;
+		gotFocus = gotFocus of Form;
+		load = load of Form;
+		lstCustomers_displayRow = displayRow of ListBox;
+	)
 	CustomerSearch completeDefinition
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:02:02:26:53.825;
@@ -157,6 +208,33 @@ typeDefinitions
 	eventMethodMappings
 		click = click of Form;
 		submit_click = click of Button;
+	)
+	MainMenu completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:25:11.521;
+	referenceDefinitions
+		mnuAddCustoemr:                MenuItem  number = 2, ordinal = 2;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.520;
+		mnuCustomer:                   MenuItem  number = 1, ordinal = 1;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.519;
+		mnuCustomerList:               MenuItem  number = 3, ordinal = 3;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.520;
+		mnuCustomerSearch:             MenuItem  number = 4, ordinal = 4;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:25:11.521;
+	jadeMethodDefinitions
+		load() updating, clientExecution, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:15:46.138;
+		mnuAddCustoemr_click(menuItem: MenuItem input) updating, number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:23:40.266;
+		mnuCustomerList_click(menuItem: MenuItem input) updating, number = 1004;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:31:05.813;
+		mnuCustomerSearch_click(menuItem: MenuItem input) updating, number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:26:08.657;
+	eventMethodMappings
+		load = load of Form;
+		mnuAddCustoemr_click = click of MenuItem;
+		mnuCustomerList_click = click of MenuItem;
+		mnuCustomerSearch_click = click of MenuItem;
 	)
 databaseDefinitions
 	SimpleBankViewDb
@@ -225,6 +303,21 @@ begin
 		app.msgBox("It appears the form hasn't been filled.",
 				"Hmmm...", MsgBox_OK_Only);
 	endif;
+
+end;
+}
+runMainMenu
+{
+runMainMenu();
+
+vars
+	form: MainMenu;
+
+begin
+
+	app.initialize();
+	create form transient;
+	form.show();
 
 end;
 }
@@ -370,6 +463,109 @@ begin
 end;
 }
 	)
+	CustomerEdit (
+	jadeMethodSources
+load
+{
+load() updating;
+
+vars
+
+begin
+	app.mdiFrame := MainMenu;
+	
+	self.txtFirstName.text := myCustomer.firstName;
+	self.txtLastName.text := myCustomer.lastName;
+	self.txtPhone.text := myCustomer.getPropertyValue('phone').String;
+	self.txtStreetAddress.text := myCustomer.getPropertyValue('streetAddress').String;
+	self.txtSuburb.text := myCustomer.getPropertyValue('suburb').String;
+	self.txtCity.text := myCustomer.getPropertyValue('city').String;
+
+end;
+}
+updateCustomer
+{
+updateCustomer() protected;
+
+begin
+	beginTransaction;
+		self.myCustomer.setPropertyValue('firstName', self.txtFirstName.text);
+		self.myCustomer.setPropertyValue('lastName', self.txtLastName.text);
+		self.myCustomer.setPropertyValue('streetAddress', self.txtStreetAddress.text);
+		self.myCustomer.setPropertyValue('suburb', self.txtSuburb.text);
+		self.myCustomer.setPropertyValue('city', self.txtCity.text);
+	commitTransaction;
+	
+end;
+}
+	)
+	CustomerList (
+	jadeMethodSources
+btnEdit_click
+{
+btnEdit_click(btn: Button input) updating;
+
+vars
+
+	cust: Customer;
+	form: CustomerEdit;
+
+begin
+
+	cust := self.lstCustomers.listObject.Customer;
+	
+	if cust = null then
+		app.msgBox("Select a customer to edit first", "No Customer Selected", MsgBox_OK_Only);
+	else
+		create form transient;
+		form.myCustomer := cust;
+		form.show();
+	endif;
+
+end;
+}
+gotFocus
+{
+gotFocus(cntrl: Control input) updating;
+
+begin
+	// write currentSchema.name & "::" & self.name & "::" & method.name;
+	 
+	// This is just one way of making sure the ListBox displays the latest 
+	//changes to displayed
+	// objects. It is a quick-and-dirty-good-enogh-for-now solution, but it 
+	//would be more
+	// appropriate to use the mechanism of JADE notifications.
+	if self.lstCustomers.listIndex > 0 then
+		self.lstCustomers.refreshEntries(
+			self.lstCustomers.itemObject[self.lstCustomers.listIndex]);
+	endif;
+ 
+end;
+}
+load
+{
+load() updating, clientExecution;
+
+vars
+
+begin
+	self.lstCustomers.displayCollection(app.ourBank.allCustomers, true, 
+		ListBox.DisplayCollection_Forward, null, "");
+	
+end;
+}
+lstCustomers_displayRow
+{
+lstCustomers_displayRow(listbox: ListBox input; cust: Customer; lstIndex: Integer; bcontinue: Boolean io):String updating;
+
+begin
+
+	return cust.getFullName();
+
+end;
+}
+	)
 	CustomerSearch (
 	jadeMethodSources
 click
@@ -452,6 +648,64 @@ begin
 	create form transient;
 	form.showCustomer(customer);
 		
+
+end;
+}
+	)
+	MainMenu (
+	jadeMethodSources
+load
+{
+load() updating, clientExecution;
+
+vars
+
+begin
+	// this is to identify this as the parent MDI form
+	app.mdiFrame := MainMenu;
+end;
+}
+mnuAddCustoemr_click
+{
+mnuAddCustoemr_click(menuItem: MenuItem input) updating;
+
+vars
+	form: CustomerAdd;
+	
+begin
+	
+	create form transient;
+	form.show();
+	
+end;
+}
+mnuCustomerList_click
+{
+mnuCustomerList_click(menuItem: MenuItem input) updating;
+
+vars
+
+	form: CustomerList;
+
+begin
+
+	create form transient;
+	form.show();
+
+end;
+}
+mnuCustomerSearch_click
+{
+mnuCustomerSearch_click(menuItem: MenuItem input) updating;
+
+vars
+
+	form: CustomerSearch;
+
+begin
+	
+	create form transient;
+	form.show();
 
 end;
 }
