@@ -178,7 +178,7 @@ without inverses and requires manual maintenance.`
 	(
 	jadeMethodDefinitions
 		createCustomersFromFile() number = 1006;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:02:02:23:51.187;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:48:00.029;
 		createTestAccounts() updating, number = 1009;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:58.694;
 		createTestCustomer() updating, number = 1001;
@@ -312,9 +312,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 54;
+		"simplebankcustomer" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 53;
+		"simplebankmodel" number = 62;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -589,7 +589,7 @@ begin
 	
 	// Prepare the input file for reading the data
 	create inputFile transient;
-	inputFile.fileName := "C:\Users\jorda\Downloads\chch_customers.txt";
+	inputFile.fileName := "C:\Users\dkmor\OneDrive - University of Canterbury\Semester 1 2024\Info213\BankTellerApp-Jade\chch_customers.txt";
 	
 	//This line prevents a specific error message which only some of you may experience.
 	inputFile.kind := File.Kind_Unknown_Text;
