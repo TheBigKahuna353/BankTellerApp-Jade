@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statement>
+    <customer>
+        <customer_number>0001</customer_number>
+        <first_name>Jonas</first_name>
+        <last_name>Higgins</last_name>
+        <phone>+64-03-589-1040</phone>
+        <street_address>11 Ryan Street</street_address>
+        <suburb>Phillipstown</suburb>
+        <city>Christchurch</city>
+        <credit_score>281</credit_score>
+    </customer>
+    <account type="CurrentAccount">
+        <overdraft_limit>3000</overdraft_limit>
+        <transactions>
+            <transaction>
+                <Date>2023-09-01</Date>
+                <Deposit>1500</Deposit>
+                <Payee>Employer B</Payee>
+                <Balance>11500</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-02</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>11380</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-03</Date>
+                <Payment>400</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>10980</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-04</Date>
+                <Payment>120</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>10860</Balance>
+            </transaction>
+        </transactions>
+    </account>
+</statement>

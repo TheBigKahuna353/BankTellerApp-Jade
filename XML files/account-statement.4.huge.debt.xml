@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statement>
+    <customer>
+        <customer_number>0001</customer_number>
+        <first_name>Jonas</first_name>
+        <last_name>Higgins</last_name>
+        <phone>+64-03-589-1040</phone>
+        <street_address>11 Ryan Street</street_address>
+        <suburb>Phillipstown</suburb>
+        <city>Christchurch</city>
+        <credit_score>281</credit_score>
+    </customer>
+    <account type="CurrentAccount">
+        <overdraft_limit>3000</overdraft_limit>
+        <transactions>
+            <transaction>
+                <Date>2023-09-01</Date>
+                <Deposit>800</Deposit>
+                <Payee>Employer B</Payee>
+                <Balance>10800</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-02</Date>
+                <Payment>1200</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>9600</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-03</Date>
+                <Payment>1200</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>8400</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-04</Date>
+                <Payment>100</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>8300</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-05</Date>
+                <Payment>80</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>8220</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-06</Date>
+                <Payment>1200</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>7020</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-07</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>6900</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-08</Date>
+                <Payment>150</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>6750</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-09</Date>
+                <Payment>1200</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>5550</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-10</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>5430</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-11</Date>
+                <Payment>80</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>5350</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-12</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>5270</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-13</Date>
+                <Payment>20</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>5250</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-14</Date>
+                <Payment>120</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>5130</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-15</Date>
+                <Payment>80</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>5050</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-16</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>5030</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-17</Date>
+                <Payment>1200</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>3830</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-18</Date>
+                <Payment>120</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>3710</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-19</Date>
+                <Payment>100</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>3610</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-20</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>3490</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-21</Date>
+                <Payment>120</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>3370</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-22</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>3220</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-23</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>3100</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-24</Date>
+                <Payment>1200</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>1900</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-25</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>1750</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-26</Date>
+                <Payment>150</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>1600</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-27</Date>
+                <Payment>150</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>1450</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-28</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>1330</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-29</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>1210</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-09-30</Date>
+                <Payment>150</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>1060</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-01</Date>
+                <Deposit>2612</Deposit>
+                <Payee>Employer A</Payee>
+                <Balance>3672</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-02</Date>
+                <Payment>80</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>3592</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-03</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>3442</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-04</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>3362</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-05</Date>
+                <Payment>20</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>3342</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-06</Date>
+                <Payment>120</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>3222</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-07</Date>
+                <Payment>100</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>3122</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-08</Date>
+                <Payment>120</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>3002</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-09</Date>
+                <Payment>1200</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>1802</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-10</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>1782</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-11</Date>
+                <Payment>20</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>1762</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-12</Date>
+                <Payment>150</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>1612</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-13</Date>
+                <Payment>150</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>1462</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-14</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>1382</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-15</Date>
+                <Payment>100</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>1282</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-16</Date>
+                <Payment>150</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>1132</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-17</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>1012</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-18</Date>
+                <Payment>1200</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-188</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-19</Date>
+                <Payment>150</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-338</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-20</Date>
+                <Payment>1200</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-1538</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-21</Date>
+                <Payment>1200</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-2738</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-22</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-2858</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-23</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-2938</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-24</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-3018</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-25</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-3118</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-26</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-3138</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-27</Date>
+                <Payment>1200</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-4338</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-28</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-4438</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-29</Date>
+                <Payment>120</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-4558</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-30</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-4578</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-10-31</Date>
+                <Payment>120</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-4698</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-01</Date>
+                <Deposit>800</Deposit>
+                <Payee>Employer B</Payee>
+                <Balance>-3898</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-02</Date>
+                <Payment>20</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-3918</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-03</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-4068</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-04</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-5268</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-05</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-5348</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-06</Date>
+                <Payment>100</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-5448</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-07</Date>
+                <Payment>100</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-5548</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-08</Date>
+                <Payment>20</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-5568</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-09</Date>
+                <Payment>100</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-5668</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-10</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-5768</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-11</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-5918</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-12</Date>
+                <Payment>1200</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-7118</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-13</Date>
+                <Payment>120</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-7238</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-14</Date>
+                <Payment>1200</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-8438</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-15</Date>
+                <Payment>80</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-8518</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-16</Date>
+                <Payment>80</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-8598</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-17</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-8678</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-18</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-8698</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-19</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-8818</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-20</Date>
+                <Payment>100</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-8918</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-21</Date>
+                <Payment>20</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-8938</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-22</Date>
+                <Payment>80</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-9018</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-23</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-9038</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-24</Date>
+                <Payment>80</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-9118</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-25</Date>
+                <Payment>120</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-9238</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-26</Date>
+                <Payment>120</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-9358</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-27</Date>
+                <Payment>100</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-9458</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-28</Date>
+                <Payment>150</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-9608</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-29</Date>
+                <Payment>80</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-9688</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-11-30</Date>
+                <Payment>120</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-9808</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-01</Date>
+                <Deposit>3354</Deposit>
+                <Payee>Employer A</Payee>
+                <Balance>-6454</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-02</Date>
+                <Payment>20</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-6474</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-03</Date>
+                <Payment>80</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-6554</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-04</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-6654</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-05</Date>
+                <Payment>1200</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-7854</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-06</Date>
+                <Payment>1200</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-9054</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-07</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-9204</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-08</Date>
+                <Payment>120</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-9324</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-09</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-9344</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-10</Date>
+                <Payment>100</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-9444</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-11</Date>
+                <Payment>150</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-9594</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-12</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-9744</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-13</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-9764</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-14</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-9784</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-15</Date>
+                <Payment>80</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-9864</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-16</Date>
+                <Payment>120</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-9984</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-17</Date>
+                <Payment>100</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-10084</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-18</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-10164</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-19</Date>
+                <Payment>1200</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-11364</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-20</Date>
+                <Payment>20</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-11384</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-21</Date>
+                <Payment>150</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-11534</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-22</Date>
+                <Payment>80</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-11614</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-23</Date>
+                <Payment>20</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-11634</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-24</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-11734</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-25</Date>
+                <Payment>120</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-11854</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-26</Date>
+                <Payment>20</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-11874</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-27</Date>
+                <Payment>80</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-11954</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-28</Date>
+                <Payment>150</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-12104</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-29</Date>
+                <Payment>80</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-12184</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-30</Date>
+                <Payment>150</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-12334</Balance>
+            </transaction>
+            <transaction>
+                <Date>2023-12-31</Date>
+                <Payment>1200</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-13534</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-01</Date>
+                <Deposit>800</Deposit>
+                <Payee>Employer B</Payee>
+                <Balance>-12734</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-02</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-12814</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-03</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-14014</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-04</Date>
+                <Payment>80</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-14094</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-05</Date>
+                <Payment>150</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-14244</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-06</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-14394</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-07</Date>
+                <Payment>80</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-14474</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-08</Date>
+                <Payment>20</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-14494</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-09</Date>
+                <Payment>100</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-14594</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-10</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-14674</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-11</Date>
+                <Payment>120</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-14794</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-12</Date>
+                <Payment>120</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-14914</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-13</Date>
+                <Payment>20</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-14934</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-14</Date>
+                <Payment>120</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-15054</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-15</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-15174</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-16</Date>
+                <Payment>20</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-15194</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-17</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-15214</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-18</Date>
+                <Payment>100</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-15314</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-19</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-16514</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-20</Date>
+                <Payment>100</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-16614</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-21</Date>
+                <Payment>1200</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-17814</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-22</Date>
+                <Payment>120</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-17934</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-23</Date>
+                <Payment>100</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-18034</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-24</Date>
+                <Payment>100</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-18134</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-25</Date>
+                <Payment>120</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-18254</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-26</Date>
+                <Payment>150</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-18404</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-27</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-18554</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-28</Date>
+                <Payment>150</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-18704</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-29</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-18724</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-30</Date>
+                <Payment>1200</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-19924</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-01-31</Date>
+                <Payment>120</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-20044</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-01</Date>
+                <Deposit>3856</Deposit>
+                <Payee>Employer A</Payee>
+                <Balance>-16188</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-02</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-16288</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-03</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-16308</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-04</Date>
+                <Payment>150</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-16458</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-05</Date>
+                <Payment>100</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-16558</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-06</Date>
+                <Payment>120</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-16678</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-07</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-16758</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-08</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-16778</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-09</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-16858</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-10</Date>
+                <Payment>80</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-16938</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-11</Date>
+                <Payment>80</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-17018</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-12</Date>
+                <Payment>100</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-17118</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-13</Date>
+                <Payment>20</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-17138</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-14</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-17258</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-15</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-17338</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-16</Date>
+                <Payment>150</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-17488</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-17</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-17508</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-18</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-18708</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-19</Date>
+                <Payment>1200</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-19908</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-20</Date>
+                <Payment>120</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-20028</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-21</Date>
+                <Payment>100</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-20128</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-22</Date>
+                <Payment>100</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-20228</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-23</Date>
+                <Payment>100</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-20328</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-24</Date>
+                <Payment>120</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-20448</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-25</Date>
+                <Payment>150</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-20598</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-26</Date>
+                <Payment>20</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-20618</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-27</Date>
+                <Payment>100</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-20718</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-28</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-21918</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-02-29</Date>
+                <Payment>20</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-21938</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-01</Date>
+                <Deposit>800</Deposit>
+                <Payee>Employer B</Payee>
+                <Balance>-21138</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-02</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-22338</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-03</Date>
+                <Payment>120</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-22458</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-04</Date>
+                <Payment>120</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-22578</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-05</Date>
+                <Payment>1200</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-23778</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-06</Date>
+                <Payment>80</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-23858</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-07</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-23938</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-08</Date>
+                <Payment>80</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-24018</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-09</Date>
+                <Payment>80</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-24098</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-10</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-24198</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-11</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-25398</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-12</Date>
+                <Payment>80</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-25478</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-13</Date>
+                <Payment>100</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-25578</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-14</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-25678</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-15</Date>
+                <Payment>100</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-25778</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-16</Date>
+                <Payment>80</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-25858</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-17</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-26008</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-18</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-27208</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-19</Date>
+                <Payment>1200</Payment>
+                <Payee>Utility Company</Payee>
+                <Balance>-28408</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-20</Date>
+                <Payment>120</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-28528</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-21</Date>
+                <Payment>150</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-28678</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-22</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-28698</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-23</Date>
+                <Payment>100</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-28798</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-24</Date>
+                <Payment>1200</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-29998</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-25</Date>
+                <Payment>1200</Payment>
+                <Payee>Restaurant</Payee>
+                <Balance>-31198</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-26</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-31218</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-27</Date>
+                <Payment>1200</Payment>
+                <Payee>Coffee Shop</Payee>
+                <Balance>-32418</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-28</Date>
+                <Payment>20</Payment>
+                <Payee>Rent Payment</Payee>
+                <Balance>-32438</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-29</Date>
+                <Payment>150</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-32588</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-30</Date>
+                <Payment>20</Payment>
+                <Payee>Grocery Store</Payee>
+                <Balance>-32608</Balance>
+            </transaction>
+            <transaction>
+                <Date>2024-03-31</Date>
+                <Payment>20</Payment>
+                <Payee>Gas Station</Payee>
+                <Balance>-32628</Balance>
+            </transaction>
+        </transactions>
+    </account>
+</statement>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="statement">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="1" ref="customer"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="account"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="customer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="1" ref="customer_number"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="first_name"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="last_name"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="phone"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="street_address"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="suburb"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="city"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="credit_score"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="customer_number" type="xs:integer"/>
+    <xs:element name="first_name" type="xs:NCName"/>
+    <xs:element name="last_name" type="xs:NCName"/>
+    <xs:element name="phone" type="xs:string"/>
+    <xs:element name="street_address" type="xs:string"/>
+    <xs:element name="suburb" type="xs:NCName"/>
+    <xs:element name="city" type="xs:NCName"/>
+    <xs:element name="credit_score" type="xs:integer"/>
+    <xs:element name="account">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="1" ref="overdraft_limit"/>
+                <xs:element minOccurs="1" maxOccurs="1" ref="transactions"/>
+            </xs:sequence>
+            <xs:attribute name="type" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="overdraft_limit" type="xs:integer"/>
+    <xs:element name="transactions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="transaction"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="transaction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Date"/>
+                <xs:choice>
+                    <xs:element ref="Deposit"/>
+                    <xs:element ref="Payment"/>
+                </xs:choice>
+                <xs:element ref="Payee"/>
+                <xs:element ref="Balance"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Date" type="xs:NMTOKEN"/>
+    <xs:element name="Deposit" type="xs:integer"/>
+    <xs:element name="Payment" type="xs:integer"/>
+    <xs:element name="Payee" type="xs:string"/>
+    <xs:element name="Balance" type="xs:integer"/>
+</xs:schema>
