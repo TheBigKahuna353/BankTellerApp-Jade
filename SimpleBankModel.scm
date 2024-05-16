@@ -7,16 +7,17 @@ localeDefinitions
 	setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.421;
 typeHeaders
 	SimpleBankModel subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2052;
-	Bank subclassOf Object highestSubId = 2, highestOrdinal = 4, number = 2058;
+	Bank subclassOf Object highestSubId = 2, highestOrdinal = 5, number = 2058;
 	BankAccount subclassOf Object abstract, highestSubId = 1, highestOrdinal = 4, number = 2179;
 	CurrentAccount subclassOf BankAccount highestOrdinal = 1, number = 2183;
 	SavingsAccount subclassOf BankAccount highestOrdinal = 1, number = 2185;
 	Customer subclassOf Object highestSubId = 1, highestOrdinal = 10, number = 2054;
 	GSimpleBankModel subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2053;
-	Transaction subclassOf Object abstract, highestOrdinal = 5, number = 2060;
+	Transaction subclassOf Object abstract, highestOrdinal = 6, number = 2060;
 	Deposit subclassOf Transaction number = 2061;
 	Payment subclassOf Transaction number = 2064;
 	SSimpleBankModel subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2055;
+	XMLHandler subclassOf Object number = 2071;
 	BankAccountByNumberDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2184;
 	CustomerByLastNameDict subclassOf MemberKeyDictionary duplicatesAllowed, loadFactor = 66, number = 2087;
 	TransactionsByDate subclassOf MemberKeyDictionary loadFactor = 66, number = 2068;
@@ -54,6 +55,8 @@ typeDefinitions
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:46:53.239;
 		lastCustomerNumber:            Integer protected, number = 1, ordinal = 1;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:35:17.460;
+		lastTransactionNumber:         Integer protected, number = 4, ordinal = 5;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:33:12.034;
 	referenceDefinitions
 		allCustomers:                  CustomerByLastNameDict  implicitMemberInverse, readonly, subId = 1, number = 2, ordinal = 3;
 		documentationText
@@ -62,16 +65,20 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:28:54.548;
 	jadeMethodDefinitions
 		create() updating, number = 1003;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:52:20.983;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:34:01.316;
 		nextAccountNumber(): Integer updating, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:55:24.978;
 		nextCustomerNumber(): Integer updating, number = 1001;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:35:17.444;
+		nextTransactionNumber(): Integer updating, number = 1004;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:34:35.883;
 	)
 	BankAccount completeDefinition
 	(
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:19:17.912;
 	constantDefinitions
+		Default_Credit_Rating:         Integer = 300 number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:49:27.914;
 		Default_Interest_Rate:         Real = 2.5 number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:19:07:26.389;
 		Default_Overdraft_Limit:       Integer = 500 number = 1001;
@@ -177,6 +184,8 @@ without inverses and requires manual maintenance.`
 	JadeScript completeDefinition
 	(
 	jadeMethodDefinitions
+		addTransactions() number = 1018;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:40:05.019;
 		createCustomersFromFile() number = 1006;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:48:00.029;
 		createTestAccounts() updating, number = 1009;
@@ -193,6 +202,8 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:41:30.342;
 		testAutomatedInverseAssignment() updating, number = 1010;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:17:09:56.489;
+		testClass() number = 1017;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:32:31.850;
 		workingDecimalType() number = 1003;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:11:12:50:24.635;
 		workingWithDatesAndTimes() number = 1005;
@@ -212,6 +223,8 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:12:34.642;
 		date:                          Date protected, number = 1, ordinal = 1;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:08:29.257;
+		number:                        Integer protected, number = 6, ordinal = 6;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:35:15.222;
 		payee:                         String[31] protected, number = 2, ordinal = 2;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:11:22.485;
 	referenceDefinitions
@@ -224,15 +237,31 @@ without inverses and requires manual maintenance.`
 			date: Date; 
 			acc: BankAccount; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:45:09.126;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:36:42.652;
 	)
 	Deposit completeDefinition
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:12:56.017;
+	jadeMethodDefinitions
+		create(
+			amount: Decimal; 
+			balance: Decimal; 
+			date: Date; 
+			acc: BankAccount; 
+			payee: String) updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:34:31.478;
 	)
 	Payment completeDefinition
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:15:50.480;
+	jadeMethodDefinitions
+		create(
+			amount: Decimal; 
+			balance: Decimal; 
+			date: Date; 
+			acc: BankAccount; 
+			payee: String) updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:34:52.390;
 	)
 	WebSession completeDefinition
 	(
@@ -250,6 +279,13 @@ without inverses and requires manual maintenance.`
 	)
 	Form completeDefinition
 	(
+	)
+	XMLHandler completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:51:27.784;
+	jadeMethodDefinitions
+		importTransactions(xml: JadeXMLDocument) number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:43:12.951;
 	)
 	Collection completeDefinition
 	(
@@ -273,7 +309,7 @@ without inverses and requires manual maintenance.`
 	)
 	TransactionsByDate completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:22:05.427;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:39:10.941;
 	)
 	Set completeDefinition
 	(
@@ -300,6 +336,7 @@ memberKeyDefinitions
 	TransactionsByDate completeDefinition
 	(
 		date;
+		number;
 	)
 inverseDefinitions
 	allTransactions of BankAccount manual parentOf myAccount of Transaction automatic;
@@ -312,9 +349,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 53;
+		"simplebankcustomer" number = 54;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 62;
+		"simplebankmodel" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -333,6 +370,7 @@ databaseDefinitions
 		SimpleBankModel in "_usergui";
 		Transaction in "simplebankmodel";
 		TransactionsByDate in "simplebankmodel";
+		XMLHandler in "simplebankmodel";
 	)
 typeSources
 	SimpleBankModel (
@@ -368,6 +406,7 @@ vars
 begin
 	self.lastAccountNumber :=  1000000000; // 1,000,000,000 to MaxInteger (2147483647, 2^21 -1).
 	self.lastCustomerNumber := 0;
+	self.lastTransactionNumber := 0;
 
 end;
 }
@@ -392,6 +431,17 @@ nextCustomerNumber() : Integer updating;
 begin
 	self.lastCustomerNumber := self.lastCustomerNumber + 1;
 	return self.lastCustomerNumber;
+end;
+}
+nextTransactionNumber
+{
+nextTransactionNumber(): Integer updating;
+
+
+begin
+
+	lastAccountNumber += 1;
+	return lastAccountNumber;
 end;
 }
 	)
@@ -573,6 +623,33 @@ end;
 	)
 	JadeScript (
 	jadeMethodSources
+addTransactions
+{
+addTransactions();
+
+vars
+	
+	xmlDoc		:	JadeXMLDocument;
+	parser		:	JadeXMLDocumentParser;
+	handler		: 	XMLHandler;
+
+begin
+
+	app.initialize();
+	create xmlDoc transient;
+	create parser transient;
+	create handler transient;
+	
+	parser.parseDocumentFile(xmlDoc, "C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\account-statement.0.short.xml");
+	handler.importTransactions(xmlDoc);
+	
+epilog
+
+	delete xmlDoc;
+	delete parser;
+
+	end;
+}
 createCustomersFromFile
 {
 createCustomersFromFile();
@@ -840,6 +917,20 @@ begin
 	endif;
 end;
 }
+testClass
+{
+testClass();
+
+begin
+	app.initialize();
+	if app.ourBank.getName() = Bank.getName() then
+		write "Passed";
+	else
+		write "failed";
+	endif;
+
+end;
+}
 workingDecimalType
 {
 workingDecimalType();
@@ -954,6 +1045,99 @@ begin
 	self.balance := balance;
 	self.date := date;
 	self.payee := payee;
+	self.number := app.ourBank.nextTransactionNumber();
+	
+end;
+}
+	)
+	Deposit (
+	jadeMethodSources
+create
+{
+create(amount: Decimal; balance: Decimal; date: Date; acc: BankAccount; payee: String) ::super(amount, balance, date, acc, payee) updating;
+
+begin
+
+end;
+}
+	)
+	Payment (
+	jadeMethodSources
+create
+{
+create(amount: Decimal; balance: Decimal; date: Date; acc: BankAccount; payee: String) ::super(amount, balance, date, acc, payee) updating;
+
+vars
+
+begin
+
+end;
+}
+	)
+	XMLHandler (
+	jadeMethodSources
+importTransactions
+{
+importTransactions(xml: JadeXMLDocument);
+
+//		DOES NOT WORK YET
+
+vars
+
+	// Element variables
+	elmnt, acc,
+	cust, temp		:	JadeXMLElement;
+	//Element arrays
+	transactions		:	JadeXMLElementArray;
+	
+	lastName, payee,
+	accType				: String;
+	
+	balance, amount		: Integer;
+	
+	date				: Date;
+	
+	customer			: Customer;
+	bankAcc, tempAcc	: BankAccount;
+	
+	tran				: Transaction;
+
+begin
+
+	cust := xml.getElementByTagName("customer");
+	acc := xml.getElementByTagName("account");
+	
+	lastName := cust.getElementByTagName("last_name").textData;
+	accType := acc.getAttributeByName("type").value;
+	
+	customer := app.ourBank.allCustomers.getAtKey(lastName);
+	foreach tempAcc in customer.allBankAccounts
+	where tempAcc.getName() = accType do
+		bankAcc := tempAcc;
+	endforeach;
+	if bankAcc = null then
+		// raise exception
+	endif;
+	
+	create transactions transient;
+	xml.getElementsByTagName("transactions", transactions);
+	
+	beginTransaction;
+	foreach elmnt in transactions do
+		payee := elmnt.getElementByTagName("Payee").textData;
+		date := elmnt.getElementByTagName("Date").textData.asDate();
+		balance := elmnt.getElementByTagName("Balance").textData.Integer;
+		temp := elmnt.getElementByTagName("Deposit");
+		if temp <> null then
+			amount := elmnt.getElementByTagName("Deposit").textData.Integer;
+			tran := create Deposit(amount, balance, date, bankAcc, payee);
+		else
+			amount := elmnt.getElementByTagName("Payment").textData.Integer;
+			tran := create Payment(amount, balance, date, bankAcc, payee);
+		endif;
+		bankAcc.addTransaction(tran);
+		write "added Transaction";
+	endforeach;
 
 end;
 }

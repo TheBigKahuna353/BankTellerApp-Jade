@@ -9,7 +9,7 @@ typeHeaders
 	SimpleBankView subclassOf SimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2088;
 	GSimpleBankView subclassOf GSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2089;
 	SSimpleBankView subclassOf SSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2090;
-	AccountsDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2070;
+	AccountsDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 14, number = 2070;
 	CustomerDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2092;
 	CustomerAdd subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, number = 2186;
 	CustomerEdit subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2059;
@@ -84,19 +84,19 @@ typeDefinitions
 	)
 	AccountsDetails completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:20:59.386;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:20:30.916;
 	referenceDefinitions
-		addAccount:                    Button  number = 3, ordinal = 3;
+		addAccount:                    Button  number = 9, ordinal = 9;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:08:34.114;
-		grpBoxAccCreate:               GroupBox  number = 4, ordinal = 4;
+		grpBoxAccCreate:               GroupBox  number = 10, ordinal = 10;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:16:00.600;
-		listAccounts:                  ListBox  number = 1, ordinal = 1;
+		listAccounts:                  ListBox  number = 11, ordinal = 11;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:59:08.807;
-		myCustomer:                    Customer  number = 2, ordinal = 2;
+		myCustomer:                    Customer  number = 12, ordinal = 12;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:17:16:28.394;
-		optionCurrentAccount:          OptionButton  number = 6, ordinal = 6;
+		optionCurrentAccount:          OptionButton  number = 13, ordinal = 13;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:16:00.601;
-		optionSavingsAccount:          OptionButton  number = 5, ordinal = 5;
+		optionSavingsAccount:          OptionButton  number = 14, ordinal = 14;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:16:00.601;
 	jadeMethodDefinitions
 		addAccount_click(btn: Button input) updating, number = 1004;
@@ -169,7 +169,7 @@ typeDefinitions
 		btnOK_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:17:39:06.070;
 		createCustomer() number = 1001;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:20:42:32.870;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:50:04.486;
 	eventMethodMappings
 		btnOK_click = click of Button;
 	)
@@ -276,7 +276,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 56;
+		"simplebankview" number = 55;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
@@ -543,7 +543,7 @@ begin
 	// (Default) credit rating should be defined
 	// as a constant in BankAccount class.
 	cust := create Customer(firstName, lastName, phone,
-							address, suburb, city, 300);
+							address, suburb, city, BankAccount.Default_Credit_Rating);
 	commitTransaction;
 
 end;
