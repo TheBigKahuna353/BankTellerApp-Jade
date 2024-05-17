@@ -90,9 +90,9 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:34.509;
 	referenceDefinitions
 		allTransactions:               TransactionsByDate   explicitInverse, protected, subId = 1, number = 4, ordinal = 4;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:24:15.894;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:19:50:43.887;
 		myCustomer:                    Customer   explicitEmbeddedInverse, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:32:38.080;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:18:53:36.342;
 	jadeMethodDefinitions
 		addTransaction(trans: Transaction) updating, number = 1006;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:46:30.806;
@@ -153,7 +153,7 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:55:08.225;
 	referenceDefinitions
 		allBankAccounts:               BankAccountByNumberDict   explicitInverse, subId = 1, number = 10, ordinal = 10;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:32:36.256;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:18:53:36.339;
 		myBank:                        Bank  protected, number = 9, ordinal = 9;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:06:13:14:17.202;
 	jadeMethodDefinitions
@@ -185,7 +185,7 @@ without inverses and requires manual maintenance.`
 	(
 	jadeMethodDefinitions
 		addTransactions() number = 1018;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:40:05.019;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:18:58:43.887;
 		createCustomersFromFile() number = 1006;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:48:00.029;
 		createTestAccounts() updating, number = 1009;
@@ -200,6 +200,8 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:19:37:39.922;
 		purgeCustomers() number = 1007;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:41:30.342;
+		saveTransaction() number = 1019;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:48:21.019;
 		testAutomatedInverseAssignment() updating, number = 1010;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:17:09:56.489;
 		testClass() number = 1017;
@@ -228,16 +230,15 @@ without inverses and requires manual maintenance.`
 		payee:                         String[31] protected, number = 2, ordinal = 2;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:11:22.485;
 	referenceDefinitions
-		myAccount:                     BankAccount   explicitEmbeddedInverse, protected, number = 5, ordinal = 5;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:24:15.902;
+		myAccount:                     BankAccount   explicitEmbeddedInverse, number = 5, ordinal = 5;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:19:50:43.885;
 	jadeMethodDefinitions
 		create(
 			amount: Decimal; 
 			balance: Decimal; 
 			date: Date; 
-			acc: BankAccount; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:36:42.652;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:46:31.039;
 	)
 	Deposit completeDefinition
 	(
@@ -247,9 +248,8 @@ without inverses and requires manual maintenance.`
 			amount: Decimal; 
 			balance: Decimal; 
 			date: Date; 
-			acc: BankAccount; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:34:31.478;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:47:01.070;
 	)
 	Payment completeDefinition
 	(
@@ -259,9 +259,8 @@ without inverses and requires manual maintenance.`
 			amount: Decimal; 
 			balance: Decimal; 
 			date: Date; 
-			acc: BankAccount; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:34:52.390;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:47:21.237;
 	)
 	WebSession completeDefinition
 	(
@@ -284,8 +283,20 @@ without inverses and requires manual maintenance.`
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:51:27.784;
 	jadeMethodDefinitions
+		addCustDetails(
+			cust: Customer; 
+			root: JadeXMLElement io) number = 1004;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:20:10:51.959;
+		addTransaction(
+			tran: Transaction; 
+			root: JadeXMLElement io) number = 1005;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:31:26.582;
 		importTransactions(xml: JadeXMLDocument) number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:43:12.951;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:47:53.589;
+		saveAccount() number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:19:26:07.753;
+		saveTransaction(tran: Transaction) number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:50:53.852;
 	)
 	Collection completeDefinition
 	(
@@ -340,7 +351,7 @@ memberKeyDefinitions
 	)
 inverseDefinitions
 	allTransactions of BankAccount manual parentOf myAccount of Transaction automatic;
-	allBankAccounts of Customer automatic peerOf myCustomer of BankAccount manual;
+	allBankAccounts of Customer automatic parentOf myCustomer of BankAccount manual;
 
 databaseDefinitions
 	SimpleBankModelDb
@@ -632,6 +643,9 @@ vars
 	xmlDoc		:	JadeXMLDocument;
 	parser		:	JadeXMLDocumentParser;
 	handler		: 	XMLHandler;
+	current		:	CurrentAccount;
+	savings		:	SavingsAccount;
+	cust		:	Customer;
 
 begin
 
@@ -639,6 +653,16 @@ begin
 	create xmlDoc transient;
 	create parser transient;
 	create handler transient;
+	
+	cust := app.ourBank.allCustomers.getAtKey("Higgins");
+	
+	// create accounts if none exist
+	if cust.allBankAccounts.size = 0 then
+		beginTransaction;
+			current := create CurrentAccount(cust);
+			savings := create SavingsAccount(cust);
+		commitTransaction;
+	endif;
 	
 	parser.parseDocumentFile(xmlDoc, "C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\account-statement.0.short.xml");
 	handler.importTransactions(xmlDoc);
@@ -648,7 +672,7 @@ epilog
 	delete xmlDoc;
 	delete parser;
 
-	end;
+end;
 }
 createCustomersFromFile
 {
@@ -855,6 +879,33 @@ begin
 	commitTransaction;
 end;
 }
+saveTransaction
+{
+saveTransaction();
+
+vars
+
+	tran: Transaction;
+	cust: Customer;
+	acc : CurrentAccount;
+	today : Date;
+	handler: XMLHandler;
+
+begin
+
+	app.initialize();
+	beginTransaction;
+	cust := create Customer("John", "Madden", "02340234", "123 Fake Street", "Ilam", "chch", 500);
+	acc := create CurrentAccount(cust);
+	tran := create Deposit(500, 500, today, "UC");
+	acc.addTransaction(tran);
+	commitTransaction;
+	
+	create handler transient;
+
+	handler.saveTransaction(tran);
+end;
+}
 testAutomatedInverseAssignment
 {
 testAutomatedInverseAssignment() updating;
@@ -1037,7 +1088,7 @@ end;
 	jadeMethodSources
 create
 {
-create(amount: Decimal; balance: Decimal; date: Date; acc: BankAccount; payee: String) updating;
+create(amount: Decimal; balance: Decimal; date: Date; payee: String) updating;
 
 begin
 
@@ -1054,7 +1105,7 @@ end;
 	jadeMethodSources
 create
 {
-create(amount: Decimal; balance: Decimal; date: Date; acc: BankAccount; payee: String) ::super(amount, balance, date, acc, payee) updating;
+create(amount: Decimal; balance: Decimal; date: Date; payee: String) ::super(amount, balance, date, payee) updating;
 
 begin
 
@@ -1065,7 +1116,7 @@ end;
 	jadeMethodSources
 create
 {
-create(amount: Decimal; balance: Decimal; date: Date; acc: BankAccount; payee: String) ::super(amount, balance, date, acc, payee) updating;
+create(amount: Decimal; balance: Decimal; date: Date; payee: String) ::super(amount, balance, date, payee) updating;
 
 vars
 
@@ -1076,6 +1127,62 @@ end;
 	)
 	XMLHandler (
 	jadeMethodSources
+addCustDetails
+{
+addCustDetails(cust: Customer; root: JadeXMLElement io);
+
+vars
+	elmt : JadeXMLElement;
+
+begin
+	
+	elmt := root.addElement("customer_number");
+	elmt.setText(cust.getNumber().String);
+	
+	elmt := root.addElement("first_name");
+	elmt.setText(cust.getPropertyValue("firstName").String);
+	
+	elmt := root.addElement("last_name");
+	elmt.setText(cust.getPropertyValue("lastName").String);
+	
+	elmt := root.addElement("phone");
+	elmt.setText(cust.getPropertyValue("phone").String);
+	
+	elmt := root.addElement("street_address");
+	elmt.setText(cust.getPropertyValue("streetAddress").String);
+	
+	elmt := root.addElement("first_name");
+	elmt.setText(cust.getPropertyValue("firstName").String);
+
+end;
+}
+addTransaction
+{
+addTransaction(tran: Transaction; root: JadeXMLElement io);
+
+vars
+	elmt : JadeXMLElement;
+
+begin
+
+	elmt := root.addElement("Date");
+	elmt.setText(tran.getPropertyValue("date").Date.format("yyy-MM-dd"));
+	
+	if tran.getName() = "Deposit" then
+		elmt := root.addElement("Deposit");
+		elmt.setText(tran.getPropertyValue("amount").String);
+	else
+		elmt := root.addElement("Payment");
+		elmt.setText(tran.getPropertyValue("amount").String);
+	endif;
+	
+	elmt := root.addElement("Payee");
+	elmt.setText(tran.getPropertyValue("payee").String);
+	
+	elmt := root.addElement("Balance");
+	elmt.setText(tran.getPropertyValue("balance").String);
+end;
+}
 importTransactions
 {
 importTransactions(xml: JadeXMLDocument);
@@ -1111,16 +1218,19 @@ begin
 	accType := acc.getAttributeByName("type").value;
 	
 	customer := app.ourBank.allCustomers.getAtKey(lastName);
+	write accType;
 	foreach tempAcc in customer.allBankAccounts
 	where tempAcc.getName() = accType do
 		bankAcc := tempAcc;
 	endforeach;
 	if bankAcc = null then
-		// raise exception
+		// raise Exception
 	endif;
+	write "Bank Account found, " & bankAcc.String;
 	
 	create transactions transient;
-	xml.getElementsByTagName("transactions", transactions);
+	xml.getElementsByTagName("transaction", transactions);
+	write transactions.size.String;
 	
 	beginTransaction;
 	foreach elmnt in transactions do
@@ -1130,15 +1240,76 @@ begin
 		temp := elmnt.getElementByTagName("Deposit");
 		if temp <> null then
 			amount := elmnt.getElementByTagName("Deposit").textData.Integer;
-			tran := create Deposit(amount, balance, date, bankAcc, payee);
+			tran := create Deposit(amount, balance, date, payee);
 		else
 			amount := elmnt.getElementByTagName("Payment").textData.Integer;
-			tran := create Payment(amount, balance, date, bankAcc, payee);
+			tran := create Payment(amount, balance, date, payee);
 		endif;
 		bankAcc.addTransaction(tran);
 		write "added Transaction";
 	endforeach;
+	commitTransaction;
+end;
+}
+saveAccount
+{
+saveAccount();
 
+// saves all transactions in a bank account to XML
+
+vars
+
+begin
+
+end;
+}
+saveTransaction
+{
+saveTransaction(tran: Transaction);
+
+// save a single transaction to XML to be uploaded
+
+vars
+	
+	xml					:	JadeXMLDocument;
+	statement, customer, 
+	account, transactions,
+	transaction			:	JadeXMLElement;
+	
+	cust				: 	Customer;
+	acc					:	BankAccount;
+	xmlCustDetails		: 	StringArray;
+	
+
+begin
+	
+	create xml transient;
+	create xmlCustDetails transient;
+	
+	
+	acc := tran.myAccount;
+	cust := acc.myCustomer;
+	
+	statement := xml.addElement("statement");
+	
+	// add customer details
+	customer := statement.addElement("customer");
+	self.addCustDetails(cust, customer);
+	
+	// add account
+	account := statement.addElement("account");
+	account.addAttribute("type", acc.getName());
+	
+	//add transaction
+	transactions := account.addElement("transactions");
+	
+	transaction := transactions.addElement("transaction");
+	
+	self.addTransaction(tran, transaction);
+	
+	xml.writeToFile("C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\output.xml");
+	
+	write "successfully exported to XML";
 end;
 }
 	)
