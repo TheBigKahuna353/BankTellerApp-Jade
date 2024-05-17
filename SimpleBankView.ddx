@@ -416,7 +416,7 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>633</left>
+		<left>540</left>
 		<maxButton>true</maxButton>
 		<mdiChild>0</mdiChild>
 		<mdiFrame>false</mdiFrame>
@@ -442,7 +442,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>151</top>
+		<top>60</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>

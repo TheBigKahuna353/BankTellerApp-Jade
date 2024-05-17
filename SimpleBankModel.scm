@@ -12,6 +12,7 @@ typeHeaders
 	CurrentAccount subclassOf BankAccount highestOrdinal = 1, number = 2183;
 	SavingsAccount subclassOf BankAccount highestOrdinal = 1, number = 2185;
 	Customer subclassOf Object highestSubId = 1, highestOrdinal = 10, number = 2054;
+	MissingPropertyException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2072;
 	GSimpleBankModel subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2053;
 	Transaction subclassOf Object abstract, highestOrdinal = 6, number = 2060;
 	Deposit subclassOf Transaction number = 2061;
@@ -89,8 +90,8 @@ without inverses and requires manual maintenance.`
 		balance:                       Decimal[12,2] protected, number = 3, ordinal = 3;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:34.509;
 	referenceDefinitions
-		allTransactions:               TransactionsByDate   explicitInverse, protected, subId = 1, number = 4, ordinal = 4;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:19:50:43.887;
+		allTransactions:               TransactionsByDate   explicitInverse, subId = 1, number = 4, ordinal = 4;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:22:35:24.487;
 		myCustomer:                    Customer   explicitEmbeddedInverse, number = 2, ordinal = 2;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:18:53:36.342;
 	jadeMethodDefinitions
@@ -157,6 +158,8 @@ without inverses and requires manual maintenance.`
 		myBank:                        Bank  protected, number = 9, ordinal = 9;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:06:13:14:17.202;
 	jadeMethodDefinitions
+		checkForNull() number = 1004;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:24:58.693;
 		create(
 			cFirstName: String; 
 			cLastName: String; 
@@ -170,6 +173,23 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:20:57:26.171;
 		getNumber(): Integer number = 1003;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:02:02:12:43.581;
+	)
+	Exception completeDefinition
+	(
+	)
+	NormalException completeDefinition
+	(
+	)
+	MissingPropertyException completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:22:51:51.486;
+	jadeMethodDefinitions
+		create() updating, protected, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:22:56:57.995;
+		setErrorText(
+			property: String; 
+			class: Object) updating, number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:01:47.999;
 	)
 	Global completeDefinition
 	(
@@ -187,11 +207,13 @@ without inverses and requires manual maintenance.`
 		addTransactions() number = 1018;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:18:58:43.887;
 		createCustomersFromFile() number = 1006;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:48:00.029;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:08:14.971;
 		createTestAccounts() updating, number = 1009;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:58.694;
 		createTestCustomer() updating, number = 1001;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:00:27.632;
+		importAndExportXML() number = 1021;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:12:29.336;
 		iterationWithForeach() number = 1013;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:21:43:23.017;
 		iterationWithIterator() number = 1014;
@@ -199,13 +221,17 @@ without inverses and requires manual maintenance.`
 		purgeAccounts() updating, number = 1011;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:19:37:39.922;
 		purgeCustomers() number = 1007;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:41:30.342;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:09:24.753;
+		purgeTransactions() number = 1022;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:01:13.153;
 		saveTransaction() number = 1019;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:48:21.019;
 		testAutomatedInverseAssignment() updating, number = 1010;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:17:09:56.489;
 		testClass() number = 1017;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:32:31.850;
+		testExcpetions() number = 1020;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:01:08.161;
 		workingDecimalType() number = 1003;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:11:12:50:24.635;
 		workingWithDatesAndTimes() number = 1005;
@@ -231,7 +257,7 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:11:22.485;
 	referenceDefinitions
 		myAccount:                     BankAccount   explicitEmbeddedInverse, number = 5, ordinal = 5;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:19:50:43.885;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:22:35:24.488;
 	jadeMethodDefinitions
 		create(
 			amount: Decimal; 
@@ -286,17 +312,19 @@ without inverses and requires manual maintenance.`
 		addCustDetails(
 			cust: Customer; 
 			root: JadeXMLElement io) number = 1004;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:20:10:51.959;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:13:57.637;
 		addTransaction(
 			tran: Transaction; 
 			root: JadeXMLElement io) number = 1005;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:31:26.582;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:13:29.859;
 		importTransactions(xml: JadeXMLDocument) number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:47:53.589;
-		saveAccount() number = 1003;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:19:26:07.753;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:14:18.977;
+		importXMLFile(file: String) number = 1006;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:42:10.866;
+		saveAccount(acc: BankAccount) number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:35:12.380;
 		saveTransaction(tran: Transaction) number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:50:53.852;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:34:33.292;
 	)
 	Collection completeDefinition
 	(
@@ -374,6 +402,7 @@ databaseDefinitions
 		CustomerByLastNameDict in "simplebankcustomer";
 		Deposit in "simplebankmodel";
 		GSimpleBankModel in "simplebankmodel";
+		MissingPropertyException in "simplebankmodel";
 		Payment in "simplebankmodel";
 		PrimTypeSet in "simplebankmodel";
 		SSimpleBankModel in "_environ";
@@ -577,6 +606,43 @@ end;
 	)
 	Customer (
 	jadeMethodSources
+checkForNull
+{
+checkForNull();
+
+vars
+	exception: MissingPropertyException;
+
+begin
+	
+	if self.city = null then
+		create exception;
+		exception.setErrorText("city", self);
+	elseif self.creditScore = null then
+		create exception;
+		exception.setErrorText("creditScore", self);
+	elseif self.firstName = null then
+		create exception;
+		exception.setErrorText("firstName", self);
+	elseif self.lastName = null then
+		create exception;
+		exception.setErrorText("lastName", self);
+	elseif self.number = null then
+		create exception;
+		exception.setErrorText("number", self);
+	elseif self.phone = null then
+		create exception;
+		exception.setErrorText("phone", self);
+	elseif self.streetAddress = null then
+		create exception;
+		exception.setErrorText("streetAddress", self);
+	elseif self.suburb = null then
+		create exception;
+		exception.setErrorText("suburb", self);
+	endif;
+
+end;
+}
 create
 {
 /*
@@ -628,6 +694,29 @@ getNumber(): Integer;
 begin
 
 	return self.number;
+
+end;
+}
+	)
+	MissingPropertyException (
+	jadeMethodSources
+create
+{
+create() updating, protected;
+
+begin
+
+	self.errorCode := 6969;
+
+end;
+}
+setErrorText
+{
+setErrorText(property: String; class: Object) updating;
+
+begin
+
+	self.errorItem := "Property: '" & property & "' on Object: " & class.String & " does not exist";
 
 end;
 }
@@ -690,7 +779,7 @@ begin
 	
 	// Prepare the input file for reading the data
 	create inputFile transient;
-	inputFile.fileName := "C:\Users\dkmor\OneDrive - University of Canterbury\Semester 1 2024\Info213\BankTellerApp-Jade\chch_customers.txt";
+	inputFile.fileName := "C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\chch_customers.txt";
 	
 	//This line prevents a specific error message which only some of you may experience.
 	inputFile.kind := File.Kind_Unknown_Text;
@@ -796,6 +885,33 @@ begin
 			" with OID " & customer.getOidString();
 end;
 }
+importAndExportXML
+{
+importAndExportXML();
+
+constants
+	Filename : String = "C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\account-statement.4.huge.debt.xml";
+
+vars
+	handler : XMLHandler;
+	bankAcc : BankAccount;
+
+begin
+
+	app.initialize();
+	
+	create handler transient;
+	bankAcc := app.ourBank.allCustomers.getAtKey("Higgins").allBankAccounts.first;
+	
+	// import transactions
+	handler.importXMLFile(Filename);
+	
+	// export transactions
+	handler.saveAccount(bankAcc);
+	
+
+end;
+}
 iterationWithForeach
 {
 iterationWithForeach();
@@ -870,12 +986,36 @@ purgeCustomers
 {
 purgeCustomers();
 
+
 begin
 	beginTransaction;
-	// Customer.instances.purge();
-	Bank.firstInstance().allCustomers.purge();
-	// Reset customer number initial value.
-	Bank.firstInstance().setPropertyValue('lastCustomerNumber', 0);
+	
+	Bank.firstInstance.allCustomers.purge();
+	
+	Bank.firstInstance.setPropertyValue("lastCustomerNumber", 0);
+	
+	commitTransaction;
+end;
+}
+purgeTransactions
+{
+purgeTransactions();
+
+vars
+	instances : ObjectArray;
+
+begin
+	beginTransaction;
+	app.clearWriteWindow();
+	
+	create instances transient;
+	// Note the use of the allInstances method to get all BankAccount subclasses' 
+	// instances.
+	Transaction.allInstances(instances, Max_Integer, true);
+	instances.purge();
+	
+	// Reset account number initial value.
+	Bank.firstInstance().setPropertyValue('lastTransactionNumber', 1000000000);
 	commitTransaction;
 end;
 }
@@ -980,6 +1120,21 @@ begin
 		write "failed";
 	endif;
 
+end;
+}
+testExcpetions
+{
+testExcpetions();
+
+vars
+	exception: MissingPropertyException;
+
+begin
+
+	app.initialize();
+	create exception;
+	exception.setErrorText("Name", app.ourBank);
+	raise exception;
 end;
 }
 workingDecimalType
@@ -1131,34 +1286,56 @@ addCustDetails
 {
 addCustDetails(cust: Customer; root: JadeXMLElement io);
 
+// adds the customers deatils in XML tags to the given XML Element called root
+
+
 vars
 	elmt : JadeXMLElement;
+	text : String;
+
 
 begin
 	
 	elmt := root.addElement("customer_number");
-	elmt.setText(cust.getNumber().String);
+	text := cust.getNumber().String;
+	
+	elmt.setText(text);
 	
 	elmt := root.addElement("first_name");
-	elmt.setText(cust.getPropertyValue("firstName").String);
+	text := cust.getPropertyValue("firstName").String;
+	elmt.setText(text);
 	
 	elmt := root.addElement("last_name");
-	elmt.setText(cust.getPropertyValue("lastName").String);
+	text := cust.getPropertyValue("lastName").String;
+	elmt.setText(text);
 	
 	elmt := root.addElement("phone");
-	elmt.setText(cust.getPropertyValue("phone").String);
+	text := cust.getPropertyValue("phone").String;
+	elmt.setText(text);
 	
 	elmt := root.addElement("street_address");
-	elmt.setText(cust.getPropertyValue("streetAddress").String);
+	text := cust.getPropertyValue("streetAddress").String;
+	elmt.setText(text);
 	
-	elmt := root.addElement("first_name");
-	elmt.setText(cust.getPropertyValue("firstName").String);
+	elmt := root.addElement("suburb");
+	text := cust.getPropertyValue("suburb").String;
+	elmt.setText(text);
+	
+	elmt := root.addElement("city");
+	text := cust.getPropertyValue("city").String;
+	elmt.setText(text);
+	
+	elmt := root.addElement("credit_score");
+	text := cust.getPropertyValue("creditScore").String;
+	elmt.setText(text);
 
 end;
 }
 addTransaction
 {
 addTransaction(tran: Transaction; root: JadeXMLElement io);
+
+// adds Transaction XML tags to XML Element called root
 
 vars
 	elmt : JadeXMLElement;
@@ -1187,7 +1364,7 @@ importTransactions
 {
 importTransactions(xml: JadeXMLDocument);
 
-//		DOES NOT WORK YET
+// assumes customers exist in database but not account, so creates a new one
 
 vars
 
@@ -1205,7 +1382,7 @@ vars
 	date				: Date;
 	
 	customer			: Customer;
-	bankAcc, tempAcc	: BankAccount;
+	bankAcc				: BankAccount;
 	
 	tran				: Transaction;
 
@@ -1218,21 +1395,18 @@ begin
 	accType := acc.getAttributeByName("type").value;
 	
 	customer := app.ourBank.allCustomers.getAtKey(lastName);
-	write accType;
-	foreach tempAcc in customer.allBankAccounts
-	where tempAcc.getName() = accType do
-		bankAcc := tempAcc;
-	endforeach;
-	if bankAcc = null then
-		// raise Exception
+	
+	beginTransaction;
+	
+	if accType = "CurrentAccount" then
+		bankAcc := create CurrentAccount(customer);
+	else
+		bankAcc := create SavingsAccount(customer);
 	endif;
-	write "Bank Account found, " & bankAcc.String;
 	
 	create transactions transient;
 	xml.getElementsByTagName("transaction", transactions);
-	write transactions.size.String;
 	
-	beginTransaction;
 	foreach elmnt in transactions do
 		payee := elmnt.getElementByTagName("Payee").textData;
 		date := elmnt.getElementByTagName("Date").textData.asDate();
@@ -1251,16 +1425,88 @@ begin
 	commitTransaction;
 end;
 }
-saveAccount
+importXMLFile
 {
-saveAccount();
-
-// saves all transactions in a bank account to XML
+importXMLFile(file: String);
 
 vars
+	
+	xmlDoc		:	JadeXMLDocument;
+	parser		:	JadeXMLDocumentParser;
+	handler		: 	XMLHandler;
 
 begin
 
+	app.initialize();
+	create xmlDoc transient;
+	create parser transient;
+	create handler transient;
+	
+	parser.parseDocumentFile(xmlDoc, file);
+	handler.importTransactions(xmlDoc);
+	
+epilog
+
+	delete xmlDoc;
+	delete parser;
+
+end;
+}
+saveAccount
+{
+saveAccount(acc: BankAccount);
+
+// save all Transactions from a bank account
+
+vars
+	
+	xml					:	JadeXMLDocument;
+	statement, customer, 
+	account, transactions,
+	transaction, temp	:	JadeXMLElement;
+	cust				: 	Customer;
+	tran				:	Transaction;
+	xmlCustDetails		: 	StringArray;
+	
+
+begin
+	
+	create xml transient;
+	create xmlCustDetails transient;
+	
+	
+	cust := acc.myCustomer;
+	
+	statement := xml.addElement("statement");
+	
+	// add customer details
+	customer := statement.addElement("customer");
+	self.addCustDetails(cust, customer);
+	
+	// add account
+	account := statement.addElement("account");
+	account.addAttribute("type", acc.getName());
+	// add interestRate
+	if acc.getName() = "CurrentAccount" then
+		temp := account.addElement("overdraft_limit");
+		temp.setText(acc.getPropertyValue("overdraftLimit").String);
+	else
+		temp := account.addElement("interest_rate");
+		temp.setText(acc.getPropertyValue("interestRate").String);
+	endif;
+	
+	//add transactions
+	transactions := account.addElement("transactions");
+	foreach tran in acc.allTransactions do
+		transaction := transactions.addElement("transaction");
+		
+		self.addTransaction(tran, transaction);
+	endforeach;
+		
+	xml.writeToFile("C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\output.xml");
+		
+	
+	write "successfully exported to XML";
 end;
 }
 saveTransaction
@@ -1274,7 +1520,7 @@ vars
 	xml					:	JadeXMLDocument;
 	statement, customer, 
 	account, transactions,
-	transaction			:	JadeXMLElement;
+	transaction, temp	:	JadeXMLElement;
 	
 	cust				: 	Customer;
 	acc					:	BankAccount;
@@ -1299,6 +1545,14 @@ begin
 	// add account
 	account := statement.addElement("account");
 	account.addAttribute("type", acc.getName());
+	// add interestRate
+	if acc.getName() = "CurrentAccount" then
+		temp := account.addElement("overdraft_limit");
+		temp.setText(acc.getPropertyValue("overdraftLimit").String);
+	else
+		temp := account.addElement("interest_rate");
+		temp.setText(acc.getPropertyValue("interestRate").String);
+	endif;
 	
 	//add transaction
 	transactions := account.addElement("transactions");

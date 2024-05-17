@@ -118,7 +118,7 @@ typeDefinitions
 	)
 	CustomerDetails completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:59:09.584;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:44:49.515;
 	referenceDefinitions
 		btnCancel:                     Button  number = 2, ordinal = 2;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:27:18:20:23.280;
