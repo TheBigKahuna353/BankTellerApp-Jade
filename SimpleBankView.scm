@@ -9,7 +9,7 @@ typeHeaders
 	SimpleBankView subclassOf SimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2088;
 	GSimpleBankView subclassOf GSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2089;
 	SSimpleBankView subclassOf SSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2090;
-	AccountsDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 14, number = 2070;
+	Accounts subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 13, number = 2070;
 	CustomerDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2092;
 	CustomerAdd subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, number = 2186;
 	CustomerEdit subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2059;
@@ -82,25 +82,37 @@ typeDefinitions
 	Form completeDefinition
 	(
 	)
-	AccountsDetails completeDefinition
+	Accounts completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:20:30.916;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:45:52.229;
 	referenceDefinitions
-		addAccount:                    Button  number = 9, ordinal = 9;
+		accountEdit:                   Button  number = 12, ordinal = 13;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:45:52.228;
+		accountTransactions:           Button  number = 8, ordinal = 8;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:28:10.539;
+		addAccount:                    Button  number = 3, ordinal = 3;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:08:34.114;
-		grpBoxAccCreate:               GroupBox  number = 10, ordinal = 10;
+		groupBox3:                     GroupBox  number = 7, ordinal = 7;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:28:10.538;
+		grpBoxAccCreate:               GroupBox  number = 4, ordinal = 4;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:16:00.600;
-		listAccounts:                  ListBox  number = 11, ordinal = 11;
+		labelAccNum:                   Label  number = 11, ordinal = 11;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:30:47.662;
+		labelAccType:                  Label  number = 10, ordinal = 10;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:30:47.661;
+		listAccounts:                  ListBox  number = 1, ordinal = 1;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:59:08.807;
-		myCustomer:                    Customer  number = 12, ordinal = 12;
+		listAccounts_1:                ListBox  number = 9, ordinal = 9;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:28:10.539;
+		myCustomer:                    Customer  number = 2, ordinal = 2;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:17:16:28.394;
-		optionCurrentAccount:          OptionButton  number = 13, ordinal = 13;
+		optionCurrentAccount:          OptionButton  number = 6, ordinal = 6;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:16:00.601;
-		optionSavingsAccount:          OptionButton  number = 14, ordinal = 14;
+		optionSavingsAccount:          OptionButton  number = 5, ordinal = 5;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:16:00.601;
 	jadeMethodDefinitions
 		addAccount_click(btn: Button input) updating, number = 1004;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:30:51.691;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:22:45:33.962;
 		listAccounts_displayRow(
 			listbox: ListBox input; 
 			account: BankAccount; 
@@ -118,7 +130,7 @@ typeDefinitions
 	)
 	CustomerDetails completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:44:49.515;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:45:56.754;
 	referenceDefinitions
 		btnCancel:                     Button  number = 2, ordinal = 2;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:27:18:20:23.280;
@@ -169,7 +181,7 @@ typeDefinitions
 		btnOK_click(btn: Button input) updating, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:17:39:06.070;
 		createCustomer() number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:50:04.486;
+		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:20:42:32.870;
 	eventMethodMappings
 		btnOK_click = click of Button;
 	)
@@ -199,7 +211,7 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:42:47.149;
 	jadeMethodDefinitions
 		btnAccounts_click(btn: Button input) updating, number = 1005;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:17:16:10.640;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:28:10.533;
 		btnEdit_click(btn: Button input) updating, number = 1003;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:26:36.221;
 		gotFocus(cntrl: Control input) updating, number = 1004;
@@ -276,7 +288,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 55;
+		"simplebankview" number = 56;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
@@ -376,19 +388,24 @@ begin
 end;
 }
 	)
-	AccountsDetails (
+	Accounts (
 	jadeMethodSources
 addAccount_click
 {
 addAccount_click(btn: Button input) updating;
 
 vars
-
+	newCurrentAccount : CurrentAccount;
+	newSavingsAccount : SavingsAccount;
 begin
 	if optionCurrentAccount.value = true then
-		
+		beginTransaction;
+		newCurrentAccount := create CurrentAccount(self.myCustomer);
+		commitTransaction;
 	elseif optionSavingsAccount.value = true then
-	
+		beginTransaction;
+		newSavingsAccount := create SavingsAccount(self.myCustomer);
+		commitTransaction;
 	else
 		app.msgBox("Please pick an account type", "Account creation error", MsgBox_OK_Only);
 	endif;
@@ -543,7 +560,7 @@ begin
 	// (Default) credit rating should be defined
 	// as a constant in BankAccount class.
 	cust := create Customer(firstName, lastName, phone,
-							address, suburb, city, BankAccount.Default_Credit_Rating);
+							address, suburb, city, 300);
 	commitTransaction;
 
 end;
@@ -593,7 +610,7 @@ btnAccounts_click(btn: Button input) updating;
 
 vars
 	cust: Customer;
-	form: AccountsDetails;
+	form: Accounts;
 begin
 	
 	cust := self.lstCustomers.listObject.Customer;

@@ -38,29 +38,29 @@
 			<GUIClass name="OptionButton" />
 		</threeDControls>
 	</Application>
-	<Form locale="5129" name="AccountsDetails">
+	<Form locale="5129" name="Accounts">
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
 		<backColor>-2147483633</backColor>
 		<borderStyle>2</borderStyle>
 		<bubbleHelp/>
-		<caption>AccountsDetails</caption>
-		<clientHeight>405</clientHeight>
-		<clientWidth>404</clientWidth>
+		<caption>Accounts</caption>
+		<clientHeight>784</clientHeight>
+		<clientWidth>407</clientWidth>
 		<clipControls>true</clipControls>
 		<controlBox>true</controlBox>
 		<description/>
 		<disableReason/>
 		<dragCursor/>
 		<enabled>true</enabled>
-		<height>444</height>
+		<height>823</height>
 		<helpContextId>0</helpContextId>
 		<helpKeyword/>
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>710</left>
+		<left>960</left>
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
@@ -70,7 +70,7 @@
 		<minimumWidth>0</minimumWidth>
 		<mouseCursor/>
 		<mousePointer>0</mousePointer>
-		<name>AccountsDetails</name>
+		<name>Accounts</name>
 		<paintedDialogBaseUnits>1048584</paintedDialogBaseUnits>
 		<printerForm>false</printerForm>
 		<scaleForm>true</scaleForm>
@@ -86,7 +86,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>262</top>
+		<top>103</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
@@ -94,9 +94,131 @@
 		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
 		<webEncodingType/>
 		<webFileName/>
-		<width>420</width>
+		<width>423</width>
 		<windowState>0</windowState>
 		<controlList>
+			<GroupBox name="groupBox3">
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<caption>Account Details</caption>
+				<clipControls>true</clipControls>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="Accounts" />
+				<height>122</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>21</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>groupBox3</name>
+				<parent name="Accounts" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>271</parentBottomOffset>
+				<parentRightOffset>20</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>8</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>391</top>
+				<transparent>false</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>366</width>
+			</GroupBox>
+			<ListBox name="listAccounts_1">
+				<alternatingRowBackColor>16777200</alternatingRowBackColor>
+				<alternatingRowBackColorCount>0</alternatingRowBackColorCount>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<defaultLineHeight>0</defaultLineHeight>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="Accounts" />
+				<hasPictures>false</hasPictures>
+				<hasPlusMinus>false</hasPlusMinus>
+				<hasTreeLines>false</hasTreeLines>
+				<height>238</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>true</integralHeight>
+				<left>21</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<multiSelect>0</multiSelect>
+				<name>listAccounts_1</name>
+				<nameSeparator>\</nameSeparator>
+				<parent name="Accounts" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>21</parentBottomOffset>
+				<parentRightOffset>20</parentRightOffset>
+				<pictureClosed/>
+				<pictureLeaf/>
+				<pictureMinus/>
+				<pictureOpen/>
+				<picturePlus/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>2</scrollBars>
+				<scrollHorizontal>0</scrollHorizontal>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<sortAsc>true</sortAsc>
+				<sortCased>false</sortCased>
+				<sorted>false</sorted>
+				<tabIndex>7</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>525</top>
+				<userScript/>
+				<visible>true</visible>
+				<width>366</width>
+			</ListBox>
 			<GroupBox name="grpBoxAccCreate">
 				<backBrush/>
 				<backBrushStyle>0</backBrushStyle>
@@ -119,8 +241,8 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
-				<height>83</height>
+				<form name="Accounts" />
+				<height>119</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
 				<ignoreSkin>false</ignoreSkin>
@@ -129,10 +251,10 @@
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>grpBoxAccCreate</name>
-				<parent name="AccountsDetails" />
+				<parent name="Accounts" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>57</parentBottomOffset>
-				<parentRightOffset>234</parentRightOffset>
+				<parentBottomOffset>400</parentBottomOffset>
+				<parentRightOffset>237</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
 				<relativeTop>false</relativeTop>
@@ -150,67 +272,6 @@
 				<visible>true</visible>
 				<width>149</width>
 			</GroupBox>
-			<Button name="addAccount">
-				<autoSize>1</autoSize>
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483633</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>0</borderStyle>
-				<bubbleHelp/>
-				<buttonPicture>0</buttonPicture>
-				<cancel>false</cancel>
-				<caption>Add Account</caption>
-				<default>false</default>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>true</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483630</foreColor>
-				<form name="AccountsDetails" />
-				<height>28</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<left>21</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<name>addAccount</name>
-				<parent name="AccountsDetails" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>22</parentBottomOffset>
-				<parentRightOffset>274</parentRightOffset>
-				<picture/>
-				<pictureDisabled/>
-				<pictureDown/>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<style>0</style>
-				<tabIndex>2</tabIndex>
-				<tabStop>true</tabStop>
-				<tag/>
-				<top>355</top>
-				<userScript/>
-				<value>false</value>
-				<visible>true</visible>
-				<webFileName/>
-				<width>109</width>
-			</Button>
 			<ListBox name="listAccounts">
 				<alternatingRowBackColor>16777200</alternatingRowBackColor>
 				<alternatingRowBackColorCount>0</alternatingRowBackColorCount>
@@ -234,7 +295,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
+				<form name="Accounts" />
 				<hasPictures>false</hasPictures>
 				<hasPlusMinus>false</hasPlusMinus>
 				<hasTreeLines>false</hasTreeLines>
@@ -250,10 +311,10 @@
 				<multiSelect>0</multiSelect>
 				<name>listAccounts</name>
 				<nameSeparator>\</nameSeparator>
-				<parent name="AccountsDetails" />
+				<parent name="Accounts" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>153</parentBottomOffset>
-				<parentRightOffset>17</parentRightOffset>
+				<parentBottomOffset>532</parentBottomOffset>
+				<parentRightOffset>20</parentRightOffset>
 				<pictureClosed/>
 				<pictureLeaf/>
 				<pictureMinus/>
@@ -280,6 +341,305 @@
 				<visible>true</visible>
 				<width>366</width>
 			</ListBox>
+			<Button name="accountEdit">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Edit Account</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="Accounts" />
+				<height>28</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>236</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>accountEdit</name>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>46</parentBottomOffset>
+				<parentRightOffset>9</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>11</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>48</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>121</width>
+			</Button>
+			<Label name="labelAccNum">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Label1</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>false</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="Accounts" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>17</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>labelAccNum</name>
+				<noPrefix>false</noPrefix>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>57</parentBottomOffset>
+				<parentRightOffset>318</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>10</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>52</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>31</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<Label name="labelAccType">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Label1</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>false</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="Accounts" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>17</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>labelAccType</name>
+				<noPrefix>false</noPrefix>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>84</parentBottomOffset>
+				<parentRightOffset>318</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>9</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>25</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>31</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<Button name="accountTransactions">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Account Transactions</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="Accounts" />
+				<height>28</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>236</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>accountTransactions</name>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>7</parentBottomOffset>
+				<parentRightOffset>9</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>6</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>87</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>121</width>
+			</Button>
+			<Button name="addAccount">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Add Account</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="Accounts" />
+				<height>28</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>20</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>addAccount</name>
+				<parent name="grpBoxAccCreate" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>10</parentBottomOffset>
+				<parentRightOffset>20</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>2</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>81</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>109</width>
+			</Button>
 			<OptionButton name="optionCurrentAccount">
 				<alignment>0</alignment>
 				<autoSize>true</autoSize>
@@ -303,20 +663,20 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
+				<form name="Accounts" />
 				<height>17</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
 				<ignoreSkin>false</ignoreSkin>
 				<index>0</index>
-				<left>26</left>
+				<left>20</left>
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>optionCurrentAccount</name>
 				<parent name="grpBoxAccCreate" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>16</parentBottomOffset>
-				<parentRightOffset>26</parentRightOffset>
+				<parentBottomOffset>57</parentBottomOffset>
+				<parentRightOffset>32</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
 				<relativeTop>false</relativeTop>
@@ -328,7 +688,7 @@
 				<tabIndex>5</tabIndex>
 				<tabStop>true</tabStop>
 				<tag/>
-				<top>50</top>
+				<top>45</top>
 				<transparent>true</transparent>
 				<userScript/>
 				<value>false</value>
@@ -358,20 +718,20 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
+				<form name="Accounts" />
 				<height>17</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
 				<ignoreSkin>false</ignoreSkin>
 				<index>0</index>
-				<left>26</left>
+				<left>20</left>
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>optionSavingsAccount</name>
 				<parent name="grpBoxAccCreate" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>51</parentBottomOffset>
-				<parentRightOffset>26</parentRightOffset>
+				<parentBottomOffset>93</parentBottomOffset>
+				<parentRightOffset>32</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
 				<relativeTop>false</relativeTop>
@@ -383,7 +743,7 @@
 				<tabIndex>4</tabIndex>
 				<tabStop>true</tabStop>
 				<tag/>
-				<top>15</top>
+				<top>9</top>
 				<transparent>true</transparent>
 				<userScript/>
 				<value>false</value>
@@ -416,7 +776,7 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>540</left>
+		<left>236</left>
 		<maxButton>true</maxButton>
 		<mdiChild>0</mdiChild>
 		<mdiFrame>false</mdiFrame>
@@ -442,7 +802,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>60</top>
+		<top>77</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
