@@ -1,11 +1,12 @@
 #TODO
 
-- AccountsAdd
+- AccountsAdd - DONE
 - AccountsEdit
--   subclasses of AccountDetails
+  - Conversion of one type to another? copy detail to new object and delete original possible option.
+- Subclasses of AccountDetails
 - searching Transactions
 - transaction id
-- list accounts
+- list accounts - DONE
 - list transactions
 - add deposits
 - XML stuff
