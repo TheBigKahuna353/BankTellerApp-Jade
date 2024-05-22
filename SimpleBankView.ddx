@@ -371,7 +371,7 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>960</left>
+		<left>1741</left>
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
@@ -397,7 +397,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>103</top>
+		<top>94</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
@@ -408,6 +408,67 @@
 		<width>423</width>
 		<windowState>0</windowState>
 		<controlList>
+			<Button name="btnXML">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Upload</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>false</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="Accounts" />
+				<height>28</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>266</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>btnXML</name>
+				<parent name="Accounts" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>487</parentBottomOffset>
+				<parentRightOffset>32</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>12</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>269</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>109</width>
+			</Button>
 			<GroupBox name="groupBox3">
 				<backBrush/>
 				<backBrushStyle>0</backBrushStyle>
@@ -461,7 +522,7 @@
 				<visible>true</visible>
 				<width>366</width>
 			</GroupBox>
-			<ListBox name="listAccounts_1">
+			<ListBox name="listTransactions">
 				<alternatingRowBackColor>16777200</alternatingRowBackColor>
 				<alternatingRowBackColorCount>0</alternatingRowBackColorCount>
 				<backBrush/>
@@ -498,7 +559,7 @@
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<multiSelect>0</multiSelect>
-				<name>listAccounts_1</name>
+				<name>listTransactions</name>
 				<nameSeparator>\</nameSeparator>
 				<parent name="Accounts" />
 				<parentAspect>0</parentAspect>
@@ -1055,423 +1116,6 @@
 				<tabStop>true</tabStop>
 				<tag/>
 				<top>9</top>
-				<transparent>true</transparent>
-				<userScript/>
-				<value>false</value>
-				<visible>true</visible>
-				<width>97</width>
-			</OptionButton>
-		</controlList>
-		<menuList>
-		</menuList>
-	</Form>
-	<Form locale="5129" name="AccountsDetails">
-		<allowDocking>0</allowDocking>
-		<backBrush/>
-		<backBrushStyle>0</backBrushStyle>
-		<backColor>-2147483633</backColor>
-		<borderStyle>2</borderStyle>
-		<bubbleHelp/>
-		<caption>AccountsDetails</caption>
-		<clientHeight>405</clientHeight>
-		<clientWidth>404</clientWidth>
-		<clipControls>true</clipControls>
-		<controlBox>true</controlBox>
-		<description/>
-		<disableReason/>
-		<dragCursor/>
-		<enabled>true</enabled>
-		<height>444</height>
-		<helpContextId>0</helpContextId>
-		<helpKeyword/>
-		<icon/>
-		<ignoreSkin>false</ignoreSkin>
-		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>156</left>
-		<maxButton>true</maxButton>
-		<mdiChild>2</mdiChild>
-		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
-		<minButton>true</minButton>
-		<minimumHeight>0</minimumHeight>
-		<minimumWidth>0</minimumWidth>
-		<mouseCursor/>
-		<mousePointer>0</mousePointer>
-		<name>AccountsDetails</name>
-		<paintedDialogBaseUnits>1048584</paintedDialogBaseUnits>
-		<printerForm>false</printerForm>
-		<scaleForm>true</scaleForm>
-		<scrollBars>0</scrollBars>
-		<secureForm>false</secureForm>
-		<securityLevelEnabled>0</securityLevelEnabled>
-		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
-		<skinCategoryName/>
-		<tag/>
-		<top>142</top>
-		<userScript/>
-		<visible>true</visible>
-		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
-		<webBrowserAutoRefreshURL/>
-		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
-		<webEncodingType/>
-		<webFileName/>
-		<width>420</width>
-		<windowState>0</windowState>
-		<controlList>
-			<Button name="btnXML">
-				<autoSize>1</autoSize>
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483633</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>0</borderStyle>
-				<bubbleHelp/>
-				<buttonPicture>0</buttonPicture>
-				<cancel>false</cancel>
-				<caption>Upload</caption>
-				<default>false</default>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>false</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483630</foreColor>
-				<form name="AccountsDetails" />
-				<height>28</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<left>247</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<name>btnXML</name>
-				<parent name="AccountsDetails" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>93</parentBottomOffset>
-				<parentRightOffset>48</parentRightOffset>
-				<picture/>
-				<pictureDisabled/>
-				<pictureDown/>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<style>0</style>
-				<tabIndex>6</tabIndex>
-				<tabStop>true</tabStop>
-				<tag/>
-				<top>284</top>
-				<userScript/>
-				<value>false</value>
-				<visible>true</visible>
-				<webFileName/>
-				<width>109</width>
-			</Button>
-			<GroupBox name="grpBoxAccCreate">
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483633</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>2</borderStyle>
-				<bubbleHelp/>
-				<caption/>
-				<clipControls>true</clipControls>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>true</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
-				<height>83</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<left>21</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<name>grpBoxAccCreate</name>
-				<parent name="AccountsDetails" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>57</parentBottomOffset>
-				<parentRightOffset>234</parentRightOffset>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<tabIndex>3</tabIndex>
-				<tabStop>false</tabStop>
-				<tag/>
-				<top>265</top>
-				<transparent>false</transparent>
-				<userScript/>
-				<visible>true</visible>
-				<width>149</width>
-			</GroupBox>
-			<Button name="addAccount">
-				<autoSize>1</autoSize>
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483633</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>0</borderStyle>
-				<bubbleHelp/>
-				<buttonPicture>0</buttonPicture>
-				<cancel>false</cancel>
-				<caption>Add Account</caption>
-				<default>false</default>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>true</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483630</foreColor>
-				<form name="AccountsDetails" />
-				<height>28</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<left>21</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<name>addAccount</name>
-				<parent name="AccountsDetails" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>22</parentBottomOffset>
-				<parentRightOffset>274</parentRightOffset>
-				<picture/>
-				<pictureDisabled/>
-				<pictureDown/>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<style>0</style>
-				<tabIndex>2</tabIndex>
-				<tabStop>true</tabStop>
-				<tag/>
-				<top>355</top>
-				<userScript/>
-				<value>false</value>
-				<visible>true</visible>
-				<webFileName/>
-				<width>109</width>
-			</Button>
-			<ListBox name="listAccounts">
-				<alternatingRowBackColor>16777200</alternatingRowBackColor>
-				<alternatingRowBackColorCount>0</alternatingRowBackColorCount>
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483643</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>2</borderStyle>
-				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>true</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
-				<hasPictures>false</hasPictures>
-				<hasPlusMinus>false</hasPlusMinus>
-				<hasTreeLines>false</hasTreeLines>
-				<height>238</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<integralHeight>true</integralHeight>
-				<left>21</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<multiSelect>0</multiSelect>
-				<name>listAccounts</name>
-				<nameSeparator>\</nameSeparator>
-				<parent name="AccountsDetails" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>153</parentBottomOffset>
-				<parentRightOffset>17</parentRightOffset>
-				<pictureClosed/>
-				<pictureLeaf/>
-				<pictureMinus/>
-				<pictureOpen/>
-				<picturePlus/>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<scrollBars>2</scrollBars>
-				<scrollHorizontal>0</scrollHorizontal>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<sortAsc>true</sortAsc>
-				<sortCased>false</sortCased>
-				<sorted>false</sorted>
-				<tabIndex>1</tabIndex>
-				<tabStop>true</tabStop>
-				<tag/>
-				<top>14</top>
-				<userScript/>
-				<visible>true</visible>
-				<width>366</width>
-			</ListBox>
-			<OptionButton name="optionCurrentAccount">
-				<alignment>0</alignment>
-				<autoSize>true</autoSize>
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483633</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>0</borderStyle>
-				<bubbleHelp/>
-				<caption>Current Account</caption>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>true</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
-				<height>17</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<left>26</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<name>optionCurrentAccount</name>
-				<parent name="grpBoxAccCreate" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>16</parentBottomOffset>
-				<parentRightOffset>26</parentRightOffset>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<tabIndex>5</tabIndex>
-				<tabStop>true</tabStop>
-				<tag/>
-				<top>50</top>
-				<transparent>true</transparent>
-				<userScript/>
-				<value>false</value>
-				<visible>true</visible>
-				<width>97</width>
-			</OptionButton>
-			<OptionButton name="optionSavingsAccount">
-				<alignment>0</alignment>
-				<autoSize>true</autoSize>
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483633</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>0</borderStyle>
-				<bubbleHelp/>
-				<caption>Savings Account</caption>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>true</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483640</foreColor>
-				<form name="AccountsDetails" />
-				<height>17</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<left>26</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<name>optionSavingsAccount</name>
-				<parent name="grpBoxAccCreate" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>51</parentBottomOffset>
-				<parentRightOffset>26</parentRightOffset>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<tabIndex>4</tabIndex>
-				<tabStop>true</tabStop>
-				<tag/>
-				<top>15</top>
 				<transparent>true</transparent>
 				<userScript/>
 				<value>false</value>
@@ -3394,7 +3038,7 @@
 		<borderStyle>2</borderStyle>
 		<bubbleHelp/>
 		<caption>Simple Banking System</caption>
-		<clientHeight>661</clientHeight>
+		<clientHeight>647</clientHeight>
 		<clientWidth>1264</clientWidth>
 		<clipControls>true</clipControls>
 		<controlBox>true</controlBox>
@@ -3402,13 +3046,13 @@
 		<disableReason/>
 		<dragCursor/>
 		<enabled>true</enabled>
-		<height>720</height>
+		<height>706</height>
 		<helpContextId>0</helpContextId>
 		<helpKeyword/>
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>203</left>
+		<left>780</left>
 		<maxButton>true</maxButton>
 		<mdiChild>0</mdiChild>
 		<mdiFrame>true</mdiFrame>
@@ -3434,7 +3078,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>59</top>
+		<top>243</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
@@ -3547,7 +3191,7 @@
 				<shortCutKey/>
 				<shortCutFlags/>
 			</MenuItem>
-			<MenuItem name="">
+			<MenuItem name="mnuAccount">
 				<backColor>0</backColor>
 				<caption>&amp;Account</caption>
 				<checked>false</checked>
@@ -3562,7 +3206,7 @@
 				<helpKeyword/>
 				<helpList>false</helpList>
 				<level>1</level>
-				<name/>
+				<name>mnuAccount</name>
 				<picture/>
 				<securityLevelEnabled>0</securityLevelEnabled>
 				<securityLevelVisible>0</securityLevelVisible>
@@ -3597,6 +3241,859 @@
 				<shortCutKey/>
 				<shortCutFlags/>
 			</MenuItem>
+			<MenuItem name="mnuTransaction">
+				<backColor>0</backColor>
+				<caption>&amp;Transactions</caption>
+				<checked>false</checked>
+				<commandId>0</commandId>
+				<description/>
+				<disableReason/>
+				<enabled>true</enabled>
+				<foreColor>0</foreColor>
+				<form name="MainMenu" />
+				<hasSubMenu>true</hasSubMenu>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<helpList>false</helpList>
+				<level>1</level>
+				<name>mnuTransaction</name>
+				<picture/>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<visible>true</visible>
+				<webFileName/>
+				<windowList>false</windowList>
+				<shortCutKey/>
+				<shortCutFlags/>
+			</MenuItem>
+			<MenuItem name="mnuNewTransaction">
+				<backColor>0</backColor>
+				<caption>&amp;New Transaction</caption>
+				<checked>false</checked>
+				<commandId>0</commandId>
+				<description/>
+				<disableReason/>
+				<enabled>true</enabled>
+				<foreColor>0</foreColor>
+				<form name="MainMenu" />
+				<hasSubMenu>false</hasSubMenu>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<helpList>false</helpList>
+				<level>2</level>
+				<name>mnuNewTransaction</name>
+				<picture/>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<visible>true</visible>
+				<webFileName/>
+				<windowList>false</windowList>
+				<shortCutKey/>
+				<shortCutFlags/>
+			</MenuItem>
+		</menuList>
+	</Form>
+	<Form locale="5129" name="NewTransaction">
+		<allowDocking>0</allowDocking>
+		<backBrush/>
+		<backBrushStyle>0</backBrushStyle>
+		<backColor>-2147483633</backColor>
+		<borderStyle>2</borderStyle>
+		<bubbleHelp/>
+		<caption>New Transaction</caption>
+		<clientHeight>348</clientHeight>
+		<clientWidth>239</clientWidth>
+		<clipControls>true</clipControls>
+		<controlBox>true</controlBox>
+		<description/>
+		<disableReason/>
+		<dragCursor/>
+		<enabled>true</enabled>
+		<height>387</height>
+		<helpContextId>0</helpContextId>
+		<helpKeyword/>
+		<icon/>
+		<ignoreSkin>false</ignoreSkin>
+		<ignoreSkinAllControls>false</ignoreSkinAllControls>
+		<left>615</left>
+		<maxButton>true</maxButton>
+		<mdiChild>2</mdiChild>
+		<mdiFrame>false</mdiFrame>
+		<mdiPinned>false</mdiPinned>
+		<minButton>true</minButton>
+		<minimumHeight>0</minimumHeight>
+		<minimumWidth>0</minimumWidth>
+		<mouseCursor/>
+		<mousePointer>0</mousePointer>
+		<name>NewTransaction</name>
+		<paintedDialogBaseUnits>1048584</paintedDialogBaseUnits>
+		<printerForm>false</printerForm>
+		<scaleForm>true</scaleForm>
+		<scrollBars>0</scrollBars>
+		<secureForm>false</secureForm>
+		<securityLevelEnabled>0</securityLevelEnabled>
+		<securityLevelVisible>0</securityLevelVisible>
+		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
+		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
+		<showMdiCloseMenu>false</showMdiCloseMenu>
+		<showMdiDockMenu>false</showMdiDockMenu>
+		<showMdiFloatMenu>false</showMdiFloatMenu>
+		<showMdiPinMenu>false</showMdiPinMenu>
+		<skinCategoryName/>
+		<tag/>
+		<top>171</top>
+		<userScript/>
+		<visible>true</visible>
+		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
+		<webBrowserAutoRefreshURL/>
+		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
+		<webEncodingType/>
+		<webFileName/>
+		<width>255</width>
+		<windowState>0</windowState>
+		<controlList>
+			<Button name="submitButton">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Submit</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="NewTransaction" />
+				<height>29</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>77</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>submitButton</name>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>31</parentBottomOffset>
+				<parentRightOffset>78</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>12</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>288</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>84</width>
+			</Button>
+			<TextBox name="dateTextBox">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>0</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>65</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>dateTextBox</name>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>198</parentBottomOffset>
+				<parentRightOffset>74</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>false</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>11</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>128</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>100</width>
+			</TextBox>
+			<Label name="datelabel">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Date:</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>65</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>datelabel</name>
+				<noPrefix>false</noPrefix>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>226</parentBottomOffset>
+				<parentRightOffset>147</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>10</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>109</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>27</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<TextBox name="payeetextBox">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>0</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>65</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>payeetextBox</name>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>151</parentBottomOffset>
+				<parentRightOffset>74</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>false</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>9</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>175</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>100</width>
+			</TextBox>
+			<Label name="payeeLabel">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Payee:</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>65</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>payeeLabel</name>
+				<noPrefix>false</noPrefix>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>179</parentBottomOffset>
+				<parentRightOffset>140</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>8</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>156</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>34</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<TextBox name="amountTextBox">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>0</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>65</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>amountTextBox</name>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>245</parentBottomOffset>
+				<parentRightOffset>74</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>false</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>7</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>81</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>100</width>
+			</TextBox>
+			<Label name="amountLabel">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Amount:</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>65</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>amountLabel</name>
+				<noPrefix>false</noPrefix>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>273</parentBottomOffset>
+				<parentRightOffset>133</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>6</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>62</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>41</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<TextBox name="accounTextBox">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>0</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>65</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>accounTextBox</name>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>292</parentBottomOffset>
+				<parentRightOffset>74</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>false</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>5</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>34</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>100</width>
+			</TextBox>
+			<Label name="accountLabel">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Account:</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>65</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>accountLabel</name>
+				<noPrefix>false</noPrefix>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>320</parentBottomOffset>
+				<parentRightOffset>131</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>4</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>15</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>43</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<GroupBox name="typeGroupBox">
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<caption/>
+				<clipControls>true</clipControls>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<height>61</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>65</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>typeGroupBox</name>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>84</parentBottomOffset>
+				<parentRightOffset>66</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>1</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>203</top>
+				<transparent>false</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>108</width>
+			</GroupBox>
+			<OptionButton name="withdrawalRadioBtn">
+				<alignment>0</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Withdrawal</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<height>17</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>7</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>withdrawalRadioBtn</name>
+				<parent name="typeGroupBox" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>8</parentBottomOffset>
+				<parentRightOffset>29</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>3</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>36</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<width>72</width>
+			</OptionButton>
+			<OptionButton name="depositRadioBtn">
+				<alignment>0</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Deposit</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="NewTransaction" />
+				<height>17</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>7</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>depositRadioBtn</name>
+				<parent name="typeGroupBox" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>31</parentBottomOffset>
+				<parentRightOffset>47</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>2</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>13</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<width>54</width>
+			</OptionButton>
+		</controlList>
+		<menuList>
 		</menuList>
 	</Form>
 </schema>
