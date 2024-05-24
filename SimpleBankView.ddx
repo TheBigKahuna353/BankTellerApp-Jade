@@ -349,14 +349,14 @@
 		<menuList>
 		</menuList>
 	</Form>
-	<Form locale="5129" name="Accounts">
+	<Form locale="5129" name="AccountsAndTransactions">
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
 		<backColor>-2147483633</backColor>
 		<borderStyle>2</borderStyle>
 		<bubbleHelp/>
-		<caption>Accounts</caption>
+		<caption>Accounts &amp; Transactions</caption>
 		<clientHeight>784</clientHeight>
 		<clientWidth>407</clientWidth>
 		<clipControls>true</clipControls>
@@ -381,7 +381,7 @@
 		<minimumWidth>0</minimumWidth>
 		<mouseCursor/>
 		<mousePointer>0</mousePointer>
-		<name>Accounts</name>
+		<name>AccountsAndTransactions</name>
 		<paintedDialogBaseUnits>1048584</paintedDialogBaseUnits>
 		<printerForm>false</printerForm>
 		<scaleForm>true</scaleForm>
@@ -399,7 +399,7 @@
 		<tag/>
 		<top>94</top>
 		<userScript/>
-		<visible>true</visible>
+		<visible>false</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
 		<webBrowserAutoRefreshURL/>
 		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
@@ -433,7 +433,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483630</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>28</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -443,7 +443,7 @@
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>btnXML</name>
-				<parent name="Accounts" />
+				<parent name="AccountsAndTransactions" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>487</parentBottomOffset>
 				<parentRightOffset>32</parentRightOffset>
@@ -491,7 +491,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>122</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -501,7 +501,7 @@
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>groupBox3</name>
-				<parent name="Accounts" />
+				<parent name="AccountsAndTransactions" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>271</parentBottomOffset>
 				<parentRightOffset>20</parentRightOffset>
@@ -545,7 +545,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<hasPictures>false</hasPictures>
 				<hasPlusMinus>false</hasPlusMinus>
 				<hasTreeLines>false</hasTreeLines>
@@ -561,7 +561,7 @@
 				<multiSelect>0</multiSelect>
 				<name>listTransactions</name>
 				<nameSeparator>\</nameSeparator>
-				<parent name="Accounts" />
+				<parent name="AccountsAndTransactions" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>21</parentBottomOffset>
 				<parentRightOffset>20</parentRightOffset>
@@ -613,7 +613,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>119</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -623,7 +623,7 @@
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>grpBoxAccCreate</name>
-				<parent name="Accounts" />
+				<parent name="AccountsAndTransactions" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>400</parentBottomOffset>
 				<parentRightOffset>237</parentRightOffset>
@@ -667,7 +667,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<hasPictures>false</hasPictures>
 				<hasPlusMinus>false</hasPlusMinus>
 				<hasTreeLines>false</hasTreeLines>
@@ -683,7 +683,7 @@
 				<multiSelect>0</multiSelect>
 				<name>listAccounts</name>
 				<nameSeparator>\</nameSeparator>
-				<parent name="Accounts" />
+				<parent name="AccountsAndTransactions" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>532</parentBottomOffset>
 				<parentRightOffset>20</parentRightOffset>
@@ -738,7 +738,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483630</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>28</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -797,7 +797,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<formatOut/>
 				<height>13</height>
 				<helpContextId>0</helpContextId>
@@ -855,7 +855,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<formatOut/>
 				<height>13</height>
 				<helpContextId>0</helpContextId>
@@ -915,7 +915,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483630</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>28</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -976,7 +976,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483630</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>28</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -1035,7 +1035,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>17</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -1090,7 +1090,7 @@
 				<fontStrikethru>false</fontStrikethru>
 				<fontUnderline>false</fontUnderline>
 				<foreColor>-2147483640</foreColor>
-				<form name="Accounts" />
+				<form name="AccountsAndTransactions" />
 				<height>17</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
@@ -3052,7 +3052,7 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>780</left>
+		<left>320</left>
 		<maxButton>true</maxButton>
 		<mdiChild>0</mdiChild>
 		<mdiFrame>true</mdiFrame>
@@ -3078,7 +3078,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>243</top>
+		<top>299</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
@@ -3282,6 +3282,31 @@
 				<helpList>false</helpList>
 				<level>2</level>
 				<name>mnuNewTransaction</name>
+				<picture/>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<visible>true</visible>
+				<webFileName/>
+				<windowList>false</windowList>
+				<shortCutKey/>
+				<shortCutFlags/>
+			</MenuItem>
+			<MenuItem name="mnuSearchTransactions">
+				<backColor>0</backColor>
+				<caption>&amp;Search</caption>
+				<checked>false</checked>
+				<commandId>0</commandId>
+				<description/>
+				<disableReason/>
+				<enabled>true</enabled>
+				<foreColor>0</foreColor>
+				<form name="MainMenu" />
+				<hasSubMenu>false</hasSubMenu>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<helpList>false</helpList>
+				<level>2</level>
+				<name>mnuSearchTransactions</name>
 				<picture/>
 				<securityLevelEnabled>0</securityLevelEnabled>
 				<securityLevelVisible>0</securityLevelVisible>

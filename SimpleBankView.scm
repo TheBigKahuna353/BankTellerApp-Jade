@@ -10,13 +10,13 @@ typeHeaders
 	GSimpleBankView subclassOf GSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2089;
 	SSimpleBankView subclassOf SSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2090;
 	AccountSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2074;
-	Accounts subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2073;
+	AccountsAndTransactions subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2073;
 	CustomerDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2092;
 	CustomerAdd subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, number = 2186;
 	CustomerEdit subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2059;
 	CustomerList subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2057;
 	CustomerSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2069;
-	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 8, number = 2056;
+	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2056;
 	NewTransaction subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2048;
 membershipDefinitions
 typeDefinitions
@@ -104,9 +104,9 @@ typeDefinitions
 	eventMethodMappings
 		btnSearch_click = click of Button;
 	)
-	Accounts completeDefinition
+	AccountsAndTransactions completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:00:41.646;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:00:04:17.205;
 	referenceDefinitions
 		accountEdit:                   Button  number = 12, ordinal = 13;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:45:52.228;
@@ -243,7 +243,7 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:13:42:47.149;
 	jadeMethodDefinitions
 		btnAccounts_click(btn: Button input) updating, number = 1005;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:28:10.533;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:00:04:17.196;
 		btnEdit_click(btn: Button input) updating, number = 1003;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:26:36.221;
 		gotFocus(cntrl: Control input) updating, number = 1004;
@@ -283,7 +283,7 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:02:01:30:35.017;
 	jadeMethodDefinitions
 		btnAccounts_click(btn: Button input) updating, number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:00:58:12.028;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:00:04:17.196;
 		btnEdit_click(btn: Button input) updating, number = 1004;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:00:38:31.688;
 		click() updating, number = 1001;
@@ -299,7 +299,7 @@ typeDefinitions
 	)
 	MainMenu completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:38:00.624;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:11:30.525;
 	referenceDefinitions
 		mnuAccount:                    MenuItem  number = 6, ordinal = 6;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:34.540;
@@ -315,6 +315,8 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:34.540;
 		mnuSearchAcc:                  MenuItem  number = 5, ordinal = 5;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:01:16:08.354;
+		mnuSearchTransactions:         MenuItem  number = 9, ordinal = 9;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:11:30.525;
 		mnuTransaction:                MenuItem  number = 7, ordinal = 7;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:34.540;
 	jadeMethodDefinitions
@@ -368,7 +370,7 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
 	jadeMethodDefinitions
 		submitButton_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:45:27.484;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:27:36.094;
 	eventMethodMappings
 		submitButton_click = click of Button;
 	)
@@ -518,7 +520,7 @@ vars
 
 	num : Integer;
 	acc : BankAccount;
-	form : Accounts;
+	form : AccountsAndTransactions;
 
 begin
 
@@ -535,7 +537,7 @@ begin
 end;
 }
 	)
-	Accounts (
+	AccountsAndTransactions (
 	jadeMethodSources
 addAccount_click
 {
@@ -790,7 +792,7 @@ btnAccounts_click(btn: Button input) updating;
 
 vars
 	cust: Customer;
-	form: Accounts;
+	form: AccountsAndTransactions;
 begin
 	
 	cust := self.lstCustomers.listObject.Customer;
@@ -880,7 +882,7 @@ vars
 	custName : String;
 	num : Integer;
 	customer : Customer;
-	form : Accounts;
+	form : AccountsAndTransactions;
 
 begin
 
@@ -1092,15 +1094,23 @@ vars
     doubleCheck : Integer;
 	newDepositTransaction : Deposit;
 	newWithdrawalTransaction : Withdrawal; 
+	targetAccount : BankAccount;
 begin
     doubleCheck := app.msgBox("Please confirm transaction details.", "Transaction Confirmation", MsgBox_OK_Cancel);
     if doubleCheck = MsgBox_Return_Cancel then
         return;
     endif;
+	
+	targetAccount := app.ourBank.allBankAccounts.getAtKey(accounTextBox.text.Integer);
+	
 	if depositRadioBtn.value = true then
-	
+		beginTransaction;
+		newDepositTransaction := create Deposit(targetAccount, amountTextBox.text.Decimal, dateTextBox.text.Date, payeetextBox.text);
+		commitTransaction;
 	elseif withdrawalRadioBtn.value then
-	
+		beginTransaction;
+		newWithdrawalTransaction := create Withdrawal(targetAccount, amountTextBox.text.Decimal, dateTextBox.text.Date, payeetextBox.text);
+		commitTransaction;
 	else
 		app.msgBox("Please pick a transaction type", "Transaction error", MsgBox_OK_Only);
 	endif;

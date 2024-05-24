@@ -88,7 +88,7 @@ without inverses and requires manual maintenance.`
 	)
 	BankAccount completeDefinition
 	(
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:19:17.912;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:15:29.215;
 	constantDefinitions
 		Default_Credit_Rating:         Integer = 300 number = 1003;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:49:27.914;
@@ -107,8 +107,6 @@ without inverses and requires manual maintenance.`
 		myCustomer:                    Customer   explicitEmbeddedInverse, number = 2, ordinal = 2;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:53:00.392;
 	jadeMethodDefinitions
-		addTransaction(trans: Transaction) updating, number = 1006;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:46:30.806;
 		canWithdraw(amount: Decimal): Boolean abstract, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:19:36.642;
 		create(cust: Customer) updating, number = 1001;
@@ -295,31 +293,40 @@ without inverses and requires manual maintenance.`
 		myAccount:                     BankAccount   explicitEmbeddedInverse, number = 5, ordinal = 5;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:52:15.530;
 	jadeMethodDefinitions
+		balanceAdjustment() updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:30:06.192;
 		create(
+			account: BankAccount; 
 			amount: Decimal; 
 			date: Date; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:48:13.422;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:31:52.546;
 	)
 	Deposit completeDefinition
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:12:56.017;
 	jadeMethodDefinitions
+		balanceAdjustment() updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:33:11.362;
 		create(
+			account: BankAccount; 
 			amount: Decimal; 
 			date: Date; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:48:42.059;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:22:30.536;
 	)
 	Withdrawal completeDefinition
 	(
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:43:48.158;
 	jadeMethodDefinitions
+		balanceAdjustment() updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:30:34.330;
 		create(
+			account: BankAccount; 
 			amount: Decimal; 
 			date: Date; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:49:01.283;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:22:43.929;
 	)
 	WebSession completeDefinition
 	(
@@ -519,16 +526,6 @@ end;
 	)
 	BankAccount (
 	jadeMethodSources
-addTransaction
-{
-addTransaction(trans: Transaction) updating;
-
-begin
-
-	allTransactions.add(trans);
-
-end;
-}
 canWithdraw
 {
 canWithdraw(amount : Decimal) : Boolean abstract;
@@ -1393,24 +1390,50 @@ end;
 	)
 	Transaction (
 	jadeMethodSources
-create
+balanceAdjustment
 {
-create(amount: Decimal; date: Date; payee: String) updating;
+balanceAdjustment() updating;
+
+vars
 
 begin
 
+end;
+}
+create
+{
+create(account : BankAccount; amount: Decimal; date: Date; payee: String) updating;
+
+begin
+	
+	self.myAccount := account;
 	self.amount := amount;
 	self.date := date;
 	self.payee := payee;
-
+	
+	// Calls Balance adjustment to update the referenced accounts balance when a new transaction is made
+	
+	self.balanceAdjustment();
+	
 end;
 }
 	)
 	Deposit (
 	jadeMethodSources
+balanceAdjustment
+{
+balanceAdjustment() updating;
+
+vars
+
+begin
+	inheritMethod();
+	
+end;
+}
 create
 {
-create(amount: Decimal; date: Date; payee: String) ::super(amount, date, payee) updating;
+create(account : BankAccount; amount: Decimal; date: Date; payee: String) :: super(account, amount, date, payee) updating;
 
 begin
 
@@ -1419,9 +1442,19 @@ end;
 	)
 	Withdrawal (
 	jadeMethodSources
+balanceAdjustment
+{
+balanceAdjustment() updating;
+
+vars
+
+begin
+	inheritMethod();
+end;
+}
 create
 {
-create(amount: Decimal; date: Date; payee: String) ::super(amount, date, payee) updating;
+create(account : BankAccount; amount: Decimal; date: Date; payee: String) :: super(account, amount, date, payee) updating;
 
 vars
 
