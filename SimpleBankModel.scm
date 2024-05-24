@@ -22,12 +22,12 @@ typeHeaders
 	XMLHandler subclassOf Object number = 2071;
 	BankAccountByNumberDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2184;
 	CustomerByLastNameDict subclassOf MemberKeyDictionary duplicatesAllowed, loadFactor = 66, number = 2087;
-	TransactionsByDate subclassOf MemberKeyDictionary loadFactor = 66, number = 2068;
+	TransactionsByNumber subclassOf MemberKeyDictionary loadFactor = 66, number = 2068;
 	PrimTypeSet subclassOf Set loadFactor = 66, transient, number = 2180;
 membershipDefinitions
 	BankAccountByNumberDict of BankAccount;
 	CustomerByLastNameDict of Customer;
-	TransactionsByDate of Transaction;
+	TransactionsByNumber of Transaction;
 	PrimTypeSet of PrimType;
 typeDefinitions
 	Object completeDefinition
@@ -102,7 +102,7 @@ without inverses and requires manual maintenance.`
 		balance:                       Decimal[12,2] protected, number = 3, ordinal = 3;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:34.509;
 	referenceDefinitions
-		allTransactions:               TransactionsByDate   explicitInverse, subId = 1, number = 4, ordinal = 4;
+		allTransactions:               TransactionsByNumber   explicitInverse, subId = 1, number = 4, ordinal = 4;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:52:15.533;
 		myCustomer:                    Customer   explicitEmbeddedInverse, number = 2, ordinal = 2;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:53:00.392;
@@ -115,6 +115,8 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:42.898;
 		getBalance(): Decimal number = 1004;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:22:44.932;
+		setBalance(amount: Decimal) updating, number = 1006;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:44:53.089;
 		withdraw(amount: Decimal) updating, number = 1005;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:24:09.884;
 	)
@@ -293,21 +295,21 @@ without inverses and requires manual maintenance.`
 		myAccount:                     BankAccount   explicitEmbeddedInverse, number = 5, ordinal = 5;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:52:15.530;
 	jadeMethodDefinitions
-		balanceAdjustment() updating, number = 1002;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:30:06.192;
+		balanceAdjustment(adjustmentAmount: Decimal) updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:45:09.038;
 		create(
 			account: BankAccount; 
 			amount: Decimal; 
 			date: Date; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:31:52.546;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:54:34.766;
 	)
 	Deposit completeDefinition
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:12:56.017;
 	jadeMethodDefinitions
-		balanceAdjustment() updating, number = 1002;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:33:11.362;
+		balanceAdjustment(adjustmentAmount: Decimal) updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:31:43.137;
 		create(
 			account: BankAccount; 
 			amount: Decimal; 
@@ -319,8 +321,8 @@ without inverses and requires manual maintenance.`
 	(
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:43:48.158;
 	jadeMethodDefinitions
-		balanceAdjustment() updating, number = 1002;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:30:34.330;
+		balanceAdjustment(adjustmentAmount: Decimal) updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:34:04.633;
 		create(
 			account: BankAccount; 
 			amount: Decimal; 
@@ -386,9 +388,9 @@ without inverses and requires manual maintenance.`
 	(
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:13:14:14:12.156;
 	)
-	TransactionsByDate completeDefinition
+	TransactionsByNumber completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:22:05.427;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:51:42.637;
 	)
 	Set completeDefinition
 	(
@@ -412,9 +414,9 @@ memberKeyDefinitions
 	(
 		lastName;
 	)
-	TransactionsByDate completeDefinition
+	TransactionsByNumber completeDefinition
 	(
-		date;
+		number;
 	)
 inverseDefinitions
 	allTransactions of BankAccount automatic parentOf myAccount of Transaction manual;
@@ -448,7 +450,7 @@ databaseDefinitions
 		SavingsAccount in "simplebankaccount";
 		SimpleBankModel in "_usergui";
 		Transaction in "simplebankmodel";
-		TransactionsByDate in "simplebankmodel";
+		TransactionsByNumber in "simplebankmodel";
 		Withdrawal in "simplebankmodel";
 		XMLHandler in "simplebankmodel";
 	)
@@ -563,6 +565,16 @@ vars
 begin
 	return self.balance;
 
+end;
+}
+setBalance
+{
+setBalance(amount : Decimal) updating;
+
+vars
+	
+begin
+	self.balance := amount;
 end;
 }
 withdraw
@@ -1392,12 +1404,13 @@ end;
 	jadeMethodSources
 balanceAdjustment
 {
-balanceAdjustment() updating;
+balanceAdjustment(adjustmentAmount : Decimal) updating;
 
 vars
-
+	temp : Decimal[12,3];
 begin
-
+	temp := self.myAccount.getBalance();
+	self.myAccount.setBalance(temp + adjustmentAmount);
 end;
 }
 create
@@ -1410,10 +1423,11 @@ begin
 	self.amount := amount;
 	self.date := date;
 	self.payee := payee;
+	self.number := app.ourBank.nextTransactionNumber();
 	
 	// Calls Balance adjustment to update the referenced accounts balance when a new transaction is made
 	
-	self.balanceAdjustment();
+	self.balanceAdjustment(amount);
 	
 end;
 }
@@ -1422,12 +1436,12 @@ end;
 	jadeMethodSources
 balanceAdjustment
 {
-balanceAdjustment() updating;
+balanceAdjustment(adjustmentAmount : Decimal) updating;
 
 vars
 
 begin
-	inheritMethod();
+	inheritMethod(adjustmentAmount);
 	
 end;
 }
@@ -1444,12 +1458,13 @@ end;
 	jadeMethodSources
 balanceAdjustment
 {
-balanceAdjustment() updating;
+balanceAdjustment(adjustmentAmount : Decimal) updating;
 
 vars
-
+	modifiedAmount : Decimal[12,3];
 begin
-	inheritMethod();
+	modifiedAmount := adjustmentAmount * -1;
+	inheritMethod(modifiedAmount);
 end;
 }
 create
