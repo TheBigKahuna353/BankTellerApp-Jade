@@ -8,25 +8,28 @@ localeDefinitions
 typeHeaders
 	SimpleBankModel subclassOf RootSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2052;
 	Bank subclassOf Object highestSubId = 2, highestOrdinal = 6, number = 2058;
-	BankAccount subclassOf Object abstract, highestSubId = 1, highestOrdinal = 4, number = 2179;
+	BankAccount subclassOf Object abstract, highestSubId = 1, highestOrdinal = 5, number = 2179;
 	CurrentAccount subclassOf BankAccount highestOrdinal = 1, number = 2183;
 	SavingsAccount subclassOf BankAccount highestOrdinal = 1, number = 2185;
 	Customer subclassOf Object highestSubId = 1, highestOrdinal = 10, number = 2054;
 	MissingPropertyException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2072;
 	GSimpleBankModel subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2053;
 	AccountXMLParser subclassOf JadeXMLParser transient, transientAllowed, subclassTransientAllowed, number = 2080;
-	Transaction subclassOf Object abstract, highestOrdinal = 6, number = 2060;
+	Transaction subclassOf Object abstract, highestOrdinal = 7, number = 2060;
 	Deposit subclassOf Transaction number = 2061;
-	Withdrawal subclassOf Transaction number = 2064;
+	Payment subclassOf Transaction number = 2064;
+	Withdrawal subclassOf Transaction number = 2075;
 	SSimpleBankModel subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2055;
 	XMLHandler subclassOf Object number = 2071;
 	BankAccountByNumberDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2184;
 	CustomerByLastNameDict subclassOf MemberKeyDictionary duplicatesAllowed, loadFactor = 66, number = 2087;
-	TransactionsByNumber subclassOf MemberKeyDictionary loadFactor = 66, number = 2068;
+	TransactionsByDate subclassOf MemberKeyDictionary loadFactor = 66, number = 2068;
+	TransactionsByNumber subclassOf MemberKeyDictionary loadFactor = 66, number = 2070;
 	PrimTypeSet subclassOf Set loadFactor = 66, transient, number = 2180;
 membershipDefinitions
 	BankAccountByNumberDict of BankAccount;
 	CustomerByLastNameDict of Customer;
+	TransactionsByDate of Transaction;
 	TransactionsByNumber of Transaction;
 	PrimTypeSet of PrimType;
 typeDefinitions
@@ -78,7 +81,9 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:28:54.548;
 	jadeMethodDefinitions
 		create() updating, number = 1003;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:52:20.983;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:16:23:50.010;
+		getAllTransactions(): MergeIterator number = 1005;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:17:08:32.305;
 		nextAccountNumber(): Integer updating, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:55:24.978;
 		nextCustomerNumber(): Integer updating, number = 1001;
@@ -88,7 +93,7 @@ without inverses and requires manual maintenance.`
 	)
 	BankAccount completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:15:29.215;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:15:43:37.096;
 	constantDefinitions
 		Default_Credit_Rating:         Integer = 300 number = 1003;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:49:27.914;
@@ -101,12 +106,16 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:19:44.756;
 		balance:                       Decimal[12,2] protected, number = 3, ordinal = 3;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:34.509;
+		openingBalance:                Decimal[12] protected, number = 5, ordinal = 5;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:03:48.631;
 	referenceDefinitions
 		allTransactions:               TransactionsByNumber   explicitInverse, subId = 1, number = 4, ordinal = 4;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:52:15.533;
 		myCustomer:                    Customer   explicitEmbeddedInverse, number = 2, ordinal = 2;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:53:00.392;
 	jadeMethodDefinitions
+		adjustBalances() updating, number = 1006;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:45.757;
 		canWithdraw(amount: Decimal): Boolean abstract, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:19:36.642;
 		create(cust: Customer) updating, number = 1001;
@@ -115,8 +124,10 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:42.898;
 		getBalance(): Decimal number = 1004;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:22:44.932;
-		setBalance(amount: Decimal) updating, number = 1006;
+		setBalance(amount: Decimal) updating, number = 1007;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:44:53.089;
+		setOpeningBalance(balance: Decimal) updating, number = 1008;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:11:03.126;
 		withdraw(amount: Decimal) updating, number = 1005;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:24:09.884;
 	)
@@ -239,7 +250,9 @@ without inverses and requires manual maintenance.`
 		runXMLParser() number = 1024;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:21:44:03.096;
 		saveTransaction() number = 1019;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:21:48:21.019;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:16:25:32.954;
+		testAllTransactions() number = 1025;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:17:07:46.830;
 		testAutomatedInverseAssignment() updating, number = 1010;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:01:04:52.373;
 		testClass() number = 1017;
@@ -281,54 +294,73 @@ without inverses and requires manual maintenance.`
 	)
 	Transaction completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:49:33.334;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:04:36.093;
 	attributeDefinitions
+		accBalance:                    Decimal[12] protected, number = 3, ordinal = 7;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:05:07.575;
 		amount:                        Decimal[12,2] protected, number = 4, ordinal = 4;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:13:22.339;
 		date:                          Date protected, number = 1, ordinal = 1;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:08:29.257;
-		number:                        Integer protected, number = 6, ordinal = 6;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:35:15.222;
+		number:                        Integer readonly, number = 6, ordinal = 6;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:16:11:17.898;
 		payee:                         String[31] protected, number = 2, ordinal = 2;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:11:22.485;
 	referenceDefinitions
 		myAccount:                     BankAccount   explicitEmbeddedInverse, number = 5, ordinal = 5;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:52:15.530;
 	jadeMethodDefinitions
-		balanceAdjustment(adjustmentAmount: Decimal) updating, number = 1002;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:45:09.038;
 		create(
 			account: BankAccount; 
 			amount: Decimal; 
 			date: Date; 
 			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:54:34.766;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:09:01.396;
+		getAmount(): Decimal number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:06:05.304;
+		getBalanceChange(): Decimal abstract, number = 1004;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:14:41.877;
+		setBalance(amount: Decimal) updating, number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:07:10.499;
 	)
 	Deposit completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:12:56.017;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:13:41.250;
 	jadeMethodDefinitions
-		balanceAdjustment(adjustmentAmount: Decimal) updating, number = 1002;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:31:43.137;
 		create(
 			account: BankAccount; 
 			amount: Decimal; 
 			date: Date; 
 			payee: String) updating, number = 1001;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:22:30.536;
+		getBalanceChange(): Decimal number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:14:22.701;
+	)
+	Payment completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:15:50.480;
+	jadeMethodDefinitions
+		create(
+			account: BankAccount; 
+			amount: Decimal; 
+			date: Date; 
+			payee: String) updating, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:15:40:36.882;
+		getBalanceChange(): Decimal number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:10.989;
 	)
 	Withdrawal completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:43:48.158;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:17.376;
 	jadeMethodDefinitions
-		balanceAdjustment(adjustmentAmount: Decimal) updating, number = 1002;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:34:04.633;
 		create(
 			account: BankAccount; 
 			amount: Decimal; 
 			date: Date; 
 			payee: String) updating, number = 1001;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:22:43.929;
+		getBalanceChange(): Decimal number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:35.325;
 	)
 	WebSession completeDefinition
 	(
@@ -360,7 +392,7 @@ without inverses and requires manual maintenance.`
 			root: JadeXMLElement io) number = 1005;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:13:29.859;
 		importTransactions(xml: JadeXMLDocument) number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:43:48.158;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:18:31.994;
 		importXMLFile(file: String) number = 1006;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:42:10.866;
 		saveAccount(acc: BankAccount) number = 1003;
@@ -388,6 +420,10 @@ without inverses and requires manual maintenance.`
 	(
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:13:14:14:12.156;
 	)
+	TransactionsByDate completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:13:22:05.427;
+	)
 	TransactionsByNumber completeDefinition
 	(
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:24:15:51:42.637;
@@ -414,6 +450,10 @@ memberKeyDefinitions
 	(
 		lastName;
 	)
+	TransactionsByDate completeDefinition
+	(
+		date;
+	)
 	TransactionsByNumber completeDefinition
 	(
 		number;
@@ -429,9 +469,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 53;
+		"simplebankcustomer" number = 54;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 62;
+		"simplebankmodel" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -445,11 +485,13 @@ databaseDefinitions
 		Deposit in "simplebankmodel";
 		GSimpleBankModel in "simplebankmodel";
 		MissingPropertyException in "simplebankmodel";
+		Payment in "simplebankmodel";
 		PrimTypeSet in "simplebankmodel";
 		SSimpleBankModel in "_environ";
 		SavingsAccount in "simplebankaccount";
 		SimpleBankModel in "_usergui";
 		Transaction in "simplebankmodel";
+		TransactionsByDate in "simplebankmodel";
 		TransactionsByNumber in "simplebankmodel";
 		Withdrawal in "simplebankmodel";
 		XMLHandler in "simplebankmodel";
@@ -488,7 +530,29 @@ vars
 begin
 	self.lastAccountNumber :=  1000000000; // 1,000,000,000 to MaxInteger (2147483647, 2^21 -1).
 	self.lastCustomerNumber := 0;
+	self.lastTransactionNumber := 0;
 
+end;
+}
+getAllTransactions
+{
+getAllTransactions(): MergeIterator;
+
+vars
+	iter : MergeIterator;
+	acc : BankAccount;
+
+begin
+	write self.allBankAccounts.size;
+
+	create iter transient;
+	foreach acc in allBankAccounts do
+		write "adding collection";
+		iter.addCollection(acc.allTransactions);
+	endforeach;
+	
+	return iter;
+		
 end;
 }
 nextAccountNumber
@@ -528,6 +592,26 @@ end;
 	)
 	BankAccount (
 	jadeMethodSources
+adjustBalances
+{
+adjustBalances() updating;
+
+vars
+
+	tran : Transaction;
+	balance : Decimal[12, 2];
+
+begin
+	balance := openingBalance;
+	
+	foreach tran in allTransactions do
+		balance := balance + tran.getBalanceChange();
+		tran.setBalance(balance);
+	endforeach;
+	
+	self.balance := balance;
+end;
+}
 canWithdraw
 {
 canWithdraw(amount : Decimal) : Boolean abstract;
@@ -575,6 +659,18 @@ vars
 	
 begin
 	self.balance := amount;
+end;
+}
+setOpeningBalance
+{
+setOpeningBalance(balance : Decimal) updating;
+
+vars
+
+begin
+
+	self.openingBalance := balance;
+
 end;
 }
 withdraw
@@ -1092,13 +1188,31 @@ begin
 	beginTransaction;
 	cust := create Customer("John", "Madden", "02340234", "123 Fake Street", "Ilam", "chch", 500);
 	acc := create CurrentAccount(cust);
-	tran := create Deposit(500, 500, today, "UC");
-	acc.addTransaction(tran);
+	tran := create Deposit(acc, 500, today, "UC");
 	commitTransaction;
 	
 	create handler transient;
 
 	handler.saveTransaction(tran);
+end;
+}
+testAllTransactions
+{
+testAllTransactions();
+
+vars
+
+	temp: Transaction;
+	iter : MergeIterator;
+
+begin
+
+	app.initialize();
+	iter := app.ourBank.getAllTransactions();
+	write iter.getCollectionCount();
+
+	
+
 end;
 }
 testAutomatedInverseAssignment
@@ -1402,17 +1516,6 @@ end;
 	)
 	Transaction (
 	jadeMethodSources
-balanceAdjustment
-{
-balanceAdjustment(adjustmentAmount : Decimal) updating;
-
-vars
-	temp : Decimal[12,3];
-begin
-	temp := self.myAccount.getBalance();
-	self.myAccount.setBalance(temp + adjustmentAmount);
-end;
-}
 create
 {
 create(account : BankAccount; amount: Decimal; date: Date; payee: String) updating;
@@ -1425,48 +1528,84 @@ begin
 	self.payee := payee;
 	self.number := app.ourBank.nextTransactionNumber();
 	
-	// Calls Balance adjustment to update the referenced accounts balance when a new transaction is made
+	self.myAccount.adjustBalances();
 	
-	self.balanceAdjustment(amount);
-	
+end;
+}
+getAmount
+{
+getAmount(): Decimal;
+
+
+begin
+
+	return amount;
+
+end;
+}
+getBalanceChange
+{
+getBalanceChange() : Decimal abstract;
+}
+setBalance
+{
+setBalance(amount: Decimal) updating;
+
+vars
+
+begin
+
+	self.accBalance := amount;
+
 end;
 }
 	)
 	Deposit (
 	jadeMethodSources
-balanceAdjustment
-{
-balanceAdjustment(adjustmentAmount : Decimal) updating;
-
-vars
-
-begin
-	inheritMethod(adjustmentAmount);
-	
-end;
-}
 create
 {
 create(account : BankAccount; amount: Decimal; date: Date; payee: String) :: super(account, amount, date, payee) updating;
 
 begin
+
+end;
+}
+getBalanceChange
+{
+getBalanceChange() : Decimal;
+
+begin
+
+	return self.amount;
+
+end;
+}
+	)
+	Payment (
+	jadeMethodSources
+create
+{
+create(account : BankAccount; amount: Decimal; date: Date; payee: String) :: super(account, amount, date, payee) updating;
+
+vars
+
+begin
+
+end;
+}
+getBalanceChange
+{
+getBalanceChange(): Decimal;
+
+begin
+
+	return -self.amount;
 
 end;
 }
 	)
 	Withdrawal (
 	jadeMethodSources
-balanceAdjustment
-{
-balanceAdjustment(adjustmentAmount : Decimal) updating;
-
-vars
-	modifiedAmount : Decimal[12,3];
-begin
-	modifiedAmount := adjustmentAmount * -1;
-	inheritMethod(modifiedAmount);
-end;
-}
 create
 {
 create(account : BankAccount; amount: Decimal; date: Date; payee: String) :: super(account, amount, date, payee) updating;
@@ -1474,6 +1613,16 @@ create(account : BankAccount; amount: Decimal; date: Date; payee: String) :: sup
 vars
 
 begin
+
+end;
+}
+getBalanceChange
+{
+getBalanceChange(): Decimal;
+
+begin
+
+	return -amount;
 
 end;
 }
@@ -1583,6 +1732,8 @@ vars
 	bankAcc				: BankAccount;
 	
 	tran				: Transaction;
+	
+	i					: Integer;
 
 begin
 
@@ -1605,6 +1756,7 @@ begin
 	create transactions transient;
 	xml.getElementsByTagName("transaction", transactions);
 	
+	i := 0;
 	foreach elmnt in transactions do
 		payee := elmnt.getElementByTagName("Payee").textData;
 		date := elmnt.getElementByTagName("Date").textData.asDate();
@@ -1612,12 +1764,14 @@ begin
 		temp := elmnt.getElementByTagName("Deposit");
 		if temp <> null then
 			amount := elmnt.getElementByTagName("Deposit").textData.Integer;
-			tran := create Deposit(amount, balance, date, payee);
+			tran := create Deposit(bankAcc, amount, date, payee);
 		else
 			amount := elmnt.getElementByTagName("Payment").textData.Integer;
-			tran := create Withdrawal(amount, balance, date, payee);
+			tran := create Payment(bankAcc, amount, date, payee);
 		endif;
-		bankAcc.addTransaction(tran);
+		if i = 0 then
+			bankAcc.setOpeningBalance(tran.getBalanceChange());
+		endif;
 		write "added Transaction";
 	endforeach;
 	commitTransaction;

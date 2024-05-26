@@ -60,7 +60,7 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>531</left>
+		<left>182</left>
 		<maxButton>true</maxButton>
 		<mdiChild>0</mdiChild>
 		<mdiFrame>false</mdiFrame>
@@ -86,7 +86,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>126</top>
+		<top>183</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
@@ -371,7 +371,7 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>1741</left>
+		<left>627</left>
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
@@ -397,9 +397,9 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>94</top>
+		<top>65</top>
 		<userScript/>
-		<visible>false</visible>
+		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
 		<webBrowserAutoRefreshURL/>
 		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
@@ -890,67 +890,6 @@
 				<width>31</width>
 				<wordWrap>false</wordWrap>
 			</Label>
-			<Button name="accountTransactions">
-				<autoSize>1</autoSize>
-				<backBrush/>
-				<backBrushStyle>0</backBrushStyle>
-				<backColor>-2147483633</backColor>
-				<borderColorSingle>0</borderColorSingle>
-				<borderStyle>0</borderStyle>
-				<bubbleHelp/>
-				<buttonPicture>0</buttonPicture>
-				<cancel>false</cancel>
-				<caption>Account Transactions</caption>
-				<default>false</default>
-				<description/>
-				<disableReason/>
-				<dragCursor/>
-				<enabled>true</enabled>
-				<focusBackColor>0</focusBackColor>
-				<focusForeColor>0</focusForeColor>
-				<fontBold>false</fontBold>
-				<fontItalic>false</fontItalic>
-				<fontName/>
-				<fontSize>8.25</fontSize>
-				<fontStrikethru>false</fontStrikethru>
-				<fontUnderline>false</fontUnderline>
-				<foreColor>-2147483630</foreColor>
-				<form name="AccountsAndTransactions" />
-				<height>28</height>
-				<helpContextId>0</helpContextId>
-				<helpKeyword/>
-				<ignoreSkin>false</ignoreSkin>
-				<index>0</index>
-				<left>236</left>
-				<mouseCursor/>
-				<mousePointer>0</mousePointer>
-				<name>accountTransactions</name>
-				<parent name="groupBox3" />
-				<parentAspect>0</parentAspect>
-				<parentBottomOffset>7</parentBottomOffset>
-				<parentRightOffset>9</parentRightOffset>
-				<picture/>
-				<pictureDisabled/>
-				<pictureDown/>
-				<relativeHeight>false</relativeHeight>
-				<relativeLeft>false</relativeLeft>
-				<relativeTop>false</relativeTop>
-				<relativeWidth>false</relativeWidth>
-				<securityLevelEnabled>0</securityLevelEnabled>
-				<securityLevelVisible>0</securityLevelVisible>
-				<show3D>3</show3D>
-				<skinCategoryName/>
-				<style>0</style>
-				<tabIndex>6</tabIndex>
-				<tabStop>true</tabStop>
-				<tag/>
-				<top>87</top>
-				<userScript/>
-				<value>false</value>
-				<visible>true</visible>
-				<webFileName/>
-				<width>121</width>
-			</Button>
 			<Button name="addAccount">
 				<autoSize>1</autoSize>
 				<backBrush/>
@@ -4117,6 +4056,317 @@
 				<visible>true</visible>
 				<width>54</width>
 			</OptionButton>
+		</controlList>
+		<menuList>
+		</menuList>
+	</Form>
+	<Form locale="5129" name="TransactionSearch">
+		<allowDocking>0</allowDocking>
+		<backBrush/>
+		<backBrushStyle>0</backBrushStyle>
+		<backColor>-2147483633</backColor>
+		<borderStyle>2</borderStyle>
+		<bubbleHelp/>
+		<caption>TransactionSearch</caption>
+		<clientHeight>324</clientHeight>
+		<clientWidth>407</clientWidth>
+		<clipControls>true</clipControls>
+		<controlBox>true</controlBox>
+		<description/>
+		<disableReason/>
+		<dragCursor/>
+		<enabled>true</enabled>
+		<height>363</height>
+		<helpContextId>0</helpContextId>
+		<helpKeyword/>
+		<icon/>
+		<ignoreSkin>false</ignoreSkin>
+		<ignoreSkinAllControls>false</ignoreSkinAllControls>
+		<left>684</left>
+		<maxButton>true</maxButton>
+		<mdiChild>1</mdiChild>
+		<mdiFrame>false</mdiFrame>
+		<mdiPinned>false</mdiPinned>
+		<minButton>true</minButton>
+		<minimumHeight>0</minimumHeight>
+		<minimumWidth>0</minimumWidth>
+		<mouseCursor/>
+		<mousePointer>0</mousePointer>
+		<name>TransactionSearch</name>
+		<paintedDialogBaseUnits>1048584</paintedDialogBaseUnits>
+		<printerForm>false</printerForm>
+		<scaleForm>true</scaleForm>
+		<scrollBars>0</scrollBars>
+		<secureForm>false</secureForm>
+		<securityLevelEnabled>0</securityLevelEnabled>
+		<securityLevelVisible>0</securityLevelVisible>
+		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
+		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
+		<showMdiCloseMenu>false</showMdiCloseMenu>
+		<showMdiDockMenu>false</showMdiDockMenu>
+		<showMdiFloatMenu>false</showMdiFloatMenu>
+		<showMdiPinMenu>false</showMdiPinMenu>
+		<skinCategoryName/>
+		<tag/>
+		<top>184</top>
+		<userScript/>
+		<visible>true</visible>
+		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
+		<webBrowserAutoRefreshURL/>
+		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
+		<webEncodingType/>
+		<webFileName/>
+		<width>423</width>
+		<windowState>0</windowState>
+		<controlList>
+			<Button name="btnSearch">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Search</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="TransactionSearch" />
+				<height>28</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>92</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>btnSearch</name>
+				<parent name="TransactionSearch" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>117</parentBottomOffset>
+				<parentRightOffset>227</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>6</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>179</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>88</width>
+			</Button>
+			<Label name="numberLabel">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>by Number</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName>Tahoma</fontName>
+				<fontSize>11.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="TransactionSearch" />
+				<formatOut/>
+				<height>18</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>78</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>numberLabel</name>
+				<noPrefix>false</noPrefix>
+				<parent name="TransactionSearch" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>227</parentBottomOffset>
+				<parentRightOffset>256</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>3</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>79</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>73</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<TextBox name="txtNumber">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>1</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="TransactionSearch" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>78</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>txtNumber</name>
+				<parent name="TransactionSearch" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>202</parentBottomOffset>
+				<parentRightOffset>219</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>false</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>2</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>100</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>110</width>
+			</TextBox>
+			<Label name="label1">
+				<alignment>6</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Search Transactions</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName>Tahoma</fontName>
+				<fontSize>15.75</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="TransactionSearch" />
+				<formatOut/>
+				<height>25</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>128</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>label1</name>
+				<noPrefix>false</noPrefix>
+				<parent name="TransactionSearch" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>275</parentBottomOffset>
+				<parentRightOffset>91</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>true</relativeLeft>
+				<relativeTop>true</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>1</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>24</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>188</width>
+				<wordWrap>false</wordWrap>
+			</Label>
 		</controlList>
 		<menuList>
 		</menuList>
