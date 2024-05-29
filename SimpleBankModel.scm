@@ -55,6 +55,8 @@ typeDefinitions
 		ourBank:                       Bank  readonly, number = 1, ordinal = 1;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:19:14:04:41.264;
 	jadeMethodDefinitions
+		genericExceptionHandler(exObj: Exception): Integer number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:49:19.766;
 		initialize() updating, number = 1001;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:19:14:04:41.255;
 	)
@@ -210,7 +212,7 @@ without inverses and requires manual maintenance.`
 		create() updating, protected, number = 1001;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:18:15:36.698;
 		logSelf(logFileName: String) number = 1003;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:05:14.728;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:25:56.980;
 		setErrorText() updating, number = 1002;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:11:48:18.702;
 		showDialog(): Boolean number = 1004;
@@ -499,6 +501,37 @@ databaseDefinitions
 typeSources
 	SimpleBankModel (
 	jadeMethodSources
+genericExceptionHandler
+{
+genericExceptionHandler(exObj : Exception): Integer;
+
+vars
+	logFile : File;
+	errorTime : Time;
+	errorDate : Date;
+begin
+	create logFile;
+	
+	// writes the error log file to the bin file of the install directory of Jade typicall the C: drive 
+	logFile.fileName := "errorLog.log";
+	
+	logFile.open;
+	while not logFile.endOfFile do
+		logFile.readLine;
+	endwhile;
+	beginTransaction;
+		logFile.writeLine(errorTime.currentLocaleFormat & ", " & errorDate.display & ", " &	exObj.errorItem);
+	commitTransaction;
+	
+	//displays simplified error message to user
+	app.msgBox(exObj.errorItem, "Error!", MsgBox_OK_Only);
+	
+epilog
+	delete logFile; 
+	return Ex_Abort_Action;
+end;
+
+}
 initialize
 {
 /*
@@ -870,7 +903,7 @@ begin
 		logFile.writeLine(errorTime.currentLocaleFormat & ", " & errorDate.display & ", " &	self.errorItem);
 	commitTransaction;
 epilog
-	delete logFile;
+	delete logFile; 
 end;
 }
 setErrorText

@@ -36,7 +36,7 @@ typeDefinitions
 	)
 	SimpleBankView completeDefinition
 	(
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:13:16:39:52.873;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:42:18.539;
 	)
 	Global completeDefinition
 	(
@@ -379,7 +379,7 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
 	jadeMethodDefinitions
 		submitButton_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:06:02.138;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:49:21.290;
 	eventMethodMappings
 		submitButton_click = click of Button;
 	)
@@ -1165,11 +1165,14 @@ vars
 	
 	dateException : DateInputException;
 begin
+	app.initialize();
+	
     doubleCheck := app.msgBox("Please confirm transaction details.", "Transaction Confirmation", MsgBox_OK_Cancel);
     if doubleCheck = MsgBox_Return_Cancel then
         return;
     endif;
 	
+	on Exception do app.genericExceptionHandler(exception) global;
 	//gets the account for which the transaction is to be associated with
 	targetAccount := app.ourBank.allBankAccounts.getAtKey(accounTextBox.text.Integer);
 	
@@ -1178,9 +1181,9 @@ begin
 	if transactionDate.isValid = false then
 		create dateException;
 		dateException.setErrorText();
-		dateException.logSelf("errorLog.txt");
-		dateException.showDialog;
-		return;
+		raise dateException;
+		//dateException.logSelf("errorLog.txt");
+		//dateException.showDialog;
 	endif;
 	
 	if depositRadioBtn.value = true then
