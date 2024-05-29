@@ -379,7 +379,7 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
 	jadeMethodDefinitions
 		submitButton_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:23:12:27:36.094;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:12:02:59.234;
 	eventMethodMappings
 		submitButton_click = click of Button;
 	)
@@ -408,7 +408,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 55;
+		"simplebankview" number = 56;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
@@ -1161,21 +1161,33 @@ vars
 	newDepositTransaction : Deposit;
 	newWithdrawalTransaction : Withdrawal; 
 	targetAccount : BankAccount;
+	transactionDate: Date;
+	
+	dateException : DateInputException;
 begin
     doubleCheck := app.msgBox("Please confirm transaction details.", "Transaction Confirmation", MsgBox_OK_Cancel);
     if doubleCheck = MsgBox_Return_Cancel then
         return;
     endif;
 	
+	//gets the account for which the transaction is to be associated with
 	targetAccount := app.ourBank.allBankAccounts.getAtKey(accounTextBox.text.Integer);
+	
+	//checks correct date input
+	transactionDate := dateTextBox.text.asDate;
+	if transactionDate.isValid = false then
+		create dateException;
+		dateException.setErrorText();
+		dateException.raise
+	endif;
 	
 	if depositRadioBtn.value = true then
 		beginTransaction;
-		newDepositTransaction := create Deposit(targetAccount, amountTextBox.text.Decimal, dateTextBox.text.Date, payeetextBox.text);
+		newDepositTransaction := create Deposit(targetAccount, amountTextBox.text.Decimal, transactionDate, payeetextBox.text);
 		commitTransaction;
 	elseif withdrawalRadioBtn.value then
 		beginTransaction;
-		newWithdrawalTransaction := create Withdrawal(targetAccount, amountTextBox.text.Decimal, dateTextBox.text.Date, payeetextBox.text);
+		newWithdrawalTransaction := create Withdrawal(targetAccount, amountTextBox.text.Decimal, transactionDate, payeetextBox.text);
 		commitTransaction;
 	else
 		app.msgBox("Please pick a transaction type", "Transaction error", MsgBox_OK_Only);

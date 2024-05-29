@@ -12,6 +12,7 @@ typeHeaders
 	CurrentAccount subclassOf BankAccount highestOrdinal = 1, number = 2183;
 	SavingsAccount subclassOf BankAccount highestOrdinal = 1, number = 2185;
 	Customer subclassOf Object highestSubId = 1, highestOrdinal = 10, number = 2054;
+	DateInputException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2048;
 	MissingPropertyException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2072;
 	GSimpleBankModel subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2053;
 	AccountXMLParser subclassOf JadeXMLParser transient, transientAllowed, subclassTransientAllowed, number = 2080;
@@ -202,6 +203,15 @@ without inverses and requires manual maintenance.`
 	)
 	NormalException completeDefinition
 	(
+	)
+	DateInputException completeDefinition
+	(
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:11:38:25.514;
+	jadeMethodDefinitions
+		create() updating, protected, number = 1001;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:11:47:31.524;
+		setErrorText() updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:11:48:18.702;
 	)
 	MissingPropertyException completeDefinition
 	(
@@ -469,9 +479,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 54;
+		"simplebankcustomer" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 53;
+		"simplebankmodel" number = 62;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -482,6 +492,7 @@ databaseDefinitions
 		CurrentAccount in "simplebankaccount";
 		Customer in "simplebankcustomer";
 		CustomerByLastNameDict in "simplebankcustomer";
+		DateInputException in "simplebankmodel";
 		Deposit in "simplebankmodel";
 		GSimpleBankModel in "simplebankmodel";
 		MissingPropertyException in "simplebankmodel";
@@ -833,6 +844,27 @@ begin
 
 	return self.number;
 
+end;
+}
+	)
+	DateInputException (
+	jadeMethodSources
+create
+{
+create() updating, protected;
+
+begin
+
+	self.errorCode := 6942;
+
+end;
+}
+setErrorText
+{
+setErrorText() updating;
+
+begin
+	self.errorItem := "Incorrect format for date input, please input date as dd/mm/yyyy.";
 end;
 }
 	)
