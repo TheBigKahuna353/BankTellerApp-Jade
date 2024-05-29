@@ -1,10 +1,7 @@
 # TODO
 
-- log errors/handling             big
-- upload xml to server            small
+- upload xml to server (waiting on group bearer token)
 - message that has worked/failed  small
-- parser                          medium
 - report                          big
 - statusLine for errorHandlimg    small
-- network Exception               small
                                                   
