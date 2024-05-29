@@ -1,6 +1,6 @@
-﻿jadeVersionNumber "22.0.01";
+﻿jadeVersionNumber "22.0.03";
 schemaDefinition
-SimpleBankView subschemaOf SimpleBankModel completeDefinition, patchVersioningEnabled = false;
+SimpleBankView subschemaOf SimpleBankModel completeDefinition;
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
@@ -379,7 +379,7 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
 	jadeMethodDefinitions
 		submitButton_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "dmo128" "22.0.01" 2024:05:29:12:51:51.968;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:06:02.138;
 	eventMethodMappings
 		submitButton_click = click of Button;
 	)
@@ -408,7 +408,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 55;
+		"simplebankview" number = 56;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
@@ -1159,7 +1159,7 @@ submitButton_click(btn: Button input) updating;
 vars
     doubleCheck : Integer;
 	newDepositTransaction : Deposit;
-	newWithdrawalTransaction : Withdrawal; 
+	newPaymentTransaction : Payment; 
 	targetAccount : BankAccount;
 	transactionDate: Date;
 	
@@ -1178,8 +1178,9 @@ begin
 	if transactionDate.isValid = false then
 		create dateException;
 		dateException.setErrorText();
-		dateException.continuable := false;
-		raise dateException;
+		dateException.logSelf("errorLog.txt");
+		dateException.showDialog;
+		return;
 	endif;
 	
 	if depositRadioBtn.value = true then
@@ -1188,7 +1189,7 @@ begin
 		commitTransaction;
 	elseif withdrawalRadioBtn.value then
 		beginTransaction;
-		newWithdrawalTransaction := create Withdrawal(targetAccount, amountTextBox.text.Decimal, transactionDate, payeetextBox.text);
+		newPaymentTransaction := create Payment(targetAccount, amountTextBox.text.Decimal, transactionDate, payeetextBox.text);
 		commitTransaction;
 	else
 		app.msgBox("Please pick a transaction type", "Transaction error", MsgBox_OK_Only);

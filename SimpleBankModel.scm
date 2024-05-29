@@ -1,6 +1,6 @@
-﻿jadeVersionNumber "22.0.01";
+﻿jadeVersionNumber "22.0.03";
 schemaDefinition
-SimpleBankModel subschemaOf RootSchema completeDefinition, patchVersioningEnabled = false;
+SimpleBankModel subschemaOf RootSchema completeDefinition;
 	setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.455;
 localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
@@ -208,9 +208,13 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:11:38:25.514;
 	jadeMethodDefinitions
 		create() updating, protected, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:11:47:31.524;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:18:15:36.698;
+		logSelf(logFileName: String) number = 1003;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:05:14.728;
 		setErrorText() updating, number = 1002;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:11:48:18.702;
+		showDialog(): Boolean number = 1004;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:07:03.363;
 	)
 	MissingPropertyException completeDefinition
 	(
@@ -239,7 +243,7 @@ without inverses and requires manual maintenance.`
 		addTransactions() number = 1018;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:01:04:52.373;
 		createCustomersFromFile() number = 1006;
-		setModifiedTimeStamp "dmo128" "22.0.01" 2024:05:29:12:37:19.353;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:18:41:31.158;
 		createTestAccounts() updating, number = 1009;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:58.694;
 		createTestCustomer() updating, number = 1001;
@@ -465,9 +469,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 54;
+		"simplebankcustomer" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 53;
+		"simplebankmodel" number = 62;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -840,8 +844,33 @@ create() updating, protected;
 
 begin
 
-	self.errorCode := 6942;
+	self.errorCode := 69420;
 
+end;
+}
+logSelf
+{
+logSelf(logFileName: String);
+
+vars
+	logFile : File;
+	errorTime : Time;
+	errorDate : Date;
+begin
+	create logFile;
+	
+	// writes the error log file to the bin file of the install directory of Jade typicall the C: drive 
+	logFile.fileName := logFileName;
+	
+	logFile.open;
+	while not logFile.endOfFile do
+		logFile.readLine;
+	endwhile;
+	beginTransaction;
+		logFile.writeLine(errorTime.currentLocaleFormat & ", " & errorDate.display & ", " &	self.errorItem);
+	commitTransaction;
+epilog
+	delete logFile;
 end;
 }
 setErrorText
@@ -850,6 +879,17 @@ setErrorText() updating;
 
 begin
 	self.errorItem := "Incorrect format for date input, please input date as dd/mm/yyyy.";
+end;
+}
+showDialog
+{
+showDialog(): Boolean;
+
+vars
+
+begin
+	app.msgBox("Please input a Date in the format DD/MM/YYYY.","Incorrect Input",MsgBox_OK_Only);
+	return true;
 end;
 }
 	)
@@ -934,7 +974,7 @@ begin
 	
 	// Prepare the input file for reading the data
 	create inputFile transient;
-	inputFile.fileName := "C:\Users\dmo128\OneDrive - University of Canterbury\Semester 1 2024\Info213\BankTellerApp-Jade\chch_customers.txt";
+	inputFile.fileName := "C:\Users\dkmor\OneDrive - University of Canterbury\Semester 1 2024\Info213\BankTellerApp-Jade\chch_customers.txt";
 	
 	//This line prevents a specific error message which only some of you may experience.
 	inputFile.kind := File.Kind_Unknown_Text;
