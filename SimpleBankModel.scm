@@ -12,8 +12,9 @@ typeHeaders
 	CurrentAccount subclassOf BankAccount highestOrdinal = 1, number = 2183;
 	SavingsAccount subclassOf BankAccount highestOrdinal = 1, number = 2185;
 	Customer subclassOf Object highestSubId = 1, highestOrdinal = 10, number = 2054;
-	DateInputException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2048;
+	DateInputException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2073;
 	MissingPropertyException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2072;
+	NetworkException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2078;
 	GSimpleBankModel subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2053;
 	AccountXMLParser subclassOf JadeXMLParser transient, transientAllowed, subclassTransientAllowed, number = 2080;
 	Transaction subclassOf Object abstract, highestOrdinal = 7, number = 2060;
@@ -229,6 +230,15 @@ without inverses and requires manual maintenance.`
 			class: Object) updating, number = 1002;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:01:47.999;
 	)
+	NetworkException completeDefinition
+	(
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:32:18.511;
+	jadeMethodDefinitions
+		create() updating, protected, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:33:01.851;
+		setErrortext(code: String) updating, number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:37:42.686;
+	)
 	Global completeDefinition
 	(
 	)
@@ -398,9 +408,11 @@ without inverses and requires manual maintenance.`
 		importXMLFile(file: String) number = 1006;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:42:10.866;
 		saveAccount(acc: BankAccount) number = 1003;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:21:24:58.469;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:40:05.812;
 		saveTransaction(tran: Transaction) number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:34:33.292;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:40:11.376;
+		sendXML(xml: JadeXMLDocument) number = 1007;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:42:23.908;
 	)
 	Collection completeDefinition
 	(
@@ -471,9 +483,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 53;
+		"simplebankcustomer" number = 54;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 62;
+		"simplebankmodel" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -488,6 +500,7 @@ databaseDefinitions
 		Deposit in "simplebankmodel";
 		GSimpleBankModel in "simplebankmodel";
 		MissingPropertyException in "simplebankmodel";
+		NetworkException in "simplebankmodel";
 		Payment in "simplebankmodel";
 		PrimTypeSet in "simplebankmodel";
 		SSimpleBankModel in "_environ";
@@ -945,6 +958,31 @@ setErrorText(property: String; class: Object) updating;
 begin
 
 	self.errorItem := "Property: '" & property & "' on Object: " & class.String & " does not exist";
+
+end;
+}
+	)
+	NetworkException (
+	jadeMethodSources
+create
+{
+create() updating, protected;
+
+
+begin
+
+	self.errorCode := 6996;
+
+end;
+}
+setErrortext
+{
+setErrortext(code: String) updating;
+
+
+begin
+
+	self.errorItem := "Network request responded with code: " & code;
 
 end;
 }
@@ -1922,7 +1960,7 @@ begin
 		self.addTransaction(tran, transaction);
 	endforeach;
 		
-	xml.writeToFile(app.CWDJordan & "XML files\output.xml");
+	sendXML(xml);
 		
 	
 	write "successfully exported to XML";
@@ -1980,9 +2018,66 @@ begin
 	
 	self.addTransaction(tran, transaction);
 	
-	xml.writeToFile("C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\output.xml");
+	sendXML(xml);
 	
 	write "successfully exported to XML";
+end;
+}
+sendXML
+{
+sendXML(xml: JadeXMLDocument);
+
+/*
+	This is a quick and dirty prototype to demonstrate how to build and send an example/test XML file 
+	in the body of a request to a REST API intended for XML file validation.
+*/
+constants
+	FileLocation = app.CWDJordan & "XML Files/"; // This where the example XML file is located. 
+	FileName = "account-statement.0.short.xml"; // This is the name of the XML file.
+	End_Point = "http://c141kn.canterbury.ac.nz/sbmxmlv/"; // This is where we are sending those files. 
+	Path = "uploadxml"; // This is the name of the service.
+	BearerToken = "{group bearer token}"; // This should be your group bearer token. 
+	DataName = "data";
+	ContentType="application/xml";
+vars
+	file: File;
+	client: JadeRestClient;
+	request: JadeRestRequest;
+	response: JadeRestResponse;
+	exec : NetworkException;
+begin
+	create file transient;
+	file.fileName := FileLocation & FileName;
+	file.kind := File.Kind_ANSI;
+	client := create JadeRestClient(End_Point) transient; 
+	request := create JadeRestRequest (Path) transient;
+	request.addBearerToken (BearerToken);
+	request.dataFormat := JadeRestRequest.DataFormat_MultipartFormData;
+	
+	/* This example uses an actual XML file saved on disk. However, when this example is adapted 
+	* or integrated into the application, it is not necessary to generate/save XML files on disk.
+	* Instead of the redundant step of file generation, an XML document created/generated in
+	* memory can be converted to string representation (serialised) and then passed as the last
+	* argument to the following method call, thus avoiding writing/reading XML data on disk. */
+	
+	// TODO change from file to XMLDoc
+	
+	request.addMultipartFormData(DataName, FileName, ContentType, xml.String);
+	create response transient;
+	client.post(request, response);
+	if response.statusCode = 0 or response.statusCode >= 300 then
+		create exec transient;
+		exec.setErrortext(response.String);
+		raise exec;
+	else 
+		write "Request posted to " & response.url & " returned status " &
+			response.statusCode.String & " and this data [" & response.data & "].";
+	endif;
+epilog
+	delete client;
+	delete response;
+	delete request;
+
 end;
 }
 	)

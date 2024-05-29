@@ -408,7 +408,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 56;
+		"simplebankview" number = 55;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
