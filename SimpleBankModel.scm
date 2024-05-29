@@ -1,6 +1,6 @@
-﻿jadeVersionNumber "22.0.03";
+﻿jadeVersionNumber "22.0.01";
 schemaDefinition
-SimpleBankModel subschemaOf RootSchema completeDefinition;
+SimpleBankModel subschemaOf RootSchema completeDefinition, patchVersioningEnabled = false;
 	setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.455;
 localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
@@ -19,7 +19,6 @@ typeHeaders
 	Transaction subclassOf Object abstract, highestOrdinal = 7, number = 2060;
 	Deposit subclassOf Transaction number = 2061;
 	Payment subclassOf Transaction number = 2064;
-	Withdrawal subclassOf Transaction number = 2075;
 	SSimpleBankModel subclassOf RootSchemaSession transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2055;
 	XMLHandler subclassOf Object number = 2071;
 	BankAccountByNumberDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2184;
@@ -240,7 +239,7 @@ without inverses and requires manual maintenance.`
 		addTransactions() number = 1018;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:01:04:52.373;
 		createCustomersFromFile() number = 1006;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:16:48:00.029;
+		setModifiedTimeStamp "dmo128" "22.0.01" 2024:05:29:12:37:19.353;
 		createTestAccounts() updating, number = 1009;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:58.694;
 		createTestCustomer() updating, number = 1001;
@@ -359,19 +358,6 @@ without inverses and requires manual maintenance.`
 		getBalanceChange(): Decimal number = 1002;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:10.989;
 	)
-	Withdrawal completeDefinition
-	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:17.376;
-	jadeMethodDefinitions
-		create(
-			account: BankAccount; 
-			amount: Decimal; 
-			date: Date; 
-			payee: String) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:22:43.929;
-		getBalanceChange(): Decimal number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:35.325;
-	)
 	WebSession completeDefinition
 	(
 	)
@@ -479,9 +465,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 53;
+		"simplebankcustomer" number = 54;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 62;
+		"simplebankmodel" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -504,7 +490,6 @@ databaseDefinitions
 		Transaction in "simplebankmodel";
 		TransactionsByDate in "simplebankmodel";
 		TransactionsByNumber in "simplebankmodel";
-		Withdrawal in "simplebankmodel";
 		XMLHandler in "simplebankmodel";
 	)
 typeSources
@@ -949,7 +934,7 @@ begin
 	
 	// Prepare the input file for reading the data
 	create inputFile transient;
-	inputFile.fileName := "C:\Users\dkmor\OneDrive - University of Canterbury\Semester 1 2024\Info213\BankTellerApp-Jade\chch_customers.txt";
+	inputFile.fileName := "C:\Users\dmo128\OneDrive - University of Canterbury\Semester 1 2024\Info213\BankTellerApp-Jade\chch_customers.txt";
 	
 	//This line prevents a specific error message which only some of you may experience.
 	inputFile.kind := File.Kind_Unknown_Text;
@@ -1632,29 +1617,6 @@ getBalanceChange(): Decimal;
 begin
 
 	return -self.amount;
-
-end;
-}
-	)
-	Withdrawal (
-	jadeMethodSources
-create
-{
-create(account : BankAccount; amount: Decimal; date: Date; payee: String) :: super(account, amount, date, payee) updating;
-
-vars
-
-begin
-
-end;
-}
-getBalanceChange
-{
-getBalanceChange(): Decimal;
-
-begin
-
-	return -amount;
 
 end;
 }

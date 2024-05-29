@@ -1,6 +1,6 @@
-﻿jadeVersionNumber "22.0.03";
+﻿jadeVersionNumber "22.0.01";
 schemaDefinition
-SimpleBankView subschemaOf SimpleBankModel completeDefinition;
+SimpleBankView subschemaOf SimpleBankModel completeDefinition, patchVersioningEnabled = false;
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
@@ -379,7 +379,7 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
 	jadeMethodDefinitions
 		submitButton_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:12:02:59.234;
+		setModifiedTimeStamp "dmo128" "22.0.01" 2024:05:29:12:51:51.968;
 	eventMethodMappings
 		submitButton_click = click of Button;
 	)
@@ -408,7 +408,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 56;
+		"simplebankview" number = 55;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
@@ -1178,7 +1178,8 @@ begin
 	if transactionDate.isValid = false then
 		create dateException;
 		dateException.setErrorText();
-		dateException.raise
+		dateException.continuable := false;
+		raise dateException;
 	endif;
 	
 	if depositRadioBtn.value = true then

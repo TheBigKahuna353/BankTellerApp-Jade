@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<schema name="SimpleBankView" JadeVersionNumber="22.0.03" JadePatchNumber="0" CompleteDefinition="true">
+<schema name="SimpleBankView" JadeVersionNumber="22.0.01" JadePatchNumber="0" CompleteDefinition="true">
 	<Application name="SimpleBankMDI">
 		<__overridePatchNumber>0</__overridePatchNumber>
 		<__patchControlString/>
