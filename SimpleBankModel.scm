@@ -57,9 +57,9 @@ typeDefinitions
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:19:14:04:41.264;
 	jadeMethodDefinitions
 		genericExceptionHandler(exObj: Exception): Integer number = 1002;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:49:19.766;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:16:22.073;
 		initialize() updating, number = 1001;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:19:14:04:41.255;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:31:02.234;
 	)
 	Bank completeDefinition
 	(
@@ -237,7 +237,7 @@ without inverses and requires manual maintenance.`
 		create() updating, protected, number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:33:01.851;
 		setErrortext(code: String) updating, number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:37:42.686;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:34:35.395;
 	)
 	Global completeDefinition
 	(
@@ -284,8 +284,12 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:23:32:31.850;
 		testExcpetions() number = 1020;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:01:08.161;
+		testFileOpen() number = 1026;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:19:37.709;
 		testRESTReq() number = 1023;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:19:00:20:16.897;
+		testXMLParser() number = 1027;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:21:14:51.114;
 		workingDecimalType() number = 1003;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:11:12:50:24.635;
 		workingWithDatesAndTimes() number = 1005;
@@ -301,10 +305,8 @@ without inverses and requires manual maintenance.`
 	)
 	AccountXMLParser completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:21:39:58.658;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:21:25:48.051;
 	jadeMethodDefinitions
-		characters(text: String) updating, protected, number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:21:40:49.604;
 		endElement(
 			namespaceURI: String; 
 			localName: String; 
@@ -402,17 +404,17 @@ without inverses and requires manual maintenance.`
 		addTransaction(
 			tran: Transaction; 
 			root: JadeXMLElement io) number = 1005;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:13:29.859;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:21:17:42.873;
 		importTransactions(xml: JadeXMLDocument) number = 1001;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:18:31.994;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:50:30.381;
 		importXMLFile(file: String) number = 1006;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:42:10.866;
 		saveAccount(acc: BankAccount) number = 1003;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:40:05.812;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:50:53.683;
 		saveTransaction(tran: Transaction) number = 1002;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:40:11.376;
 		sendXML(xml: JadeXMLDocument) number = 1007;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:42:23.908;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:33:28.330;
 	)
 	Collection completeDefinition
 	(
@@ -525,6 +527,9 @@ vars
 begin
 	create logFile;
 	
+	// abort transaction in case one was happening
+	abortTransaction;
+	
 	// writes the error log file to the bin file of the install directory of Jade typicall the C: drive 
 	logFile.fileName := "errorLog.log";
 	
@@ -532,9 +537,9 @@ begin
 	while not logFile.endOfFile do
 		logFile.readLine;
 	endwhile;
-	beginTransaction;
-		logFile.writeLine(errorTime.currentLocaleFormat & ", " & errorDate.display & ", " &	exObj.errorItem);
-	commitTransaction;
+	
+	logFile.writeLine(errorTime.currentLocaleFormat & ", " & errorDate.display & ", " &	exObj.errorItem);
+	
 	
 	//displays simplified error message to user
 	app.msgBox(exObj.errorItem, "Error!", MsgBox_OK_Only);
@@ -543,7 +548,6 @@ epilog
 	delete logFile; 
 	return Ex_Abort_Action;
 end;
-
 }
 initialize
 {
@@ -562,6 +566,8 @@ begin
 		create self.ourBank persistent;
 		commitTransaction;
 	endif;
+	
+	on Exception do self.genericExceptionHandler(exception) global;
 end;
 }
 	)
@@ -982,7 +988,7 @@ setErrortext(code: String) updating;
 
 begin
 
-	self.errorItem := "Network request responded with code: " & code;
+	self.errorItem := "Network Error! Response code: " & code;
 
 end;
 }
@@ -1434,6 +1440,23 @@ begin
 	raise exception;
 end;
 }
+testFileOpen
+{
+testFileOpen();
+
+vars
+
+	fileLogo : CMDFileOpen;	
+
+begin
+
+	 create fileLogo;
+    if fileLogo.open = 0 then
+        write fileLogo.fileName;
+    endif;
+
+end;
+}
 testRESTReq
 {
 testRESTReq();
@@ -1480,6 +1503,21 @@ epilog
 	delete client;
 	delete response;
 	delete request;
+
+end;
+}
+testXMLParser
+{
+testXMLParser();
+
+vars
+
+	parser: AccountXMLParser;
+
+begin
+	app.clearWriteWindow();
+	create parser;
+	parser.parseFile("C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\output.xml");
 
 end;
 }
@@ -1587,24 +1625,6 @@ end;
 	)
 	AccountXMLParser (
 	jadeMethodSources
-characters
-{
-characters(text: String) updating, protected;
-
-vars
-	trimmedText : String;
-	
-begin
-	trimmedText := text.trimBlanks();
-	write trimmedText.pos(#"0D", 1); // Non-printable Cr (Carriage return).
-	write trimmedText.pos(#"0D0A", 1); // Non-printable CrLf (Carriage return, line feed).
-	write trimmedText.pos(#"0A", 1); // Non-printable Lf (Line feed).
-	if trimmedText.length > 0 then
-		write "'CHARS (length: " & trimmedText.length.String & ") |" & trimmedText & "|'";
-	endif;
-
-end;
-}
 endElement
 {
 endElement(namespaceURI: String; localName: String; qualifiedName: String) updating, protected;
@@ -1799,7 +1819,7 @@ begin
 	
 	if tran.getName() = "Deposit" then
 		elmt := root.addElement("Deposit");
-		elmt.setText(tran.getPropertyValue("amount").String);
+		elmt.setText(tran.getPropertyValue("amount").Integer.String);
 	else
 		elmt := root.addElement("Payment");
 		elmt.setText(tran.getPropertyValue("amount").String);
@@ -1809,7 +1829,7 @@ begin
 	elmt.setText(tran.getPropertyValue("payee").String);
 	
 	elmt := root.addElement("Balance");
-	elmt.setText(tran.getPropertyValue("balance").String);
+	elmt.setText(tran.getPropertyValue("accBalance").Integer.String);
 end;
 }
 importTransactions
@@ -1877,7 +1897,6 @@ begin
 		if i = 0 then
 			bankAcc.setOpeningBalance(tran.getBalanceChange());
 		endif;
-		write "added Transaction";
 	endforeach;
 	commitTransaction;
 end;
@@ -1962,8 +1981,6 @@ begin
 		
 	sendXML(xml);
 		
-	
-	write "successfully exported to XML";
 end;
 }
 saveTransaction
@@ -2067,7 +2084,7 @@ begin
 	client.post(request, response);
 	if response.statusCode = 0 or response.statusCode >= 300 then
 		create exec transient;
-		exec.setErrortext(response.String);
+		exec.setErrortext(response.statusCode.String);
 		raise exec;
 	else 
 		write "Request posted to " & response.url & " returned status " &

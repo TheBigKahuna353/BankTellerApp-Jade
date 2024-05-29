@@ -16,7 +16,7 @@ typeHeaders
 	CustomerEdit subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2059;
 	CustomerList subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2057;
 	CustomerSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2069;
-	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 9, number = 2056;
+	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2056;
 	NewTransaction subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2076;
 	TransactionSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2079;
 membershipDefinitions
@@ -305,7 +305,7 @@ typeDefinitions
 	)
 	MainMenu completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:11:30.525;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:40:45.321;
 	referenceDefinitions
 		mnuAccount:                    MenuItem  number = 6, ordinal = 6;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:34.540;
@@ -317,6 +317,8 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.520;
 		mnuCustomerSearch:             MenuItem  number = 4, ordinal = 4;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:25:11.521;
+		mnuImport:                     MenuItem  number = 10, ordinal = 10;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:40:45.321;
 		mnuNewTransaction:             MenuItem  number = 8, ordinal = 8;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:34.540;
 		mnuSearchAcc:                  MenuItem  number = 5, ordinal = 5;
@@ -334,6 +336,8 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:31:05.813;
 		mnuCustomerSearch_click(menuItem: MenuItem input) updating, number = 1003;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:26:08.657;
+		mnuImport_click(menuItem: MenuItem input) updating, number = 1008;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:49:00.667;
 		mnuNewTransaction_click(menuItem: MenuItem input) updating, number = 1006;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:38:54.629;
 		mnuSearchAcc_click(menuItem: MenuItem input) updating, number = 1005;
@@ -345,6 +349,7 @@ typeDefinitions
 		mnuAddCustoemr_click = click of MenuItem;
 		mnuCustomerList_click = click of MenuItem;
 		mnuCustomerSearch_click = click of MenuItem;
+		mnuImport_click = click of MenuItem;
 		mnuNewTransaction_click = click of MenuItem;
 		mnuSearchAcc_click = click of MenuItem;
 		mnuSearchTransactions_click = click of MenuItem;
@@ -1106,6 +1111,26 @@ begin
 	
 	create form transient;
 	form.show();
+
+end;
+}
+mnuImport_click
+{
+mnuImport_click(menuItem: MenuItem input) updating;
+
+vars
+
+	fileOpener : CMDFileOpen;	
+	xmlHandler : XMLHandler;
+
+begin
+	create xmlHandler transient;
+	create fileOpener;
+	
+    if fileOpener.open = 0 then
+        xmlHandler.importXMLFile(fileOpener.fileName);
+		app.msgBox("Succesfully imported file.", "Success!", MsgBox_OK_Only);
+    endif;
 
 end;
 }
