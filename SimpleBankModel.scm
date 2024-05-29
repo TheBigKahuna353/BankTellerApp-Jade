@@ -16,7 +16,7 @@ typeHeaders
 	MissingPropertyException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2072;
 	NetworkException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2078;
 	GSimpleBankModel subclassOf RootSchemaGlobal transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2053;
-	AccountXMLParser subclassOf JadeXMLParser transient, transientAllowed, subclassTransientAllowed, number = 2080;
+	AccountXMLParser subclassOf JadeXMLParser transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 18, number = 2080;
 	Transaction subclassOf Object abstract, highestOrdinal = 7, number = 2060;
 	Deposit subclassOf Transaction number = 2061;
 	Payment subclassOf Transaction number = 2064;
@@ -57,7 +57,7 @@ typeDefinitions
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:19:14:04:41.264;
 	jadeMethodDefinitions
 		genericExceptionHandler(exObj: Exception): Integer number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:16:22.073;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:34:24.698;
 		initialize() updating, number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:31:02.234;
 	)
@@ -145,6 +145,8 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:39:12.871;
 		create(cust: Customer) updating, number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:25.714;
+		setOverDraftLimit(limit: Integer) updating, number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:30:00:30:34.850;
 	)
 	SavingsAccount completeDefinition
 	(
@@ -273,7 +275,7 @@ without inverses and requires manual maintenance.`
 		purgeTransactions() number = 1022;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:00:01:13.153;
 		runXMLParser() number = 1024;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:21:44:03.096;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:29:23.378;
 		saveTransaction() number = 1019;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:16:25:32.954;
 		testAllTransactions() number = 1025;
@@ -289,7 +291,7 @@ without inverses and requires manual maintenance.`
 		testRESTReq() number = 1023;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:19:00:20:16.897;
 		testXMLParser() number = 1027;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:21:14:51.114;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:24:54.416;
 		workingDecimalType() number = 1003;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:11:12:50:24.635;
 		workingWithDatesAndTimes() number = 1005;
@@ -305,19 +307,57 @@ without inverses and requires manual maintenance.`
 	)
 	AccountXMLParser completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:21:25:48.051;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:09:51.231;
+	attributeDefinitions
+		amount:                        Integer protected, number = 6, ordinal = 6;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:51:55.789;
+		attribute:                     String[31] protected, number = 17, ordinal = 17;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:00:49.007;
+		balance:                       Integer protected, number = 5, ordinal = 5;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:51:48.121;
+		city:                          String[31] protected, number = 14, ordinal = 14;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:59:13.169;
+		creditScore:                   Integer protected, number = 15, ordinal = 15;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:59:23.157;
+		date:                          Date protected, number = 7, ordinal = 7;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:52:06.254;
+		depth:                         Integer protected, number = 4, ordinal = 4;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:02:33.914;
+		firstName:                     String[31] protected, number = 9, ordinal = 9;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:58:48.333;
+		lastName:                      String[31] protected, number = 10, ordinal = 10;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:58:52.962;
+		number:                        Integer protected, number = 16, ordinal = 16;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:59:34.226;
+		payee:                         String[31] protected, number = 8, ordinal = 8;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:52:26.945;
+		phone:                         String[31] protected, number = 11, ordinal = 11;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:58:58.117;
+		streetAddy:                    String[31] protected, number = 12, ordinal = 12;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:59:04.693;
+		suburb:                        String[31] protected, number = 13, ordinal = 13;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:59:09.263;
+		type:                          String[31] protected, number = 1, ordinal = 18;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:18:47.736;
+	referenceDefinitions
+		account:                       BankAccount  protected, number = 3, ordinal = 3;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:02:09.563;
+		customer:                      Customer  protected, number = 2, ordinal = 2;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:22:01:50.609;
 	jadeMethodDefinitions
+		characters(text: String) updating, protected, number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:30:00:32:28.671;
 		endElement(
 			namespaceURI: String; 
 			localName: String; 
 			qualifiedName: String) updating, protected, number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:21:41:16.847;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:31:45.267;
 		startElement(
 			namespaceURI: String; 
 			localName: String; 
 			qualifiedName: String; 
 			attributeCount: Integer) updating, protected, number = 1003;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:18:21:41:38.087;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:35:06.224;
 	)
 	Transaction completeDefinition
 	(
@@ -408,7 +448,7 @@ without inverses and requires manual maintenance.`
 		importTransactions(xml: JadeXMLDocument) number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:50:30.381;
 		importXMLFile(file: String) number = 1006;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:17:23:42:10.866;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:30:00:07:44.168;
 		saveAccount(acc: BankAccount) number = 1003;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:50:53.683;
 		saveTransaction(tran: Transaction) number = 1002;
@@ -538,11 +578,11 @@ begin
 		logFile.readLine;
 	endwhile;
 	
-	logFile.writeLine(errorTime.currentLocaleFormat & ", " & errorDate.display & ", " &	exObj.errorItem);
+	logFile.writeLine(errorTime.currentLocaleFormat & ", " & errorDate.display & ", " &	exObj.errorCode.String & " - " & exObj.errorItem);
 	
 	
 	//displays simplified error message to user
-	app.msgBox(exObj.errorItem, "Error!", MsgBox_OK_Only);
+	app.msgBox(exObj.errorCode.String & exObj.errorItem, "Error!", MsgBox_OK_Only);
 	
 epilog
 	delete logFile; 
@@ -766,6 +806,17 @@ vars
 begin
 	
 	self.overdraftLimit := BankAccount.Default_Overdraft_Limit;
+
+end;
+}
+setOverDraftLimit
+{
+setOverDraftLimit(limit: Integer) updating;
+
+
+begin
+
+	self.overdraftLimit := limit;
 
 end;
 }
@@ -1297,6 +1348,8 @@ vars
 	parser : AccountXMLParser;
 
 begin
+
+	app.initialize();
 	app.clearWriteWindow();
 	
 	create parser;
@@ -1515,6 +1568,7 @@ vars
 	parser: AccountXMLParser;
 
 begin
+	app.initialize();
 	app.clearWriteWindow();
 	create parser;
 	parser.parseFile("C:\Users\jorda\Documents\GitHub\BankTellerApp-Jade\XML files\output.xml");
@@ -1625,15 +1679,105 @@ end;
 	)
 	AccountXMLParser (
 	jadeMethodSources
+characters
+{
+characters(text: String) updating, protected;
+
+vars
+	trimmed : String;
+	str: String;
+	i : Integer;
+
+begin
+	
+	foreach i in 1 to depth+1 do
+        str := str & '  ';
+    endforeach;
+	
+	trimmed := text.trimBlanks();
+	if trimmed = #"0D0A" or trimmed = #"0D0A" or trimmed = #"0A" then
+		return;
+	endif;
+	if trimmed.length > 0 then
+		write str & attribute & " - " & trimmed & " - " & trimmed.length.String;
+	
+		if attribute = 'customer_number' then
+			number := trimmed.Integer;
+		elseif attribute = 'first_name' then
+			firstName := trimmed;
+		elseif attribute = 'last_name' then
+			lastName := trimmed;
+		elseif attribute = 'phone' then
+			phone := trimmed;
+		elseif attribute = 'street_address' then
+			streetAddy := trimmed;
+		elseif attribute = "suburb" then
+			suburb := trimmed;
+		elseif attribute = 'city' then
+			city := trimmed;
+		elseif attribute = 'credit_score' then
+			creditScore := trimmed.Integer;
+		elseif attribute = 'overdraft_limit' then
+			account.CurrentAccount.setOverDraftLimit(trimmed.Integer);
+		elseif attribute = 'Date' then
+			date := trimmed.Date;
+		elseif attribute = "Deposit" then
+			amount := trimmed.Integer;
+			type := attribute;
+		elseif attribute = 'Payment' then
+			amount := trimmed.Integer;
+			type := attribute;
+		elseif attribute = 'Balance' then
+			balance := trimmed.Integer;
+		endif;
+		
+	endif;
+
+end;
+}
 endElement
 {
 endElement(namespaceURI: String; localName: String; qualifiedName: String) updating, protected;
 
 vars
+	str : String;
+	i : Integer;
+	tran: Transaction;
+	cust : Customer;
 
 begin
-	write localName & ">";
+	
+	foreach i in 1 to depth do
+        str := str & '  ';
+    endforeach;
 
+	write str & localName & ">";
+	
+	if localName = 'customer' then
+		cust := app.ourBank.allCustomers.getAtKey(lastName);
+		write '"' & lastName & '"';
+		if not cust = null then
+			customer := cust;
+		else
+			beginTransaction;
+			customer := create Customer(firstName, lastName, phone, streetAddy, suburb, city, creditScore);
+			commitTransaction;
+		endif;
+		write "customer added";
+	elseif localName = "transaction" then
+		beginTransaction;
+		if type = 'Payment' then
+			tran := create Payment(account, amount, date, payee);
+		elseif type = 'Deposit' then
+			tran := create Deposit(account, amount, date, payee);
+		else
+			// raise exception
+		endif;
+		commitTransaction;
+	endif;
+	
+	
+	depth := depth - 1;
 end;
 }
 startElement
@@ -1647,18 +1791,46 @@ vars
     qualifiedNameAttr : String;
     type : String;
     value: String;
+	str : String;
+	i : Integer;
 			 
 begin
-
-	write "<" & localName & " (QN:" & qualifiedName & ")" & " with " & attributeCount.String & " attribute(s)";
+	
+	foreach i in 1 to depth do
+        str := str & '  ';
+    endforeach;
+	
+	write str & "<" & localName & " (QN:" & qualifiedName & ")" & " with " & attributeCount.String & " attribute(s)";
 	
 	if attributeCount > 0 then
 		foreach idx in 1 to attributeCount do
 			getAttribute(idx, namespaceURIAttr, localNameAttr, qualifiedNameAttr, type, value);
-			write "#" & idx.String & " " & localNameAttr & " (QNA:" & qualifiedNameAttr & ")" & " VAL: " & value;
+			write str & "#" & idx.String & " " & localNameAttr & " (QNA:" & qualifiedNameAttr & ")" & " VAL: " & value;
 		endforeach;
 	endif;
-
+	
+	if depth = 0 and not localName = 'statement' then
+		//raise exception
+	endif;
+	
+	attribute := localName;
+	
+	if localName = 'account' then
+		beginTransaction;
+		if value = 'CurrentAccount' then
+			account := create CurrentAccount(customer);
+		elseif value = 'SavingsAccount' then
+			account := create SavingsAccount(customer);
+		else
+			// raise exception
+		endif;
+		commitTransaction;
+	endif;
+	
+	depth := depth + 1;
+	
+	
+	
 end;
 }
 	)
@@ -1907,23 +2079,19 @@ importXMLFile(file: String);
 
 vars
 	
-	xmlDoc		:	JadeXMLDocument;
-	parser		:	JadeXMLDocumentParser;
-	handler		: 	XMLHandler;
+	parser: AccountXMLParser;
 
 begin
 
-	app.initialize();
-	create xmlDoc transient;
+	// create xmlDoc transient;
 	create parser transient;
-	create handler transient;
 	
-	parser.parseDocumentFile(xmlDoc, file);
-	handler.importTransactions(xmlDoc);
+	// parser.parseDocumentFile(xmlDoc, file);
+	// handler.importTransactions(xmlDoc);
+	parser.parseFile(file);
 	
 epilog
 
-	delete xmlDoc;
 	delete parser;
 
 end;
