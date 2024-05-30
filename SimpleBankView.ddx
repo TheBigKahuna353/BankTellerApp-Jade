@@ -371,7 +371,7 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>627</left>
+		<left>1118</left>
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
@@ -397,7 +397,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>65</top>
+		<top>47</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
@@ -783,7 +783,7 @@
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>0</borderStyle>
 				<bubbleHelp/>
-				<caption>Label1</caption>
+				<caption>-</caption>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -813,7 +813,7 @@
 				<parent name="groupBox3" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>57</parentBottomOffset>
-				<parentRightOffset>318</parentRightOffset>
+				<parentRightOffset>345</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
 				<relativeTop>false</relativeTop>
@@ -829,7 +829,7 @@
 				<transparent>true</transparent>
 				<userScript/>
 				<visible>true</visible>
-				<width>31</width>
+				<width>4</width>
 				<wordWrap>false</wordWrap>
 			</Label>
 			<Label name="labelAccType">
@@ -841,7 +841,7 @@
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>0</borderStyle>
 				<bubbleHelp/>
-				<caption>Label1</caption>
+				<caption>-</caption>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -871,7 +871,7 @@
 				<parent name="groupBox3" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>84</parentBottomOffset>
-				<parentRightOffset>318</parentRightOffset>
+				<parentRightOffset>345</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
 				<relativeTop>false</relativeTop>
@@ -887,7 +887,7 @@
 				<transparent>true</transparent>
 				<userScript/>
 				<visible>true</visible>
-				<width>31</width>
+				<width>4</width>
 				<wordWrap>false</wordWrap>
 			</Label>
 			<Button name="addAccount">
@@ -3290,7 +3290,7 @@
 		<borderStyle>2</borderStyle>
 		<bubbleHelp/>
 		<caption>New Transaction</caption>
-		<clientHeight>348</clientHeight>
+		<clientHeight>362</clientHeight>
 		<clientWidth>239</clientWidth>
 		<clipControls>true</clipControls>
 		<controlBox>true</controlBox>
@@ -3298,7 +3298,7 @@
 		<disableReason/>
 		<dragCursor/>
 		<enabled>true</enabled>
-		<height>387</height>
+		<height>401</height>
 		<helpContextId>0</helpContextId>
 		<helpKeyword/>
 		<icon/>
@@ -3341,6 +3341,70 @@
 		<width>255</width>
 		<windowState>0</windowState>
 		<controlList>
+			<StatusLine name="statusLine">
+				<alignment>0</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<bevelColor>-2147483628</bevelColor>
+				<bevelInner>1</bevelInner>
+				<bevelInnerWidth>1</bevelInnerWidth>
+				<bevelOuter>2</bevelOuter>
+				<bevelOuterWidth>1</bevelOuterWidth>
+				<bevelShadowColor>-2147483632</bevelShadowColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>1</borderStyle>
+				<boundaryBrush>0</boundaryBrush>
+				<boundaryColor>-2147483633</boundaryColor>
+				<boundaryWidth>1</boundaryWidth>
+				<bubbleHelp/>
+				<caption/>
+				<clipControls>true</clipControls>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="NewTransaction" />
+				<height>21</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>0</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>statusLine</name>
+				<parent name="NewTransaction" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>0</parentBottomOffset>
+				<parentRightOffset>0</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>13</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>341</top>
+				<userScript/>
+				<visible>true</visible>
+				<width>239</width>
+				<wordWrap>false</wordWrap>
+			</StatusLine>
 			<Button name="submitButton">
 				<autoSize>1</autoSize>
 				<backBrush/>
@@ -3378,7 +3442,7 @@
 				<name>submitButton</name>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>31</parentBottomOffset>
+				<parentBottomOffset>45</parentBottomOffset>
 				<parentRightOffset>78</parentRightOffset>
 				<picture/>
 				<pictureDisabled/>
@@ -3445,7 +3509,7 @@
 				<name>dateTextBox</name>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>198</parentBottomOffset>
+				<parentBottomOffset>212</parentBottomOffset>
 				<parentRightOffset>74</parentRightOffset>
 				<passwordField>false</passwordField>
 				<readOnly>false</readOnly>
@@ -3511,7 +3575,7 @@
 				<noPrefix>false</noPrefix>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>226</parentBottomOffset>
+				<parentBottomOffset>240</parentBottomOffset>
 				<parentRightOffset>147</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
@@ -3574,7 +3638,7 @@
 				<name>payeetextBox</name>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>151</parentBottomOffset>
+				<parentBottomOffset>165</parentBottomOffset>
 				<parentRightOffset>74</parentRightOffset>
 				<passwordField>false</passwordField>
 				<readOnly>false</readOnly>
@@ -3640,7 +3704,7 @@
 				<noPrefix>false</noPrefix>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>179</parentBottomOffset>
+				<parentBottomOffset>193</parentBottomOffset>
 				<parentRightOffset>140</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
@@ -3703,7 +3767,7 @@
 				<name>amountTextBox</name>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>245</parentBottomOffset>
+				<parentBottomOffset>259</parentBottomOffset>
 				<parentRightOffset>74</parentRightOffset>
 				<passwordField>false</passwordField>
 				<readOnly>false</readOnly>
@@ -3769,7 +3833,7 @@
 				<noPrefix>false</noPrefix>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>273</parentBottomOffset>
+				<parentBottomOffset>287</parentBottomOffset>
 				<parentRightOffset>133</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
@@ -3832,7 +3896,7 @@
 				<name>accounTextBox</name>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>292</parentBottomOffset>
+				<parentBottomOffset>306</parentBottomOffset>
 				<parentRightOffset>74</parentRightOffset>
 				<passwordField>false</passwordField>
 				<readOnly>false</readOnly>
@@ -3898,7 +3962,7 @@
 				<noPrefix>false</noPrefix>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>320</parentBottomOffset>
+				<parentBottomOffset>334</parentBottomOffset>
 				<parentRightOffset>131</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
@@ -3952,7 +4016,7 @@
 				<name>typeGroupBox</name>
 				<parent name="NewTransaction" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>84</parentBottomOffset>
+				<parentBottomOffset>98</parentBottomOffset>
 				<parentRightOffset>66</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
@@ -3971,7 +4035,7 @@
 				<visible>true</visible>
 				<width>108</width>
 			</GroupBox>
-			<OptionButton name="withdrawalRadioBtn">
+			<OptionButton name="paymentlRadioBtn">
 				<alignment>0</alignment>
 				<autoSize>true</autoSize>
 				<backBrush/>
@@ -3980,7 +4044,7 @@
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>0</borderStyle>
 				<bubbleHelp/>
-				<caption>Withdrawal</caption>
+				<caption>Payment</caption>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -4003,11 +4067,11 @@
 				<left>7</left>
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
-				<name>withdrawalRadioBtn</name>
+				<name>paymentlRadioBtn</name>
 				<parent name="typeGroupBox" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>8</parentBottomOffset>
-				<parentRightOffset>29</parentRightOffset>
+				<parentRightOffset>41</parentRightOffset>
 				<relativeHeight>false</relativeHeight>
 				<relativeLeft>false</relativeLeft>
 				<relativeTop>false</relativeTop>
@@ -4024,7 +4088,7 @@
 				<userScript/>
 				<value>false</value>
 				<visible>true</visible>
-				<width>72</width>
+				<width>60</width>
 			</OptionButton>
 			<OptionButton name="depositRadioBtn">
 				<alignment>0</alignment>

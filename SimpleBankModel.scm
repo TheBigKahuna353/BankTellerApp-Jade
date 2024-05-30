@@ -57,7 +57,7 @@ typeDefinitions
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:19:14:04:41.264;
 	jadeMethodDefinitions
 		genericExceptionHandler(exObj: Exception): Integer number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:23:34:24.698;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:31:27.767;
 		initialize() updating, number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:31:02.234;
 	)
@@ -525,9 +525,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 54;
+		"simplebankcustomer" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 53;
+		"simplebankmodel" number = 62;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -582,7 +582,7 @@ begin
 	
 	
 	//displays simplified error message to user
-	app.msgBox(exObj.errorCode.String & exObj.errorItem, "Error!", MsgBox_OK_Only);
+	app.msgBox("Error Code - " & exObj.errorCode.String & ", " & exObj.errorItem, "Error!", MsgBox_OK_Only);
 	
 epilog
 	delete logFile; 

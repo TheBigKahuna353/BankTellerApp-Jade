@@ -17,7 +17,7 @@ typeHeaders
 	CustomerList subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2057;
 	CustomerSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2069;
 	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2056;
-	NewTransaction subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2076;
+	NewTransaction subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 13, number = 2076;
 	TransactionSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2079;
 membershipDefinitions
 typeDefinitions
@@ -107,7 +107,7 @@ typeDefinitions
 	)
 	AccountsAndTransactions completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:42:01.220;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:28:09.793;
 	referenceDefinitions
 		accountEdit:                   Button  number = 12, ordinal = 13;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:45:52.228;
@@ -141,7 +141,7 @@ typeDefinitions
 		btnXML_click(btn: Button input) updating, number = 1006;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:03:04.340;
 		listAccounts_click(listbox: ListBox input) updating, number = 1005;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:45:02.017;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:29:05.968;
 		listAccounts_displayRow(
 			listbox: ListBox input; 
 			account: BankAccount; 
@@ -356,7 +356,7 @@ typeDefinitions
 	)
 	NewTransaction completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:35:18.962;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:24:21.962;
 	referenceDefinitions
 		accounTextBox:                 TextBox  number = 5, ordinal = 5;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
@@ -376,15 +376,17 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.916;
 		payeetextBox:                  TextBox  number = 9, ordinal = 9;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.916;
+		paymentlRadioBtn:              OptionButton  number = 3, ordinal = 3;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
+		statusLine:                    StatusLine  number = 13, ordinal = 13;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:24:21.961;
 		submitButton:                  Button  number = 12, ordinal = 12;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.917;
 		typeGroupBox:                  GroupBox  number = 1, ordinal = 1;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.914;
-		withdrawalRadioBtn:            OptionButton  number = 3, ordinal = 3;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
 	jadeMethodDefinitions
 		submitButton_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:19:49:21.290;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:26:56.680;
 	eventMethodMappings
 		submitButton_click = click of Button;
 	)
@@ -413,7 +415,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 55;
+		"simplebankview" number = 56;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
@@ -627,8 +629,8 @@ begin
 	self.selectedAccount := self.listAccounts.listObject.BankAccount;
 	self.listTransactions.displayCollection(selectedAccount.allTransactions, true, ListBox.DisplayCollection_Forward, null, "");
 	
-	labelAccNum.caption := "Account number: " & selectedAccount.accountNumber.String;
-	labelAccType.caption := "Account Type: " & selectedAccount.getName();
+	labelAccNum.caption := "- Account number: " & selectedAccount.accountNumber.String;
+	labelAccType.caption := "- Account Type: " & selectedAccount.getName();
 end;
 }
 listAccounts_displayRow
@@ -1191,7 +1193,10 @@ vars
 	dateException : DateInputException;
 begin
 	app.initialize();
+	//clears status line
+	statusLine.caption := "";
 	
+	// Just displays a simple message box prompting a user to double check they're input
     doubleCheck := app.msgBox("Please confirm transaction details.", "Transaction Confirmation", MsgBox_OK_Cancel);
     if doubleCheck = MsgBox_Return_Cancel then
         return;
@@ -1204,18 +1209,18 @@ begin
 	//checks correct date input
 	transactionDate := dateTextBox.text.asDate;
 	if transactionDate.isValid = false then
+		statusLine.caption := "Incorrect date format.";
 		create dateException;
 		dateException.setErrorText();
 		raise dateException;
-		//dateException.logSelf("errorLog.txt");
-		//dateException.showDialog;
 	endif;
 	
+	//creates a new tranasaction object either a deposit or 
 	if depositRadioBtn.value = true then
 		beginTransaction;
 		newDepositTransaction := create Deposit(targetAccount, amountTextBox.text.Decimal, transactionDate, payeetextBox.text);
 		commitTransaction;
-	elseif withdrawalRadioBtn.value then
+	elseif paymentlRadioBtn.value = true then
 		beginTransaction;
 		newPaymentTransaction := create Payment(targetAccount, amountTextBox.text.Decimal, transactionDate, payeetextBox.text);
 		commitTransaction;
