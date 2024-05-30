@@ -38,6 +38,631 @@
 			<GUIClass name="OptionButton" />
 		</threeDControls>
 	</Application>
+	<Form locale="5129" name="AccountEdit">
+		<allowDocking>0</allowDocking>
+		<backBrush/>
+		<backBrushStyle>0</backBrushStyle>
+		<backColor>-2147483633</backColor>
+		<borderStyle>2</borderStyle>
+		<bubbleHelp/>
+		<caption>AccountEdit</caption>
+		<clientHeight>203</clientHeight>
+		<clientWidth>294</clientWidth>
+		<clipControls>true</clipControls>
+		<controlBox>true</controlBox>
+		<description/>
+		<disableReason/>
+		<dragCursor/>
+		<enabled>true</enabled>
+		<height>242</height>
+		<helpContextId>0</helpContextId>
+		<helpKeyword/>
+		<icon/>
+		<ignoreSkin>false</ignoreSkin>
+		<ignoreSkinAllControls>false</ignoreSkinAllControls>
+		<left>1591</left>
+		<maxButton>true</maxButton>
+		<mdiChild>0</mdiChild>
+		<mdiFrame>false</mdiFrame>
+		<mdiPinned>false</mdiPinned>
+		<minButton>true</minButton>
+		<minimumHeight>0</minimumHeight>
+		<minimumWidth>0</minimumWidth>
+		<mouseCursor/>
+		<mousePointer>0</mousePointer>
+		<name>AccountEdit</name>
+		<paintedDialogBaseUnits>1048584</paintedDialogBaseUnits>
+		<printerForm>false</printerForm>
+		<scaleForm>true</scaleForm>
+		<scrollBars>0</scrollBars>
+		<secureForm>false</secureForm>
+		<securityLevelEnabled>0</securityLevelEnabled>
+		<securityLevelVisible>0</securityLevelVisible>
+		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
+		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
+		<showMdiCloseMenu>false</showMdiCloseMenu>
+		<showMdiDockMenu>false</showMdiDockMenu>
+		<showMdiFloatMenu>false</showMdiFloatMenu>
+		<showMdiPinMenu>false</showMdiPinMenu>
+		<skinCategoryName/>
+		<tag/>
+		<top>125</top>
+		<userScript/>
+		<visible>true</visible>
+		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
+		<webBrowserAutoRefreshURL/>
+		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
+		<webEncodingType/>
+		<webFileName/>
+		<width>310</width>
+		<windowState>0</windowState>
+		<controlList>
+			<Button name="cancelBtn">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Cancel</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="AccountEdit" />
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>176</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>cancelBtn</name>
+				<parent name="AccountEdit" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>21</parentBottomOffset>
+				<parentRightOffset>30</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>16</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>160</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>88</width>
+			</Button>
+			<Button name="submitBtn">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Submit</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="AccountEdit" />
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>29</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>submitBtn</name>
+				<parent name="AccountEdit" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>21</parentBottomOffset>
+				<parentRightOffset>177</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>15</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>160</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>88</width>
+			</Button>
+			<GroupBox name="groupBox3">
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<caption>Account Details</caption>
+				<clipControls>true</clipControls>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="AccountEdit" />
+				<height>132</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>20</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>groupBox3</name>
+				<parent name="AccountEdit" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>62</parentBottomOffset>
+				<parentRightOffset>19</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>8</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>9</top>
+				<transparent>false</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>255</width>
+			</GroupBox>
+			<TextBox name="textBoxBal">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>0</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="AccountEdit" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>121</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>textBoxBal</name>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>15</parentBottomOffset>
+				<parentRightOffset>24</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>false</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>14</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>95</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>110</width>
+			</TextBox>
+			<TextBox name="textBoxNum">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>0</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="AccountEdit" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>120</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>textBoxNum</name>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>48</parentBottomOffset>
+				<parentRightOffset>25</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>false</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>13</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>62</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>110</width>
+			</TextBox>
+			<TextBox name="textBoxType">
+				<alignment>0</alignment>
+				<autoTab>false</autoTab>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483643</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>2</borderStyle>
+				<bubbleHelp/>
+				<case>0</case>
+				<dataType>0</dataType>
+				<decimals>0</decimals>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>true</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="AccountEdit" />
+				<formatOut/>
+				<height>22</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
+				<hintText/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<integralHeight>false</integralHeight>
+				<left>120</left>
+				<maxLength>0</maxLength>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>textBoxType</name>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>80</parentBottomOffset>
+				<parentRightOffset>25</parentRightOffset>
+				<passwordField>false</passwordField>
+				<readOnly>true</readOnly>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<scrollBars>0</scrollBars>
+				<scrollHorizontal>false</scrollHorizontal>
+				<scrollVertical>false</scrollVertical>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<selectionStyle>0</selectionStyle>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>12</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<text/>
+				<textOffset>0</textOffset>
+				<top>30</top>
+				<userScript/>
+				<visible>true</visible>
+				<wantReturn>false</wantReturn>
+				<webInputType/>
+				<width>110</width>
+			</TextBox>
+			<Label name="labelAccBal">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Account Balance:</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>false</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="AccountEdit" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>20</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>labelAccBal</name>
+				<noPrefix>false</noPrefix>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>26</parentBottomOffset>
+				<parentRightOffset>152</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>11</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>93</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>83</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<Label name="labelAccNum">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Account Number:</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>false</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="AccountEdit" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>20</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>labelAccNum</name>
+				<noPrefix>false</noPrefix>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>56</parentBottomOffset>
+				<parentRightOffset>152</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>10</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>63</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>83</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+			<Label name="labelAccType">
+				<alignment>1</alignment>
+				<autoSize>true</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<caption>Account Type:</caption>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>false</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483640</foreColor>
+				<form name="AccountEdit" />
+				<formatOut/>
+				<height>13</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<hyperlink/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>20</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>labelAccType</name>
+				<noPrefix>false</noPrefix>
+				<parent name="groupBox3" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>87</parentBottomOffset>
+				<parentRightOffset>165</parentRightOffset>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<tabIndex>9</tabIndex>
+				<tabStop>false</tabStop>
+				<tag/>
+				<top>32</top>
+				<transparent>true</transparent>
+				<userScript/>
+				<visible>true</visible>
+				<width>70</width>
+				<wordWrap>false</wordWrap>
+			</Label>
+		</controlList>
+		<menuList>
+		</menuList>
+	</Form>
 	<Form locale="5129" name="AccountSearch">
 		<allowDocking>0</allowDocking>
 		<backBrush/>
@@ -744,14 +1369,14 @@
 				<helpKeyword/>
 				<ignoreSkin>false</ignoreSkin>
 				<index>0</index>
-				<left>236</left>
+				<left>237</left>
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>accountEdit</name>
 				<parent name="groupBox3" />
 				<parentAspect>0</parentAspect>
-				<parentBottomOffset>46</parentBottomOffset>
-				<parentRightOffset>9</parentRightOffset>
+				<parentBottomOffset>9</parentBottomOffset>
+				<parentRightOffset>8</parentRightOffset>
 				<picture/>
 				<pictureDisabled/>
 				<pictureDown/>
@@ -767,7 +1392,7 @@
 				<tabIndex>11</tabIndex>
 				<tabStop>true</tabStop>
 				<tag/>
-				<top>48</top>
+				<top>85</top>
 				<userScript/>
 				<value>false</value>
 				<visible>true</visible>
@@ -3055,7 +3680,7 @@
 				<shortCutKey/>
 				<shortCutFlags/>
 			</MenuItem>
-			<MenuItem name="mnuAddCustoemr">
+			<MenuItem name="mnuAddCustomer">
 				<backColor>0</backColor>
 				<caption>&amp;Add</caption>
 				<checked>false</checked>
@@ -3070,7 +3695,7 @@
 				<helpKeyword/>
 				<helpList>false</helpList>
 				<level>2</level>
-				<name>mnuAddCustoemr</name>
+				<name>mnuAddCustomer</name>
 				<picture/>
 				<securityLevelEnabled>0</securityLevelEnabled>
 				<securityLevelVisible>0</securityLevelVisible>

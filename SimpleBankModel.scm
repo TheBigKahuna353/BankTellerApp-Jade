@@ -88,7 +88,7 @@ without inverses and requires manual maintenance.`
 		getAllTransactions(): MergeIterator number = 1005;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:17:08:32.305;
 		nextAccountNumber(): Integer updating, number = 1002;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:55:24.978;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:15:12:46.611;
 		nextCustomerNumber(): Integer updating, number = 1001;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:14:35:17.444;
 		nextTransactionNumber(): Integer updating, number = 1004;
@@ -106,7 +106,7 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:12:12.144;
 	attributeDefinitions
 		accountNumber:                 Integer readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:19:44.756;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:30:46.630;
 		balance:                       Decimal[12,2] protected, number = 3, ordinal = 3;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:21:34.509;
 		openingBalance:                Decimal[12] protected, number = 5, ordinal = 5;
@@ -121,6 +121,8 @@ without inverses and requires manual maintenance.`
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:26:15:15:45.757;
 		canWithdraw(amount: Decimal): Boolean abstract, number = 1002;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:19:36.642;
+		changeAccountNumber(newNum: Integer) updating, number = 1009;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:32:35.510;
 		create(cust: Customer) updating, number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:01:06:07.276;
 		deposit(amount: Decimal) updating, number = 1003;
@@ -257,7 +259,7 @@ without inverses and requires manual maintenance.`
 		addTransactions() number = 1018;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:01:04:52.373;
 		createCustomersFromFile() number = 1006;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:29:18:41:31.158;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:15:02:06.293;
 		createTestAccounts() updating, number = 1009;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:14:14:23:58.694;
 		createTestCustomer() updating, number = 1001;
@@ -656,7 +658,11 @@ vars
 begin
 	// Note that in this context lastAccountNumber is the same as self.lastAccount number!
 	// It is better practice to remember the self reference.
-	lastAccountNumber := lastAccountNumber + 1;
+	
+	//while loop prevents collisions in the event a user edited an account number ahead of the generator
+	while app.ourBank.allBankAccounts.includesKey(lastAccountNumber) do
+		lastAccountNumber := lastAccountNumber + 1;
+	endwhile;
 	return lastAccountNumber;
 
 end;
@@ -707,6 +713,16 @@ end;
 canWithdraw
 {
 canWithdraw(amount : Decimal) : Boolean abstract;
+}
+changeAccountNumber
+{
+changeAccountNumber(newNum : Integer) updating;
+
+vars
+
+begin
+	self.accountNumber := newNum;
+end;
 }
 create
 {

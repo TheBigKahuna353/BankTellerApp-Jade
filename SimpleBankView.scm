@@ -9,6 +9,7 @@ typeHeaders
 	SimpleBankView subclassOf SimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2088;
 	GSimpleBankView subclassOf GSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2089;
 	SSimpleBankView subclassOf SSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2090;
+	AccountEdit subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2048;
 	AccountSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2074;
 	AccountsAndTransactions subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2077;
 	CustomerDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2092;
@@ -85,6 +86,47 @@ typeDefinitions
 	Form completeDefinition
 	(
 	)
+	AccountEdit completeDefinition
+	(
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:54:44.215;
+	attributeDefinitions
+		originalAccBal:                Decimal[12] protected, number = 12, ordinal = 12;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:21:20.324;
+		originalAccNum:                Integer protected, number = 11, ordinal = 11;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:21:01.743;
+	referenceDefinitions
+		cancelBtn:                     Button  number = 9, ordinal = 9;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.369;
+		groupBox3:                     GroupBox  number = 1, ordinal = 1;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.367;
+		labelAccBal:                   Label  number = 4, ordinal = 4;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.367;
+		labelAccNum:                   Label  number = 2, ordinal = 2;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.367;
+		labelAccType:                  Label  number = 3, ordinal = 3;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.367;
+		selectedAccount:               BankAccount  number = 10, ordinal = 10;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:14:51.026;
+		submitBtn:                     Button  number = 8, ordinal = 8;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.368;
+		textBoxBal:                    TextBox  number = 7, ordinal = 7;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.368;
+		textBoxNum:                    TextBox  number = 6, ordinal = 6;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.368;
+		textBoxType:                   TextBox  number = 5, ordinal = 5;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:51:38.368;
+	jadeMethodDefinitions
+		cancelBtn_click(btn: Button input) updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:19:37.315;
+		load() updating, number = 1001;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:22:46.353;
+		submitBtn_click(btn: Button input) updating, number = 1003;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:15:12:48.008;
+	eventMethodMappings
+		cancelBtn_click = click of Button;
+		load = load of Form;
+		submitBtn_click = click of Button;
+	)
 	AccountSearch completeDefinition
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:16:23:23.346;
@@ -107,7 +149,7 @@ typeDefinitions
 	)
 	AccountsAndTransactions completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:28:09.793;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:37:50.144;
 	referenceDefinitions
 		accountEdit:                   Button  number = 12, ordinal = 13;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:45:52.228;
@@ -136,6 +178,8 @@ typeDefinitions
 		selectedAccount:               BankAccount  protected, number = 14, ordinal = 15;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:03:51.662;
 	jadeMethodDefinitions
+		accountEdit_click(btn: Button input) updating, number = 1008;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:15:44.606;
 		addAccount_click(btn: Button input) updating, number = 1004;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:22:45:33.962;
 		btnXML_click(btn: Button input) updating, number = 1006;
@@ -159,6 +203,7 @@ typeDefinitions
 		showAccounts(customer: Customer) updating, number = 1002;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:00:57:25.617;
 	eventMethodMappings
+		accountEdit_click = click of Button;
 		addAccount_click = click of Button;
 		btnXML_click = click of Button;
 		listAccounts_click = click of ListBox;
@@ -305,11 +350,11 @@ typeDefinitions
 	)
 	MainMenu completeDefinition
 	(
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:40:45.321;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:18:54.092;
 	referenceDefinitions
 		mnuAccount:                    MenuItem  number = 6, ordinal = 6;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:34.540;
-		mnuAddCustoemr:                MenuItem  number = 2, ordinal = 2;
+		mnuAddCustomer:                MenuItem  number = 2, ordinal = 2;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.520;
 		mnuCustomer:                   MenuItem  number = 1, ordinal = 1;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.519;
@@ -330,8 +375,8 @@ typeDefinitions
 	jadeMethodDefinitions
 		load() updating, clientExecution, number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:15:46.138;
-		mnuAddCustoemr_click(menuItem: MenuItem input) updating, number = 1002;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:23:40.266;
+		mnuAddCustomer_click(menuItem: MenuItem input) updating, number = 1002;
+		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:18:54.090;
 		mnuCustomerList_click(menuItem: MenuItem input) updating, number = 1004;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:31:05.813;
 		mnuCustomerSearch_click(menuItem: MenuItem input) updating, number = 1003;
@@ -346,7 +391,7 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:16:23:03.180;
 	eventMethodMappings
 		load = load of Form;
-		mnuAddCustoemr_click = click of MenuItem;
+		mnuAddCustomer_click = click of MenuItem;
 		mnuCustomerList_click = click of MenuItem;
 		mnuCustomerSearch_click = click of MenuItem;
 		mnuImport_click = click of MenuItem;
@@ -515,6 +560,70 @@ begin
 end;
 }
 	)
+	AccountEdit (
+	jadeMethodSources
+cancelBtn_click
+{
+cancelBtn_click(btn: Button input) updating;
+
+vars
+
+begin
+	self.unloadForm();
+end;
+}
+load
+{
+load() updating;
+
+vars
+
+begin
+	textBoxType.text := selectedAccount.getName();
+	textBoxNum.text := selectedAccount.accountNumber.String;
+	textBoxBal.text := selectedAccount.getBalance().String;
+	
+	//stores copies of original values for computation and checking
+	originalAccBal := selectedAccount.getBalance();
+	originalAccNum := selectedAccount.accountNumber;
+end;
+}
+submitBtn_click
+{
+submitBtn_click(btn: Button input) updating;
+
+vars
+	newAccNum : Integer;
+	newAccBal : Decimal[12,3];
+begin
+	newAccNum := textBoxNum.text.Integer;
+	newAccBal := textBoxBal.text.Decimal;
+	
+	//checks for changed account number
+	if newAccNum <> originalAccNum then
+		//checks that the new account number isn't already in use
+		if app.ourBank.allBankAccounts.includesKey(newAccNum) = false then
+			beginTransaction;
+			//changes the key off the account
+			selectedAccount.changeAccountNumber(newAccNum);
+			//adds the account to the dictionary at the new key
+			app.ourBank.allBankAccounts.add(selectedAccount);
+			//removes the account from the dictionry at its old position
+			app.ourBank.allBankAccounts.removeKey(originalAccNum);
+			commitTransaction;
+		endif;
+	endif;
+	
+	if newAccBal <> originalAccBal then
+		if newAccBal > 0 then
+			selectedAccount.setBalance(newAccBal);
+		endif;
+	endif;
+	
+	
+end;
+}
+	)
 	AccountSearch (
 	jadeMethodSources
 accountSearch
@@ -575,6 +684,26 @@ end;
 	)
 	AccountsAndTransactions (
 	jadeMethodSources
+accountEdit_click
+{
+accountEdit_click(btn: Button input) updating;
+
+vars
+	accountToBeEdited: BankAccount;
+	form: AccountEdit;
+begin
+	
+	accountToBeEdited := self.listAccounts.listObject.BankAccount;
+	
+	if accountToBeEdited = null then
+		app.msgBox("Select an account first","No account selected", MsgBox_OK_Only);
+	else
+		create form transient;
+		form.selectedAccount := accountToBeEdited;
+		form.show();
+	endif;
+end;
+}
 addAccount_click
 {
 addAccount_click(btn: Button input) updating;
@@ -1072,9 +1201,9 @@ begin
 	app.mdiFrame := MainMenu;
 end;
 }
-mnuAddCustoemr_click
+mnuAddCustomer_click
 {
-mnuAddCustoemr_click(menuItem: MenuItem input) updating;
+mnuAddCustomer_click(menuItem: MenuItem input) updating;
 
 vars
 	form: CustomerAdd;
