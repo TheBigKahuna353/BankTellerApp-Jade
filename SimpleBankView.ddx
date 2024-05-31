@@ -60,9 +60,9 @@
 		<icon/>
 		<ignoreSkin>false</ignoreSkin>
 		<ignoreSkinAllControls>false</ignoreSkinAllControls>
-		<left>1591</left>
+		<left>468</left>
 		<maxButton>true</maxButton>
-		<mdiChild>0</mdiChild>
+		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
 		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
@@ -86,7 +86,7 @@
 		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
-		<top>125</top>
+		<top>253</top>
 		<userScript/>
 		<visible>true</visible>
 		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
@@ -1068,6 +1068,67 @@
 				<mouseCursor/>
 				<mousePointer>0</mousePointer>
 				<name>btnXML</name>
+				<parent name="AccountsAndTransactions" />
+				<parentAspect>0</parentAspect>
+				<parentBottomOffset>445</parentBottomOffset>
+				<parentRightOffset>32</parentRightOffset>
+				<picture/>
+				<pictureDisabled/>
+				<pictureDown/>
+				<relativeHeight>false</relativeHeight>
+				<relativeLeft>false</relativeLeft>
+				<relativeTop>false</relativeTop>
+				<relativeWidth>false</relativeWidth>
+				<securityLevelEnabled>0</securityLevelEnabled>
+				<securityLevelVisible>0</securityLevelVisible>
+				<show3D>3</show3D>
+				<skinCategoryName/>
+				<style>0</style>
+				<tabIndex>13</tabIndex>
+				<tabStop>true</tabStop>
+				<tag/>
+				<top>311</top>
+				<userScript/>
+				<value>false</value>
+				<visible>true</visible>
+				<webFileName/>
+				<width>109</width>
+			</Button>
+			<Button name="btnExport">
+				<autoSize>1</autoSize>
+				<backBrush/>
+				<backBrushStyle>0</backBrushStyle>
+				<backColor>-2147483633</backColor>
+				<borderColorSingle>0</borderColorSingle>
+				<borderStyle>0</borderStyle>
+				<bubbleHelp/>
+				<buttonPicture>0</buttonPicture>
+				<cancel>false</cancel>
+				<caption>Export</caption>
+				<default>false</default>
+				<description/>
+				<disableReason/>
+				<dragCursor/>
+				<enabled>false</enabled>
+				<focusBackColor>0</focusBackColor>
+				<focusForeColor>0</focusForeColor>
+				<fontBold>false</fontBold>
+				<fontItalic>false</fontItalic>
+				<fontName/>
+				<fontSize>8.25</fontSize>
+				<fontStrikethru>false</fontStrikethru>
+				<fontUnderline>false</fontUnderline>
+				<foreColor>-2147483630</foreColor>
+				<form name="AccountsAndTransactions" />
+				<height>28</height>
+				<helpContextId>0</helpContextId>
+				<helpKeyword/>
+				<ignoreSkin>false</ignoreSkin>
+				<index>0</index>
+				<left>266</left>
+				<mouseCursor/>
+				<mousePointer>0</mousePointer>
+				<name>btnExport</name>
 				<parent name="AccountsAndTransactions" />
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>487</parentBottomOffset>

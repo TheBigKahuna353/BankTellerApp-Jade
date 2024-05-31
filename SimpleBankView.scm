@@ -9,16 +9,16 @@ typeHeaders
 	SimpleBankView subclassOf SimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2088;
 	GSimpleBankView subclassOf GSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2089;
 	SSimpleBankView subclassOf SSimpleBankModel transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2090;
-	AccountEdit subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2048;
+	AccountEdit subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 12, number = 2075;
 	AccountSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2074;
-	AccountsAndTransactions subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2077;
+	AccountsAndTransactions subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 16, number = 2077;
 	CustomerDetails subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 15, number = 2092;
 	CustomerAdd subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, number = 2186;
 	CustomerEdit subclassOf CustomerDetails transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2059;
 	CustomerList subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2057;
 	CustomerSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 7, number = 2069;
-	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 10, number = 2056;
-	NewTransaction subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 13, number = 2076;
+	MainMenu subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 11, number = 2056;
+	NewTransaction subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 14, number = 2076;
 	TransactionSearch subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2079;
 membershipDefinitions
 typeDefinitions
@@ -88,7 +88,7 @@ typeDefinitions
 	)
 	AccountEdit completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:54:44.215;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:17:06:57.339;
 	attributeDefinitions
 		originalAccBal:                Decimal[12] protected, number = 12, ordinal = 12;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:21:20.324;
@@ -121,7 +121,7 @@ typeDefinitions
 		load() updating, number = 1001;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:22:46.353;
 		submitBtn_click(btn: Button input) updating, number = 1003;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:15:12:48.008;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:17:09:20.337;
 	eventMethodMappings
 		cancelBtn_click = click of Button;
 		load = load of Form;
@@ -149,14 +149,16 @@ typeDefinitions
 	)
 	AccountsAndTransactions completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:37:50.144;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:16:58:36.157;
 	referenceDefinitions
 		accountEdit:                   Button  number = 12, ordinal = 13;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:45:52.228;
 		addAccount:                    Button  number = 3, ordinal = 3;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:15:18:08:34.114;
-		btnXML:                        Button  number = 13, ordinal = 14;
+		btnExport:                     Button  number = 13, ordinal = 14;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:00:04.580;
+		btnXML:                        Button  number = 8, ordinal = 16;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:16:57:26.017;
 		groupBox3:                     GroupBox  number = 7, ordinal = 7;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:23:28:10.538;
 		grpBoxAccCreate:               GroupBox  number = 4, ordinal = 4;
@@ -182,10 +184,10 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:15:44.606;
 		addAccount_click(btn: Button input) updating, number = 1004;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:20:22:45:33.962;
-		btnXML_click(btn: Button input) updating, number = 1006;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:16:03:04.340;
+		btnExport_click(btn: Button input) updating, number = 1006;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:17:04:39.277;
 		listAccounts_click(listbox: ListBox input) updating, number = 1005;
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:29:05.968;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:17:05:35.485;
 		listAccounts_displayRow(
 			listbox: ListBox input; 
 			account: BankAccount; 
@@ -205,7 +207,7 @@ typeDefinitions
 	eventMethodMappings
 		accountEdit_click = click of Button;
 		addAccount_click = click of Button;
-		btnXML_click = click of Button;
+		btnExport_click = click of Button;
 		listAccounts_click = click of ListBox;
 		listAccounts_displayRow = displayRow of ListBox;
 		listTransactions_displayRow = displayRow of ListBox;
@@ -354,7 +356,9 @@ typeDefinitions
 	referenceDefinitions
 		mnuAccount:                    MenuItem  number = 6, ordinal = 6;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:34.540;
-		mnuAddCustomer:                MenuItem  number = 2, ordinal = 2;
+		mnuAddCustoemr:                MenuItem  number = 2, ordinal = 2;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.520;
+		mnuAddCustomer:                MenuItem  number = 11, ordinal = 11;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.520;
 		mnuCustomer:                   MenuItem  number = 1, ordinal = 1;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:22:17.519;
@@ -375,7 +379,9 @@ typeDefinitions
 	jadeMethodDefinitions
 		load() updating, clientExecution, number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:15:46.138;
-		mnuAddCustomer_click(menuItem: MenuItem input) updating, number = 1002;
+		mnuAddCustoemr_click(menuItem: MenuItem input) updating, number = 1002;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:11:17:23:40.266;
+		mnuAddCustomer_click(menuItem: MenuItem input) updating, number = 1009;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:14:18:54.090;
 		mnuCustomerList_click(menuItem: MenuItem input) updating, number = 1004;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:12:14:31:05.813;
@@ -391,6 +397,7 @@ typeDefinitions
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:25:16:23:03.180;
 	eventMethodMappings
 		load = load of Form;
+		mnuAddCustoemr_click = click of MenuItem;
 		mnuAddCustomer_click = click of MenuItem;
 		mnuCustomerList_click = click of MenuItem;
 		mnuCustomerSearch_click = click of MenuItem;
@@ -401,7 +408,7 @@ typeDefinitions
 	)
 	NewTransaction completeDefinition
 	(
-		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:24:21.962;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:16:52:11.642;
 	referenceDefinitions
 		accounTextBox:                 TextBox  number = 5, ordinal = 5;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
@@ -421,9 +428,9 @@ typeDefinitions
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.916;
 		payeetextBox:                  TextBox  number = 9, ordinal = 9;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.916;
-		paymentlRadioBtn:              OptionButton  number = 3, ordinal = 3;
+		paymentlRadioBtn:              OptionButton  number = 13, ordinal = 13;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.915;
-		statusLine:                    StatusLine  number = 13, ordinal = 13;
+		statusLine:                    StatusLine  number = 14, ordinal = 14;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:30:13:24:21.961;
 		submitButton:                  Button  number = 12, ordinal = 12;
 		setModifiedTimeStamp "dkmor" "22.0.03" 2024:05:22:15:32:32.917;
@@ -460,7 +467,7 @@ databaseDefinitions
 	(
 	setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	databaseFileDefinitions
-		"simplebankview" number = 56;
+		"simplebankview" number = 55;
 		setModifiedTimeStamp "cza14" "16.0.01" 2017:02:24:18:50:00.343;
 	defaultFileDefinition "simplebankview";
 	classMapDefinitions
@@ -611,6 +618,10 @@ begin
 			//removes the account from the dictionry at its old position
 			app.ourBank.allBankAccounts.removeKey(originalAccNum);
 			commitTransaction;
+			app.msgBox("Account Succesffuly Changed", "Success", MsgBox_OK_Only);
+		else
+			// display error
+			app.msgBox("Customer Number already taken", "Error", MsgBox_OK_Only);
 		endif;
 	endif;
 	
@@ -725,25 +736,26 @@ begin
 	endif;
 end;
 }
-btnXML_click
+btnExport_click
 {
-btnXML_click(btn: Button input) updating;
+btnExport_click(btn: Button input) updating;
 
 vars
 
 	acc : BankAccount;
 	handler : XMLHandler;
+	fileSaver : CMDFileSave;	
 
 begin
 
 	acc := self.listAccounts.listObject.BankAccount;
-	
-	create handler transient;
-	
-	// upload data
-	handler.saveAccount(acc);
-	
-	// handler.upload();
+	create fileSaver;
+	if fileSaver.open = 0 then
+		create handler transient;
+		handler.exportAccount(acc, fileSaver.fileName);
+		app.msgBox("Successfully Exported", "Success!", MsgBox_OK_Only);
+	endif;
+		
 
 end;
 }
@@ -754,6 +766,7 @@ listAccounts_click(listbox: ListBox input) updating;
 vars
 
 begin
+	self.btnExport.enabled := true;
 	self.btnXML.enabled := true;
 	self.selectedAccount := self.listAccounts.listObject.BankAccount;
 	self.listTransactions.displayCollection(selectedAccount.allTransactions, true, ListBox.DisplayCollection_Forward, null, "");
@@ -1199,6 +1212,20 @@ vars
 begin
 	// this is to identify this as the parent MDI form
 	app.mdiFrame := MainMenu;
+end;
+}
+mnuAddCustoemr_click
+{
+mnuAddCustoemr_click(menuItem: MenuItem input) updating;
+
+vars
+	form: CustomerAdd;
+	
+begin
+	
+	create form transient;
+	form.show();
+	
 end;
 }
 mnuAddCustomer_click

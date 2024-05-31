@@ -265,7 +265,7 @@ without inverses and requires manual maintenance.`
 		createTestCustomer() updating, number = 1001;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:15:00:27.632;
 		importAndExportXML() number = 1021;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:21:01:04:52.373;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:17:00:52.048;
 		iterationWithForeach() number = 1013;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:21:43:23.017;
 		iterationWithIterator() number = 1014;
@@ -438,6 +438,9 @@ without inverses and requires manual maintenance.`
 	XMLHandler completeDefinition
 	(
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:16:21:51:27.784;
+	constantDefinitions
+		TOKEN:                         String = "41b06cfd-1b36-4fcf-9f41-0b028444672d" number = 1001;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:16:47:25.920;
 	jadeMethodDefinitions
 		addCustDetails(
 			cust: Customer; 
@@ -447,16 +450,20 @@ without inverses and requires manual maintenance.`
 			tran: Transaction; 
 			root: JadeXMLElement io) number = 1005;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:21:17:42.873;
+		exportAccount(
+			acc: BankAccount; 
+			filePath: String) number = 1008;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:17:02:28.880;
 		importTransactions(xml: JadeXMLDocument) number = 1001;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:50:30.381;
 		importXMLFile(file: String) number = 1006;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:30:00:07:44.168;
-		saveAccount(acc: BankAccount) number = 1003;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:50:53.683;
 		saveTransaction(tran: Transaction) number = 1002;
 		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:19:40:11.376;
+		sendAccount(acc: BankAccount) number = 1003;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:17:00:52.055;
 		sendXML(xml: JadeXMLDocument) number = 1007;
-		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:29:20:33:28.330;
+		setModifiedTimeStamp "jorda" "22.0.03" 2024:05:31:16:52:40.335;
 	)
 	Collection completeDefinition
 	(
@@ -527,9 +534,9 @@ databaseDefinitions
 	databaseFileDefinitions
 		"simplebankaccount" number = 64;
 		setModifiedTimeStamp "cza14" "22.0.03" 2024:03:20:10:18:08.973;
-		"simplebankcustomer" number = 53;
+		"simplebankcustomer" number = 54;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:39:06.027;
-		"simplebankmodel" number = 62;
+		"simplebankmodel" number = 53;
 		setModifiedTimeStamp "Philippa" "18.0.01" 2020:02:26:10:10:55.457;
 	defaultFileDefinition "simplebankmodel";
 	classMapDefinitions
@@ -1246,7 +1253,7 @@ begin
 	handler.importXMLFile(Filename);
 	
 	// export transactions
-	handler.saveAccount(bankAcc);
+	handler.sendAccount(bankAcc);
 	
 
 end;
@@ -2020,6 +2027,60 @@ begin
 	elmt.setText(tran.getPropertyValue("accBalance").Integer.String);
 end;
 }
+exportAccount
+{
+exportAccount(acc: BankAccount; filePath: String);
+// save all Transactions from a bank account
+
+vars
+	
+	xml					:	JadeXMLDocument;
+	statement, customer, 
+	account, transactions,
+	transaction, temp	:	JadeXMLElement;
+	cust				: 	Customer;
+	tran				:	Transaction;
+	xmlCustDetails		: 	StringArray;
+	
+
+begin
+	
+	create xml transient;
+	create xmlCustDetails transient;
+	
+	
+	cust := acc.myCustomer;
+	
+	statement := xml.addElement("statement");
+	
+	// add customer details
+	customer := statement.addElement("customer");
+	self.addCustDetails(cust, customer);
+	
+	// add account
+	account := statement.addElement("account");
+	account.addAttribute("type", acc.getName());
+	// add interestRate
+	if acc.getName() = "CurrentAccount" then
+		temp := account.addElement("overdraft_limit");
+		temp.setText(acc.getPropertyValue("overdraftLimit").String);
+	else
+		temp := account.addElement("interest_rate");
+		temp.setText(acc.getPropertyValue("interestRate").String);
+	endif;
+	
+	//add transactions
+	transactions := account.addElement("transactions");
+	foreach tran in acc.allTransactions do
+		transaction := transactions.addElement("transaction");
+		
+		self.addTransaction(tran, transaction);
+	endforeach;
+		
+	xml.writeToFile(filePath);
+		
+end;
+}
 importTransactions
 {
 importTransactions(xml: JadeXMLDocument);
@@ -2112,61 +2173,6 @@ epilog
 
 end;
 }
-saveAccount
-{
-saveAccount(acc: BankAccount);
-
-// save all Transactions from a bank account
-
-vars
-	
-	xml					:	JadeXMLDocument;
-	statement, customer, 
-	account, transactions,
-	transaction, temp	:	JadeXMLElement;
-	cust				: 	Customer;
-	tran				:	Transaction;
-	xmlCustDetails		: 	StringArray;
-	
-
-begin
-	
-	create xml transient;
-	create xmlCustDetails transient;
-	
-	
-	cust := acc.myCustomer;
-	
-	statement := xml.addElement("statement");
-	
-	// add customer details
-	customer := statement.addElement("customer");
-	self.addCustDetails(cust, customer);
-	
-	// add account
-	account := statement.addElement("account");
-	account.addAttribute("type", acc.getName());
-	// add interestRate
-	if acc.getName() = "CurrentAccount" then
-		temp := account.addElement("overdraft_limit");
-		temp.setText(acc.getPropertyValue("overdraftLimit").String);
-	else
-		temp := account.addElement("interest_rate");
-		temp.setText(acc.getPropertyValue("interestRate").String);
-	endif;
-	
-	//add transactions
-	transactions := account.addElement("transactions");
-	foreach tran in acc.allTransactions do
-		transaction := transactions.addElement("transaction");
-		
-		self.addTransaction(tran, transaction);
-	endforeach;
-		
-	sendXML(xml);
-		
-end;
-}
 saveTransaction
 {
 saveTransaction(tran: Transaction);
@@ -2224,6 +2230,61 @@ begin
 	write "successfully exported to XML";
 end;
 }
+sendAccount
+{
+sendAccount(acc: BankAccount);
+
+// save all Transactions from a bank account
+
+vars
+	
+	xml					:	JadeXMLDocument;
+	statement, customer, 
+	account, transactions,
+	transaction, temp	:	JadeXMLElement;
+	cust				: 	Customer;
+	tran				:	Transaction;
+	xmlCustDetails		: 	StringArray;
+	
+
+begin
+	
+	create xml transient;
+	create xmlCustDetails transient;
+	
+	
+	cust := acc.myCustomer;
+	
+	statement := xml.addElement("statement");
+	
+	// add customer details
+	customer := statement.addElement("customer");
+	self.addCustDetails(cust, customer);
+	
+	// add account
+	account := statement.addElement("account");
+	account.addAttribute("type", acc.getName());
+	// add interestRate
+	if acc.getName() = "CurrentAccount" then
+		temp := account.addElement("overdraft_limit");
+		temp.setText(acc.getPropertyValue("overdraftLimit").String);
+	else
+		temp := account.addElement("interest_rate");
+		temp.setText(acc.getPropertyValue("interestRate").String);
+	endif;
+	
+	//add transactions
+	transactions := account.addElement("transactions");
+	foreach tran in acc.allTransactions do
+		transaction := transactions.addElement("transaction");
+		
+		self.addTransaction(tran, transaction);
+	endforeach;
+		
+	sendXML(xml);
+		
+end;
+}
 sendXML
 {
 sendXML(xml: JadeXMLDocument);
@@ -2237,7 +2298,6 @@ constants
 	FileName = "account-statement.0.short.xml"; // This is the name of the XML file.
 	End_Point = "http://c141kn.canterbury.ac.nz/sbmxmlv/"; // This is where we are sending those files. 
 	Path = "uploadxml"; // This is the name of the service.
-	BearerToken = "{group bearer token}"; // This should be your group bearer token. 
 	DataName = "data";
 	ContentType="application/xml";
 vars
@@ -2252,7 +2312,7 @@ begin
 	file.kind := File.Kind_ANSI;
 	client := create JadeRestClient(End_Point) transient; 
 	request := create JadeRestRequest (Path) transient;
-	request.addBearerToken (BearerToken);
+	request.addBearerToken (TOKEN);
 	request.dataFormat := JadeRestRequest.DataFormat_MultipartFormData;
 	
 	/* This example uses an actual XML file saved on disk. However, when this example is adapted 
